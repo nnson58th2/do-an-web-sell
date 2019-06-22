@@ -1,0 +1,84 @@
+﻿@model PagedList.IPagedList<Model.EF.QuanTri>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Quản lý người dùng";
+    Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+    string quyen = "";
+    string trthai = "";
+}
+@section header {
+    Danh sách người dùng
+}
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" cellspacing="0">
+            @using (Html.BeginForm("index", "user", FormMethod.Get))
+            {
+                <div class="d-none d-md-inline-block form-inline form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tài khoản</th>
+                    <th>Mật khẩu</th>
+                    <th>Họ tên</th>
+                    <th>Điện thoại</th>
+                    <th>Quyền</th>
+                    <th>Trạng thái</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="row_@item.Id">
+                        <td>@item.Id</td>
+                        <td>@item.UserName</td>
+                        <td>@item.Password</td>
+                        <td>@item.HoTen</td>
+                        <td>@item.DienThoai</td>
+                        <td>
+                            @{ if (@item.Quyen == true)
+                                { quyen = "Víp"; }
+                                else
+                                { quyen = "Thường"; }
+
+                            }
+                            @quyen
+                        </td>
+                        <td>
+                            @{ if (@item.TrangThai == true)
+                                { trthai = "Kích hoạt"; }
+                                else
+                                { trthai = "Khóa"; }
+
+                            }
+                            @trthai
+                        </td>
+                        <td>
+                            <a href="/admin/user/edit/@item.Id"><abbr title="Cập nhật dữ liệu"><img src="/assets/admin/images/edit.png" width="20" height="20" /></abbr></a> |
+                            @Ajax.ActionLink("Xóa", "delete", new { @id = item.Id }, new AjaxOptions
+                       {
+                           Confirm = "Bạn có muốn xóa user này?",
+                           OnComplete = "$(' #row_" + @item.Id + " ').remove()",
+                           HttpMethod = "Delete"
+                       })
+                        </td>
+                    </tr>
+                                }
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))
+    </div>
+</div>

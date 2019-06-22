@@ -1,0 +1,14 @@
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\Model.dll.config
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\Model.dll
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\Model.pdb
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\EntityFramework.dll
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\PagedList.dll
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\PagedList.Mvc.dll
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\EntityFramework.xml
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\PagedList.xml
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debug\PagedList.Mvc.xml
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\obj\Debug\Model.dll
+F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\obj\Debug\Model.pdb

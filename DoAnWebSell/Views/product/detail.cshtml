@@ -1,0 +1,127 @@
+﻿@model Model.EF.SanPham
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var category = (Model.EF.DanhMucSanPham)ViewBag.Category;
+    var relatedProducts = (List<Model.EF.SanPham>)ViewBag.RelatedProducts;
+}
+
+<!-- Single Page -->
+<div class="banner-bootom-w3-agileits py-4">
+    <div class="container py-xl-4 py-lg-2">
+        <div class="row">
+            <div class="col-lg-4 col-md-7 single-right-left ">
+                <div class="grid images_3_of_2">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li data-thumb="/assets/client/images/@Model.HinhAnh">
+                                <div class="thumb-image">
+                                    <img src="/assets/client/images/@Model.HinhAnh" data-imagezoom="true" class="img-fluid" alt="">
+                                </div>
+                            </li>
+                            <li data-thumb="/assets/client/images/@Model.HinhAnh">
+                                <div class="thumb-image">
+                                    <img src="/assets/client/images/@Model.HinhAnh" data-imagezoom="true" class="img-fluid" alt="">
+                                </div>
+                            </li>
+                            <li data-thumb="/assets/client/images/@Model.HinhAnh">
+                                <div class="thumb-image">
+                                    <img src="/assets/client/images/@Model.HinhAnh" data-imagezoom="true" class="img-fluid" alt="">
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 single-right-left simpleCart_shelfItem">
+                <div class="content_top">
+                    <div class="back-links">
+                        <p><a href="/">Trang chủ</a> / <a href="/san-pham/">Sản phẩm</a> / <a href="/san-pham/@category.MetaTitle-@category.Id">@category.Name</a> / <a href="/chi-tiet/@Model.MetaTitle-@Model.MaSP">@Model.TenSP</a></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <h2 class="mb-3">@Model.TenSP</h2>
+                <p>@Model.MoTa</p>
+                <p class="mb-3">
+                    @if (Model.GiaKhuyenMai != null)
+                    {
+                        <span class="item_price">@(Model.GiaKhuyenMai.HasValue ? Model.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")đ</span>
+                        <del>@Model.DonGia.Value.ToString("N0")đ</del>
+                    }
+                    else
+                    {
+                        <span class="item_price">@(Model.DonGia.HasValue ? Model.DonGia.Value.ToString("N0") : "Liên hệ")đ</span>
+                    }
+                </p>
+                <div class="single-infoagile">
+                    <div class="share-desc">
+                        <div class="share">
+                            <p>Chia sẻ: </p>
+                            <ul>
+                                <li style="display:inline"><a href="#"><img src="/assets/client/images/facebook.png" alt="" /></a></li>
+                                <li style="display:inline"><a href="#"><img src="/assets/client/images/zalo.png" alt="" /></a></li>
+                                <li style="display:inline"><a href="#"><img src="/assets/client/images/skype.png" alt="" /></a></li>
+                                <li style="display:inline"><a href="#"><img src="/assets/client/images/twitter.png" alt="" /></a></li>
+                            </ul>
+                        </div>
+                        <div class="occasion-cart">
+                            <div class="top_brand_home_details item_add single-item hvr-outline-out pl-3">
+                                <a href="/them-gio-hang?productId=@Model.MaSP&quantity=1" class="btn btn-danger">Thêm vào giỏ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="product-single-w3l">
+                        <p class="my-sm-4 my-3">
+                            <i class="fas fa-retweet mr-3"></i>Ngân hàng & Tín dụng / Ghi nợ / Thẻ ATM
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="categories col-lg-3 col-md-8">
+                @{ Html.RenderAction("productCategory", "product");}
+            </div>
+            <div class="product_desc">
+                <div id="horizontalTab">
+                    <ul class="resp-tabs-list">
+                        <li>Chi tiết</li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="resp-tabs-container">
+                        <div class="product-desc">
+                            @Html.Raw(Model.ChiTiet)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div class="content_bottom">
+                <div class="heading">
+                    <h3>Sản phẩm liên quan</h3>
+                </div>
+                <div class="see">
+                    <p><a href="/san-pham">Xem tất cả</a></p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="section group">
+                @foreach (var item in relatedProducts)
+                {
+                    var url = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
+                    <div class="grid_1_of_4 images_1_of_4">
+                        <a href="@url"><img src="@item.HinhAnh" alt=""></a>
+                        <div class="price" style="border:none">
+                            <div class="add-cart" style="float:none">
+                                <h4><a href="@url">Thêm vào giỏ</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                }
+            </div>*@
+        </div>
+    </div>
+</div>
+<!-- //Single Page -->

@@ -1,0 +1,26 @@
+﻿.validation-summary-errors ul {
+    list-style: none;
+}
+
+/*Available width*/
+.w-60 {
+  width: 60% !important;
+}
+
+.w-80 {
+  width: 80% !important;
+}
+
+.w-90 {
+  width: 90% !important;
+}
+
+/*Format table*/
+.table {
+    font-size: .9rem;
+}
+
+/*Format label*/
+label {
+    font-weight: 600;
+} 

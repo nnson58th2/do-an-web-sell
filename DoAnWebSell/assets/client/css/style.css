@@ -2193,6 +2193,10 @@ div#testimonials h4.m-title {
     border-bottom: 1px solid #EEE;
 }
 
+.categories li a:hover {
+    font-size: 1rem;
+}
+
 .categories li:first-child a {
     border-top: 1px solid #EEE;
 }

@@ -23,4 +23,30 @@
 /*Format label*/
 label {
     font-weight: 600;
-} 
+}
+
+/*List page*/
+.pagination {
+    justify-content: center;
+}
+
+.pagination-container ul li {
+    padding: 1px 9px;
+    border: 1px solid #ddd;
+}
+
+.pagination-container ul .active {
+    color: #6c9ed5;
+    border-bottom: 3px solid #459efe;
+
+}
+
+.pagination li:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.pagination li:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}  

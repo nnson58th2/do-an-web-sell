@@ -30,7 +30,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.Id;
 
-                    Session.Add(CommonConstants.USER_SESSION, userSession);
+                    Session.Add(CommonConstants.ADMIN_SESSION, userSession);
                     return RedirectToAction("index", "home");
                 }
                 else if (result == 0)

@@ -12,3 +12,17 @@ F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\bin\Debu
 F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\obj\Debug\Model.dll
 F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Model\obj\Debug\Model.pdb
+F:\Github\do-an-web-sell\Model\bin\Debug\Model.dll.config
+F:\Github\do-an-web-sell\Model\bin\Debug\Model.dll
+F:\Github\do-an-web-sell\Model\bin\Debug\Model.pdb
+F:\Github\do-an-web-sell\Model\bin\Debug\EntityFramework.dll
+F:\Github\do-an-web-sell\Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\Github\do-an-web-sell\Model\bin\Debug\PagedList.dll
+F:\Github\do-an-web-sell\Model\bin\Debug\PagedList.Mvc.dll
+F:\Github\do-an-web-sell\Model\bin\Debug\EntityFramework.xml
+F:\Github\do-an-web-sell\Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\Github\do-an-web-sell\Model\bin\Debug\PagedList.xml
+F:\Github\do-an-web-sell\Model\bin\Debug\PagedList.Mvc.xml
+F:\Github\do-an-web-sell\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+F:\Github\do-an-web-sell\Model\obj\Debug\Model.dll
+F:\Github\do-an-web-sell\Model\obj\Debug\Model.pdb

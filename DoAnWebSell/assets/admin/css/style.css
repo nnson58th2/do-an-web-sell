@@ -66,6 +66,11 @@ label {
     text-decoration: none;
 }
 
+.format-function-edit:hover, .format-function-detail:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 tbody tr td a:last-child{
     padding: 3px 8px;
     color: #fff;

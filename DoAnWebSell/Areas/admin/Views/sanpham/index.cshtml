@@ -4,6 +4,7 @@
 @{
     ViewBag.Title = "Quản lý sản phẩm";
     Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+    string trthai = "";
 }
 
 @section header {
@@ -13,19 +14,24 @@
 <div class="card-body">
     <div class="table-responsive">
         <table class="table table-bordered" cellspacing="0">
-            @using (Html.BeginForm("index", "sanpham", FormMethod.Get))
-            {
-                <div class="d-none d-md-inline-block form-inline form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
-                        <div class="input-group-append">
-                            <button class="btn btn-dark" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
+            <div class="d-flex">
+                <div class="create w-80">
+                    <a href="/admin/sanpham/create" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a>
+                </div>
+                @using (Html.BeginForm("index", "sanpham", FormMethod.Get))
+                {
+                    <div class="form-inline form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
             <thead>
                 <tr>
                     <th>Mã sản phẩm</th>
@@ -34,6 +40,7 @@
                     <th>Số lượng</th>
                     <th>Đơn giá</th>
                     <th>Giá khuyến mãi</th>
+                    <th>Trạng thái</th>
                     <th>Tạo bởi</th>
                     <th>Chức năng</th>
                 </tr>
@@ -48,6 +55,17 @@
                         <td>@item.SoLuong</td>
                         <td>@item.DonGia</td>
                         <td>@item.GiaKhuyenMai</td>
+                        <td>
+                            @if (item.TrangThai == true)
+                            {
+                                trthai = "Kinh doanh";
+                            }
+                            else
+                            {
+                                trthai = "Không kinh doanh";
+                            }
+                            @trthai
+                        </td>
                         <td>@item.TaoBoi</td>
                         <td>
                             <a class="format-function-edit" href="/admin/sanpham/edit/@item.MaSP"><i class="fas fa-edit"></i> Chỉnh sửa</a>
@@ -59,7 +77,7 @@
                        })
                         </td>
                     </tr>
-                                }
+            }
             </tbody>
         </table>
         @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))

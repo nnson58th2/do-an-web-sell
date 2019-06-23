@@ -11,7 +11,7 @@ namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class SanPham
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -31,8 +31,10 @@ namespace Model.EF
         public string MoTa { get; set; }
         public string ChiTiet { get; set; }
         public string ThoiHanBaoHanh { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> NgaySanXuat { get; set; }
         public Nullable<bool> TrangThai { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> NgayTao { get; set; }
         public string TaoBoi { get; set; }
         public Nullable<long> DanhMucSanPhamID { get; set; }

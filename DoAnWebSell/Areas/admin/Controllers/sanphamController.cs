@@ -54,12 +54,12 @@ namespace DoAnWebSell.Areas.admin.Controllers
         public ActionResult create([Bind(Include = "MaSP,TenSP,MetaTitle,SoLuong,DonGia,GiaKhuyenMai,HinhAnh,MoTa,ChiTiet,ThoiHanBaoHanh,NgaySanXuat,TrangThai,NgayTao,TaoBoi,DanhMucSanPhamID,MaNCC")] SanPham sanPham)
         {
             //System.Web.HttpPostedFileBase Avatar;
-            var imgSP = Request.Files["Avatar"];
+            var images = Request.Files["Images"];
             //Lấy thông tin từ input type=file có tên Avatar
-            string postedFileName = System.IO.Path.GetFileName(imgSP.FileName);
+            string postedFileName = System.IO.Path.GetFileName(images.FileName);
             //Lưu hình đại diện về Server
             var path = Server.MapPath("/assets/admin/images/" + postedFileName);
-            imgSP.SaveAs(path);
+            images.SaveAs(path);
 
             if (ModelState.IsValid)
             {
@@ -96,15 +96,15 @@ namespace DoAnWebSell.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult edit([Bind(Include = "MaSP,TenSP,MetaTitle,SoLuong,DonGia,GiaKhuyenMai,HinhAnh,MoTa,ChiTiet,ThoiHanBaoHanh,NgaySanXuat,TrangThai,NgayTao,TaoBoi,DanhMucSanPhamID,MaNCC")] SanPham sanPham)
         {
-            var imgSP = Request.Files["Avatar"];
-
+            //System.Web.HttpPostedFileBase Avatar;
+            var images = Request.Files["Images"];
             try
             {
                 //Lấy thông tin từ input type=file có tên Avatar
-                string postedFileName = System.IO.Path.GetFileName(imgSP.FileName);
+                string postedFileName = System.IO.Path.GetFileName(images.FileName);
                 //Lưu hình đại diện về Server
-                var path = Server.MapPath("/assets/admin/images/" + postedFileName);
-                imgSP.SaveAs(path);
+                var path = Server.MapPath("/assets/client/images/" + postedFileName);
+                images.SaveAs(path);
             }
             catch
             { }

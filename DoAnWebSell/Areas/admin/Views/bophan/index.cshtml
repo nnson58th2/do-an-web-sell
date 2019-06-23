@@ -37,7 +37,7 @@
                             @item.TenBP
                         </td>                     
                         <td>
-                            <a href="/admin/bophan/edit/@item.MaBP"><abbr title="Cập nhật dữ liệu"><img src="/assets/admin/images/edit.png" width="20" height="20" /></abbr></a> |
+                            <a class="format-function-edit" href="/admin/bophan/edit/@item.MaBP"><i class="fas fa-edit"></i> Chỉnh sửa</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaBP }, new AjaxOptions
                        {
                            Confirm = "Bạn có muốn xóa bộ phận này?",

@@ -1,19 +1,19 @@
-﻿@model PagedList.IPagedList<Model.EF.DonDatHang>
+﻿@model PagedList.IPagedList<Model.EF.SanPham>
 @using PagedList.Mvc
 
 @{
-    ViewBag.Title = "Danh sách đơn đặt hàng";
+    ViewBag.Title = "Quản lý sản phẩm";
     Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
 }
 
 @section header {
-    Danh sách đơn đặt hàng
+    Danh sách sản phẩm
 }
 
 <div class="card-body">
     <div class="table-responsive">
         <table class="table table-bordered" cellspacing="0">
-            @using (Html.BeginForm("index", "dondathang", FormMethod.Get))
+            @using (Html.BeginForm("index", "sanpham", FormMethod.Get))
             {
                 <div class="d-none d-md-inline-block form-inline form-group">
                     <div class="input-group">
@@ -28,41 +28,40 @@
             }
             <thead>
                 <tr>
-                    <th>Mã đơn</th>
-                    <th>Tên người đặt</th>
-                    <th>Địa chỉ giao</th>
-                    <th>Điện thoại</th>
-                    <th>Ngày đặt hàng</th>
-                    <th>Trạng thái</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>Giá khuyến mãi</th>
+                    <th>Tạo bởi</th>
                     <th>Chức năng</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr id="row_@item.MaDon">
-                        <td>@item.MaDon</td>
-                        <td>@item.TenNguoiDat</td>
-                        <td>@item.DiaChiGiaoHang</td>
-                        <td>@item.SoDienThoai</td>
-                        <td>@item.NgayDat</td>
-                        <td>@item.TrangThai</td>
+                    <tr id="row_@item.MaSP">
+                        <td>@item.MaSP</td>
+                        <td style="text-align: center;"><img src="/assets/client/images/@item.HinhAnh" width="70" /></td>
+                        <td>@item.TenSP</td>
+                        <td>@item.SoLuong</td>
+                        <td>@item.DonGia</td>
+                        <td>@item.GiaKhuyenMai</td>
+                        <td>@item.TaoBoi</td>
                         <td>
-                            <a class="format-function-edit" href="/admin/dondathang/edit/@item.MaDon"><i class="fas fa-edit"></i> Chỉnh sửa</a>
-                            <a class="format-function-detail" href="/admin/dondathang/details/@item.MaDon"><i class="fas fa-info"></i> Chi tiết</a>
-                            @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaDon }, new AjaxOptions
+                            <a class="format-function-edit" href="/admin/sanpham/edit/@item.MaSP"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+                            @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaSP }, new AjaxOptions
                        {
-                           Confirm = "Bạn có muốn xóa đơn hàng này?",
-                           OnComplete = "$(' #row_" + @item.MaDon + " ').remove()",
+                           Confirm = "Bạn có muốn xóa sản phẩm này?",
+                           OnComplete = "$(' #row_" + @item.MaSP + " ').remove()",
                            HttpMethod = "Delete"
                        })
                         </td>
-
                     </tr>
-                }
+                                }
             </tbody>
         </table>
         @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))
     </div>
 </div>
-

@@ -67,7 +67,7 @@
                             @trthai
                         </td>
                         <td>
-                            <a href="/admin/user/edit/@item.Id"><abbr title="Cập nhật dữ liệu"><img src="/assets/admin/images/edit.png" width="20" height="20" /></abbr></a> |
+                            <a class="format-function-edit" href="/admin/user/edit/@item.Id"><i class="fas fa-edit"></i> Chỉnh sửa</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.Id }, new AjaxOptions
                        {
                            Confirm = "Bạn có muốn xóa user này?",

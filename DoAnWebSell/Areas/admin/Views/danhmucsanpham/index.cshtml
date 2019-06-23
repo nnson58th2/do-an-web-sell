@@ -24,7 +24,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
                             <div class="input-group-append">
-                                <button class="btn btn-success" type="submit">
+                                <button class="btn btn-dark" type="submit">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
@@ -55,7 +55,7 @@
                         <td>@item.ParentID</td>
                         <td>@item.CreateBy</td>
                         <td>
-                            <a href="/admin/danhmucsanpham/edit/@item.Id"><abbr title="Cập nhật dữ liệu"><img src="/assets/admin/images/edit.png" width="20" height="20" /></abbr></a> |
+                            <a class="format-function-edit" href="/admin/danhmucsanpham/edit/@item.Id"><i class="fas fa-edit"></i> Chỉnh sửa</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.Id }, new AjaxOptions
                        {
                            Confirm = "Bạn có muốn xóa danh mục sản phẩm này?",

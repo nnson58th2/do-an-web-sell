@@ -35,6 +35,10 @@ label {
     border: 1px solid #ddd;
 }
 
+.pagination-container ul li:hover {
+    border-bottom: 2.5px solid #8ec5ff;
+}
+
 .pagination-container ul .active {
     color: #6c9ed5;
     border-bottom: 3px solid #459efe;
@@ -49,4 +53,37 @@ label {
 .pagination li:last-child {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-}  
+}
+
+/*Images*/
+.format-function-edit, .format-function-detail {
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #28a745;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+tbody tr td a:last-child{
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #dc3545;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+/*Top menu*/
+.fa {
+	color: white;
+    font-size: 1.2rem;
+}
+
+#name-admin, #home{
+	font-size: .8rem;
+	color: white;
+	font-style: normal;
+} 

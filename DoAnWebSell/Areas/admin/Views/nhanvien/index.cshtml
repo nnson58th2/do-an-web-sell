@@ -24,7 +24,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
                             <div class="input-group-append">
-                                <button class="btn btn-success" type="submit">
+                                <button class="btn btn-dark" type="submit">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
@@ -69,8 +69,8 @@
                         <td>@item.DiaChi</td>
                         <td>@item.BoPhan.TenBP</td>
                         <td>
-                            <a href="/admin/nhanvien/edit/@item.MaNV"><abbr title="Cập nhật dữ liệu"><img src="/assets/admin/images/edit.png" width="20" height="20" /></abbr></a> |
-                            <a href="/admin/nhanvien/details/@item.MaNV"><abbr title="Xem chi tiết"><img src="/assets/admin/images/details.png" width="20" height="20" /></abbr></a> |
+                            <a class="format-function-edit" href="/admin/nhanvien/edit/@item.MaNV"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+                            <a class="format-function-detail" href="/admin/nhanvien/details/@item.MaNV"><i class="fas fa-info"></i> Chi tiết</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaNV }, new AjaxOptions
                        {
                            Confirm = "Bạn có muốn xóa nhân viên này?",

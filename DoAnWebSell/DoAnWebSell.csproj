@@ -221,6 +221,7 @@
     <Compile Include="Areas\admin\Controllers\homeController.cs" />
     <Compile Include="Areas\admin\Controllers\loginController.cs" />
     <Compile Include="Areas\admin\Controllers\nhanvienController.cs" />
+    <Compile Include="Areas\admin\Controllers\sanphamController.cs" />
     <Compile Include="Areas\admin\Controllers\userController.cs" />
     <Compile Include="Areas\admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -326,7 +327,6 @@
     <Content Include="Areas\admin\Views\nhanvien\details.cshtml" />
     <Content Include="Areas\admin\Views\nhanvien\edit.cshtml" />
     <Content Include="Areas\admin\Views\nhanvien\index.cshtml" />
-    <Content Include="Areas\admin\Views\nhanvien\search.cshtml" />
     <Content Include="assets\client\css\bootstrap-grid.css.map" />
     <Content Include="assets\client\css\bootstrap-grid.min.css.map" />
     <Content Include="assets\client\css\bootstrap-reboot.css.map" />
@@ -343,6 +343,10 @@
     <Content Include="Areas\admin\Views\danhmucsanpham\create.cshtml" />
     <Content Include="Areas\admin\Views\danhmucsanpham\edit.cshtml" />
     <Content Include="Areas\admin\Views\danhmucsanpham\index.cshtml" />
+    <Content Include="Areas\admin\Views\sanpham\create.cshtml" />
+    <Content Include="Areas\admin\Views\sanpham\details.cshtml" />
+    <Content Include="Areas\admin\Views\sanpham\edit.cshtml" />
+    <Content Include="Areas\admin\Views\sanpham\index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

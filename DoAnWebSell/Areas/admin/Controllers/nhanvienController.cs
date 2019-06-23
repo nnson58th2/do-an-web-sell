@@ -58,8 +58,6 @@ namespace DoAnWebSell.Areas.admin.Controllers
         }
 
         // POST: admin/nhanvien/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult create([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,Luong,AnhNV,SDT,DiaChi,Email,MaBP")] NhanVien nhanVien)
@@ -146,12 +144,5 @@ namespace DoAnWebSell.Areas.admin.Controllers
             }
             base.Dispose(disposing);
         }
-
-        //public ActionResult search(string tenNV = "")
-        //{
-        //    var nhannvien = db.NhanVien.Where(x => x.TenNV == tenNV);
-        //    ViewBag.TenNV = tenNV;
-        //    return View(nhannvien.ToList());
-        //}
     }
 }

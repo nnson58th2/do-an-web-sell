@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model.EF;
 using Model.ViewModel;
+using PagedList;
 
 namespace Model.Dao
 {
@@ -14,6 +15,16 @@ namespace Model.Dao
         public ProductDao()
         {
             db = new DatabaseSellEntities();
+        }
+
+        public IEnumerable<SanPham> ListAllPaging(string search, int page, int pageSize)
+        {
+            IQueryable<SanPham> model = db.SanPham;
+            if (!string.IsNullOrEmpty(search))
+            {
+                model = model.Where(x => x.TenSP.Contains(search));
+            }
+            return model.OrderBy(x => x.TenSP).ToPagedList(page, pageSize);
         }
 
         public List<SanPham> ListNewProduct(int top)

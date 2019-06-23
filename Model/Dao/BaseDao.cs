@@ -29,5 +29,20 @@ namespace Model.Dao
                 return false;
             }
         }
+
+        public bool DeleteProduct(long id)
+        {
+            try
+            {
+                var product = db.SanPham.Find(id);
+                db.SanPham.Remove(product);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

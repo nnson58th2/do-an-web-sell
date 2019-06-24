@@ -1,5 +1,6 @@
 ﻿.validation-summary-errors ul {
     list-style: none;
+    padding-left: 6px;
 }
 
 /*Available width*/
@@ -87,8 +88,15 @@ tbody tr td a:last-child{
     font-size: 1.2rem;
 }
 
-#name-admin, #home{
-	font-size: .8rem;
+.user-admin a {
+    text-decoration: none;
+}
+
+.user-admin span {
+    font-size: .8rem;
 	color: white;
-	font-style: normal;
-} 
+}
+
+.user-admin .user-name{
+	font-family: cursive;
+}   

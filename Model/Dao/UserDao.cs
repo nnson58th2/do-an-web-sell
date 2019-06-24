@@ -69,7 +69,35 @@ namespace Model.Dao
             return db.QuanTri.Find(id);
         }
 
-        public int Login(string userName, string passWord)
+        public int LoginAdmin(string userName, string passWord, bool power)
+        {
+            var result = db.QuanTri.SingleOrDefault(x => x.UserName == userName);
+            if (result == null)
+            {
+                return 0;
+            }
+            else
+            {
+                if (result.TrangThai == false)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (result.Quyen == false)
+                        return -3;
+                    else
+                    {
+                        if (result.Password == passWord && result.Quyen == true)
+                            return 1;
+                        else
+                            return -2;
+                    }
+                }
+            }
+        }
+
+        public int LoginUser(string userName, string passWord)
         {
             var result = db.QuanTri.SingleOrDefault(x => x.UserName == userName);
             if (result == null)

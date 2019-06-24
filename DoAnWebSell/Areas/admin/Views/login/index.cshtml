@@ -12,11 +12,13 @@
     <link href="/assets/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
     <link href="/assets/admin/css/sb-admin.css" rel="stylesheet">
+
+    <link href="/assets/admin/css/style.css" rel="stylesheet" />
 </head>
 <body class="bg-dark">
     <div class="container">
         <div class="card card-login mx-auto mt-5">
-            <div class="card-header">Đăng nhập hệ thông</div>
+            <div class="card-header"><label>Đăng nhập hệ thống</label></div>
             <div class="card-body">
                 @using (Html.BeginForm("login", "login", FormMethod.Post))
                 {
@@ -35,10 +37,10 @@
                     </div>
                     <div class="form-group">
                         <div class="checkbox">
-                            <label>
+                            <span>
                                 @Html.CheckBoxFor(model=>model.RememberMe)
                                 Nhớ mật khẩu
-                            </label>
+                            </span>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>

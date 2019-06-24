@@ -13,7 +13,7 @@ namespace DoAnWebSell.Areas.admin.Models
 
         [Required(ErrorMessage = "Mời bạn nhập password")]
         public string PassWord { get; set; }
-
         public bool RememberMe { get; set; }
+        public bool Power { get; set; }
     }
 }

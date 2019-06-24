@@ -17,41 +17,82 @@ namespace DoAnWebSell.Areas.admin.Controllers
             return View();
         }
 
+        //public ActionResult login(LoginModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var dao = new UserDao();
+        //        var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.PassWord));
+        //        if (result == 1)
+        //        {
+        //            var user = dao.GetById(model.UserName);
+        //            var userSession = new UserLogin();
+        //            userSession.UserName = user.UserName;
+        //            userSession.UserID = user.Id;
+
+        //            Session.Add(CommonConstants.ADMIN_SESSION, userSession);
+        //            return RedirectToAction("index", "home");
+        //        }
+        //        else if (result == 0)
+        //        {
+        //            ModelState.AddModelError("", "Tài khoản không tồn tại.");
+        //        }
+        //        else if (result == -1)
+        //        {
+        //            ModelState.AddModelError("", "Tài khoản đang bị khoá.");
+        //        }
+        //        else if (result == -2)
+        //        {
+        //            ModelState.AddModelError("", "Mật khẩu không đúng.");
+        //        }
+        //        else if (result == -3)
+        //        {
+        //            ModelState.AddModelError("", "Tài khoản của bạn không có quyền đăng nhập.");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "Đăng nhập không đúng.");
+        //        }
+        //    }
+        //    return View("index");
+        //}
+
         public ActionResult login(LoginModel model)
         {
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-                var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.PassWord));
+                var result = dao.LoginAdmin(model.UserName, Encryptor.MD5Hash(model.PassWord), model.Power);
                 if (result == 1)
                 {
                     var user = dao.GetById(model.UserName);
                     var userSession = new UserLogin();
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.Id;
+                    userSession.Name = user.HoTen;
 
                     Session.Add(CommonConstants.ADMIN_SESSION, userSession);
                     return RedirectToAction("index", "home");
                 }
                 else if (result == 0)
                 {
-                    ModelState.AddModelError("", "Tài khoản không tồn tại.");
+                    ModelState.AddModelError("", "Tài khoản không tồn tại");
                 }
                 else if (result == -1)
                 {
-                    ModelState.AddModelError("", "Tài khoản đang bị khoá.");
+                    ModelState.AddModelError("", "Tài khoản đang bị khoá");
                 }
                 else if (result == -2)
                 {
-                    ModelState.AddModelError("", "Mật khẩu không đúng.");
+                    ModelState.AddModelError("", "Mật khẩu không đúng");
                 }
                 else if (result == -3)
                 {
-                    ModelState.AddModelError("", "Tài khoản của bạn không có quyền đăng nhập.");
+                    ModelState.AddModelError("", "Tài khoản của bạn không có quyền đăng nhập");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Đăng nhập không đúng.");
+                    ModelState.AddModelError("", "Đăng nhập không đúng");
                 }
             }
             return View("index");

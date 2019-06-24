@@ -252,6 +252,7 @@
     <Content Include="assets\admin\images\delete.png" />
     <Content Include="assets\admin\images\details.png" />
     <Content Include="assets\admin\images\edit.png" />
+    <Content Include="assets\admin\images\user-admin.svg" />
     <Content Include="assets\admin\index.html" />
     <Content Include="assets\admin\js\demo\chart-area-demo.js" />
     <Content Include="assets\admin\js\demo\chart-bar-demo.js" />

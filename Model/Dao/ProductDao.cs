@@ -42,9 +42,11 @@ namespace Model.Dao
         /// </summary>
         /// <param name="categoryID"></param>
         /// <returns></returns>
-        public List<SanPham> ListByCategoryId(long categoryID)
+        public List<SanPham> ListByCategoryId(long categoryID, ref int totalRecord, int pageIndex = 1, int pageSize = 2)
         {
-            return db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).ToList();
+            totalRecord = db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).Count();
+            var model =  db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).OrderByDescending(x => x.NgayTao).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            return model;
         }
 
         public List<SanPham> ListRelatedProducts(long productId)

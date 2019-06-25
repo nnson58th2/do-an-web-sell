@@ -57,5 +57,11 @@ namespace DoAnWebSell.Areas.admin.Controllers
             }
             return View("index");
         }
+
+        public ActionResult Logout()
+        {
+            Session[CommonConstants.ADMIN_SESSION] = null;
+            return Redirect("/admin/login");
+        }
     }
 }

@@ -90,23 +90,7 @@ F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\DoAnWebSell\bi
 F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\DoAnWebSell\obj\Debug\DoAnWebSell.csprojResolveAssemblyReference.cache
 F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\DoAnWebSell\obj\Debug\DoAnWebSell.dll
 F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\DoAnWebSell\obj\Debug\DoAnWebSell.pdb
-F:\Github\do-an-web-sell\DoAnWebSell\obj\Debug\DoAnWebSell.csprojResolveAssemblyReference.cache
-F:\Github\do-an-web-sell\DoAnWebSell\bin\ApplicationInsights.config
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\csc.exe
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.CodeAnalysis.dll
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.CSharp.Core.targets
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.VisualBasic.Core.targets
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\System.Collections.Immutable.dll
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\System.Reflection.Metadata.dll
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\vbc.exe
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\VBCSCompiler.exe
-F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\VBCSCompiler.exe.config
-F:\Github\do-an-web-sell\DoAnWebSell\bin\DoAnWebSell.dll.config
-F:\Github\do-an-web-sell\DoAnWebSell\bin\DoAnWebSell.dll
-F:\Github\do-an-web-sell\DoAnWebSell\bin\DoAnWebSell.pdb
+F:\Github\do-an-web-sell\DoAnWebSell\bin\System.Web.Mvc.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\Antlr3.Runtime.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\BotDetect.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\BotDetect.Web.Mvc.dll
@@ -140,7 +124,6 @@ F:\Github\do-an-web-sell\DoAnWebSell\bin\PagedList.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\PagedList.Mvc.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\System.Data.SQLite.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\System.Web.Helpers.dll
-F:\Github\do-an-web-sell\DoAnWebSell\bin\System.Web.Mvc.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\System.Web.Optimization.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\System.Web.Razor.dll
 F:\Github\do-an-web-sell\DoAnWebSell\bin\System.Web.WebPages.Deployment.dll
@@ -180,5 +163,22 @@ F:\Github\do-an-web-sell\DoAnWebSell\bin\Microsoft.Owin.Security.OAuth.xml
 F:\Github\do-an-web-sell\DoAnWebSell\bin\Microsoft.Owin.Security.Google.xml
 F:\Github\do-an-web-sell\DoAnWebSell\bin\Microsoft.Owin.Security.Twitter.xml
 F:\Github\do-an-web-sell\DoAnWebSell\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Github\do-an-web-sell\DoAnWebSell\obj\Debug\DoAnWebSell.csprojResolveAssemblyReference.cache
 F:\Github\do-an-web-sell\DoAnWebSell\obj\Debug\DoAnWebSell.dll
 F:\Github\do-an-web-sell\DoAnWebSell\obj\Debug\DoAnWebSell.pdb
+F:\Github\do-an-web-sell\DoAnWebSell\bin\ApplicationInsights.config
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\csc.exe
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\System.Collections.Immutable.dll
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\System.Reflection.Metadata.dll
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\vbc.exe
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\VBCSCompiler.exe
+F:\Github\do-an-web-sell\DoAnWebSell\bin\roslyn\VBCSCompiler.exe.config
+F:\Github\do-an-web-sell\DoAnWebSell\bin\DoAnWebSell.dll.config
+F:\Github\do-an-web-sell\DoAnWebSell\bin\DoAnWebSell.dll
+F:\Github\do-an-web-sell\DoAnWebSell\bin\DoAnWebSell.pdb

@@ -14,8 +14,8 @@ namespace Model.EF
     
     public partial class ChiTietDatHang
     {
-        public long MaSP { get; set; }
         public long MaDon { get; set; }
+        public long MaSP { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<decimal> DonGia { get; set; }
     

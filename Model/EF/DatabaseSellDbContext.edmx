@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DatabaseSellModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DatabaseSellModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BoPhan">
           <Key>
             <PropertyRef Name="MaBP" />
@@ -72,6 +72,7 @@
             <PropertyRef Name="MaKho" />
           </Key>
           <Property Name="MaKho" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenKho" Type="nvarchar" MaxLength="250" />
           <Property Name="MaSP" Type="bigint" />
         </EntityType>
         <EntityType Name="Menu">
@@ -97,7 +98,8 @@
           </Key>
           <Property Name="MaNCC" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TenNCC" Type="nvarchar" MaxLength="50" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -248,6 +250,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_KhoHang_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="KhoHang">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Menu_MenuType">
           <End Role="MenuType" Type="Self.MenuType" Multiplicity="0..1" />
           <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
@@ -318,6 +332,10 @@
             <End Role="SanPham" EntitySet="SanPham" />
             <End Role="ChiTietKho" EntitySet="ChiTietKho" />
           </AssociationSet>
+          <AssociationSet Name="FK_KhoHang_SanPham" Association="Self.FK_KhoHang_SanPham">
+            <End Role="SanPham" EntitySet="SanPham" />
+            <End Role="KhoHang" EntitySet="KhoHang" />
+          </AssociationSet>
           <AssociationSet Name="FK_Menu_MenuType" Association="Self.FK_Menu_MenuType">
             <End Role="MenuType" EntitySet="MenuType" />
             <End Role="Menu" EntitySet="Menu" />
@@ -327,7 +345,8 @@
             <End Role="SanPham" EntitySet="SanPham" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseSellModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -341,15 +360,15 @@
         </EntityType>
         <EntityType Name="ChiTietDatHang">
           <Key>
-            <PropertyRef Name="MaSP" />
             <PropertyRef Name="MaDon" />
+            <PropertyRef Name="MaSP" />
           </Key>
-          <Property Name="MaSP" Type="Int64" Nullable="false" />
           <Property Name="MaDon" Type="Int64" Nullable="false" />
+          <Property Name="MaSP" Type="Int64" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="DonGia" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="DonDatHang" Relationship="Self.FK_ChiTietDatHang_DonDatHang" FromRole="ChiTietDatHang" ToRole="DonDatHang" />
-          <NavigationProperty Name="SanPham" Relationship="DatabaseSellModel.FK_ChiTietDatHang_SanPham" FromRole="ChiTietDatHang" ToRole="SanPham" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK_ChiTietDatHang_SanPham" FromRole="ChiTietDatHang" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="ChiTietKho">
           <Key>
@@ -383,9 +402,9 @@
           <Property Name="DiaChiGiaoHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SoDienThoai" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TrangThai" Type="Int32" />
           <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="TrangThai" Type="Int32" />
           <NavigationProperty Name="ChiTietDatHang" Relationship="Self.FK_ChiTietDatHang_DonDatHang" FromRole="DonDatHang" ToRole="ChiTietDatHang" />
           <NavigationProperty Name="KhachHang" Relationship="Self.FK__DonDatHang__MaKH__29572725" FromRole="DonDatHang" ToRole="KhachHang" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK__DonDatHang__MaNV__286302EC" FromRole="DonDatHang" ToRole="NhanVien" />
@@ -408,8 +427,10 @@
             <PropertyRef Name="MaKho" />
           </Key>
           <Property Name="MaKho" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenKho" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="MaSP" Type="Int64" />
           <NavigationProperty Name="ChiTietKho" Relationship="Self.FK_ChiTietKho_KhoHang" FromRole="KhoHang" ToRole="ChiTietKho" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK_KhoHang_SanPham" FromRole="KhoHang" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -436,7 +457,8 @@
           </Key>
           <Property Name="MaNCC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SanPham" Relationship="Self.FK__SanPham__MaNCC__1BFD2C07" FromRole="NhaCungCap" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="NhanVien">
@@ -491,10 +513,11 @@
           <Property Name="TaoBoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DanhMucSanPhamID" Type="Int64" />
           <Property Name="MaNCC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ChiTietDatHang" Relationship="Self.FK_ChiTietDatHang_SanPham" FromRole="SanPham" ToRole="ChiTietDatHang" />
           <NavigationProperty Name="ChiTietKho" Relationship="Self.FK_ChiTietKho_SanPham" FromRole="SanPham" ToRole="ChiTietKho" />
           <NavigationProperty Name="DanhMucSanPham" Relationship="Self.FK_SanPham_DanhMucSanPham" FromRole="SanPham" ToRole="DanhMucSanPham" />
+          <NavigationProperty Name="KhoHang" Relationship="Self.FK_KhoHang_SanPham" FromRole="SanPham" ToRole="KhoHang" />
           <NavigationProperty Name="NhaCungCap" Relationship="Self.FK__SanPham__MaNCC__1BFD2C07" FromRole="SanPham" ToRole="NhaCungCap" />
-          <NavigationProperty Name="ChiTietDatHang" Relationship="DatabaseSellModel.FK_ChiTietDatHang_SanPham" FromRole="SanPham" ToRole="ChiTietDatHang" />
         </EntityType>
         <Association Name="FK__NhanVien__MaBP__1367E606">
           <End Role="BoPhan" Type="Self.BoPhan" Multiplicity="1">
@@ -519,6 +542,18 @@
             </Principal>
             <Dependent Role="ChiTietDatHang">
               <PropertyRef Name="MaDon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietDatHang_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+          <End Role="ChiTietDatHang" Type="Self.ChiTietDatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="ChiTietDatHang">
+              <PropertyRef Name="MaSP" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -582,6 +617,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_KhoHang_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="KhoHang">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Menu_MenuType">
           <End Role="MenuType" Type="Self.MenuType" Multiplicity="0..1" />
           <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
@@ -628,6 +675,10 @@
             <End Role="DonDatHang" EntitySet="DonDatHang" />
             <End Role="ChiTietDatHang" EntitySet="ChiTietDatHang" />
           </AssociationSet>
+          <AssociationSet Name="FK_ChiTietDatHang_SanPham" Association="Self.FK_ChiTietDatHang_SanPham">
+            <End Role="SanPham" EntitySet="SanPham" />
+            <End Role="ChiTietDatHang" EntitySet="ChiTietDatHang" />
+          </AssociationSet>
           <AssociationSet Name="FK_ChiTietKho_KhoHang" Association="Self.FK_ChiTietKho_KhoHang">
             <End Role="KhoHang" EntitySet="KhoHang" />
             <End Role="ChiTietKho" EntitySet="ChiTietKho" />
@@ -648,6 +699,10 @@
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="DonDatHang" EntitySet="DonDatHang" />
           </AssociationSet>
+          <AssociationSet Name="FK_KhoHang_SanPham" Association="Self.FK_KhoHang_SanPham">
+            <End Role="SanPham" EntitySet="SanPham" />
+            <End Role="KhoHang" EntitySet="KhoHang" />
+          </AssociationSet>
           <AssociationSet Name="FK_Menu_MenuType" Association="Self.FK_Menu_MenuType">
             <End Role="MenuType" EntitySet="MenuType" />
             <End Role="Menu" EntitySet="Menu" />
@@ -656,23 +711,7 @@
             <End Role="NhaCungCap" EntitySet="NhaCungCap" />
             <End Role="SanPham" EntitySet="SanPham" />
           </AssociationSet>
-          <AssociationSet Name="FK_ChiTietDatHang_SanPham" Association="DatabaseSellModel.FK_ChiTietDatHang_SanPham">
-            <End Role="SanPham" EntitySet="SanPham" />
-            <End Role="ChiTietDatHang" EntitySet="ChiTietDatHang" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_ChiTietDatHang_SanPham">
-          <End Type="DatabaseSellModel.SanPham" Role="SanPham" Multiplicity="1" />
-          <End Type="DatabaseSellModel.ChiTietDatHang" Role="ChiTietDatHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SanPham">
-              <PropertyRef Name="MaSP" />
-            </Principal>
-            <Dependent Role="ChiTietDatHang">
-              <PropertyRef Name="MaSP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -690,8 +729,8 @@
           <EntitySetMapping Name="ChiTietDatHang">
             <EntityTypeMapping TypeName="DatabaseSellModel.ChiTietDatHang">
               <MappingFragment StoreEntitySet="ChiTietDatHang">
-                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="MaDon" ColumnName="MaDon" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="DonGia" ColumnName="DonGia" />
               </MappingFragment>
@@ -726,9 +765,9 @@
                 <ScalarProperty Name="DiaChiGiaoHang" ColumnName="DiaChiGiaoHang" />
                 <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -749,6 +788,7 @@
             <EntityTypeMapping TypeName="DatabaseSellModel.KhoHang">
               <MappingFragment StoreEntitySet="KhoHang">
                 <ScalarProperty Name="MaKho" ColumnName="MaKho" />
+                <ScalarProperty Name="TenKho" ColumnName="TenKho" />
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -778,6 +818,7 @@
                 <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
                 <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -80,15 +80,15 @@
                 <!-- //logo -->
                 <!-- header-bot -->
                 <div class="col-md-9 header mt-4 mb-md-0 mb-4">
-                    <div class="row">
+                    <div class="row">                   
                         <!-- search -->
                         <div class="col-10 agileits_search">
                             <form class="form-inline" action="/tim-kiem" method="get">
-                                <input class="form-control mr-sm-2" type="text" name="keyword" id="txtKeyword" placeholder="Gỗ từ khóa tìm kiếm" aria-label="Search">
+                                <input class="form-control mr-sm-2" type="search" name="keyword" id="txtKeyword" placeholder="Gõ từ khóa tìm kiếm" aria-label="Search">
                                 <button class="btn my-2 my-sm-0" type="submit">Tìm kiếm</button>
                             </form>
                         </div>
-                        <!-- //search -->
+                        <!-- //search -->                        
                         <!-- cart details -->
                         @{ Html.RenderAction("HeaderCart", "home"); }
                         <!-- //cart details -->

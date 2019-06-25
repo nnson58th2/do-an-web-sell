@@ -44,5 +44,35 @@ namespace Model.Dao
                 return false;
             }
         }
+
+        public bool DeleteWareHouse(string id)
+        {
+            try
+            {
+                var wareHouse = db.KhoHang.Find(id);
+                db.KhoHang.Remove(wareHouse);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteSuppliere(string id)
+        {
+            try
+            {
+                var suppliere = db.NhaCungCap.Find(id);
+                db.NhaCungCap.Remove(suppliere);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

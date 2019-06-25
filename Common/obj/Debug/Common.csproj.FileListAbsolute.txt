@@ -5,6 +5,6 @@ F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Common\obj\Deb
 F:\Ngành\Bậc 3\Phát triển ứng dụng web\DoAn\DoAnWebSell\Common\obj\Debug\Common.pdb
 F:\Github\do-an-web-sell\Common\bin\Debug\Common.dll
 F:\Github\do-an-web-sell\Common\bin\Debug\Common.pdb
-F:\Github\do-an-web-sell\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 F:\Github\do-an-web-sell\Common\obj\Debug\Common.dll
 F:\Github\do-an-web-sell\Common\obj\Debug\Common.pdb
+F:\Github\do-an-web-sell\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

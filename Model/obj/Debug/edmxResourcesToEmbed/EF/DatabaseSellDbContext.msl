@@ -12,8 +12,8 @@
     <EntitySetMapping Name="ChiTietDatHang">
       <EntityTypeMapping TypeName="DatabaseSellModel.ChiTietDatHang">
         <MappingFragment StoreEntitySet="ChiTietDatHang">
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="MaDon" ColumnName="MaDon" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
         </MappingFragment>
@@ -48,9 +48,9 @@
           <ScalarProperty Name="DiaChiGiaoHang" ColumnName="DiaChiGiaoHang" />
           <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
           <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -71,6 +71,7 @@
       <EntityTypeMapping TypeName="DatabaseSellModel.KhoHang">
         <MappingFragment StoreEntitySet="KhoHang">
           <ScalarProperty Name="MaKho" ColumnName="MaKho" />
+          <ScalarProperty Name="TenKho" ColumnName="TenKho" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -100,6 +101,7 @@
           <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
           <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,0 +1,72 @@
+﻿@model PagedList.IPagedList<Model.EF.KhoHang>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Thông tin các kho hàng";
+    Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+    int i = 0;
+}
+
+@section header {
+    Danh sách kho hàng
+}
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" cellspacing="0">
+            <div class="d-flex">
+                <div class="create w-80">
+                    <a href="/admin/khohang/create" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a>
+                </div>
+                @using (Html.BeginForm("index", "khohang", FormMethod.Get))
+                {
+                    <div class="form-inline form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã kho</th>
+                    <th>Tên kho</th>
+                    <th>Sản phẩm</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="row_@item.MaKho">
+                        <td>
+                            @{ i++;}
+                            @i
+                        </td>
+                        <td>@item.MaKho</td>
+                        <td>@item.TenKho</td>
+                        <td>@item.SanPham.TenSP</td>
+                        <td>
+                            <a class="format-function-edit" href="/admin/khohang/edit/@item.MaKho"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+                            <a class="format-function-detail" href="/admin/khohang/details/@item.MaKho"><i class="fas fa-info"></i> Chi tiết</a>
+                            @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaKho }, new AjaxOptions
+                       {
+                           Confirm = "Bạn có muốn xóa kho hàng này?",
+                           OnComplete = "$(' #row_" + @item.MaKho + " ').remove()",
+                           HttpMethod = "Delete"
+                       })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))
+    </div>
+</div>

@@ -23,6 +23,7 @@ namespace Model.EF
         public string MaNCC { get; set; }
         public string TenNCC { get; set; }
         public string DiaChi { get; set; }
+        public string SoDienThoai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SanPham> SanPham { get; set; }

@@ -219,7 +219,9 @@
     <Compile Include="Areas\admin\Controllers\danhmucsanphamController.cs" />
     <Compile Include="Areas\admin\Controllers\dondathangController.cs" />
     <Compile Include="Areas\admin\Controllers\homeController.cs" />
+    <Compile Include="Areas\admin\Controllers\khohangController.cs" />
     <Compile Include="Areas\admin\Controllers\loginController.cs" />
+    <Compile Include="Areas\admin\Controllers\nhacungcapController.cs" />
     <Compile Include="Areas\admin\Controllers\nhanvienController.cs" />
     <Compile Include="Areas\admin\Controllers\sanphamController.cs" />
     <Compile Include="Areas\admin\Controllers\userController.cs" />
@@ -249,9 +251,11 @@
     <Content Include="assets\admin\css\style.css" />
     <Content Include="assets\admin\forgot-password.html" />
     <Content Include="assets\admin\gulpfile.js" />
+    <Content Include="assets\admin\images\background-hide-under.jpg" />
     <Content Include="assets\admin\images\delete.png" />
     <Content Include="assets\admin\images\details.png" />
     <Content Include="assets\admin\images\edit.png" />
+    <Content Include="assets\admin\images\exit-logout.svg" />
     <Content Include="assets\admin\images\user-admin.svg" />
     <Content Include="assets\admin\index.html" />
     <Content Include="assets\admin\js\demo\chart-area-demo.js" />
@@ -260,6 +264,7 @@
     <Content Include="assets\admin\js\demo\datatables-demo.js" />
     <Content Include="assets\admin\js\sb-admin.js" />
     <Content Include="assets\admin\js\sb-admin.min.js" />
+    <Content Include="assets\admin\js\simple-money-format.js" />
     <Content Include="assets\admin\login.html" />
     <Content Include="assets\admin\register.html" />
     <Content Include="assets\admin\tables.html" />
@@ -348,6 +353,13 @@
     <Content Include="Areas\admin\Views\sanpham\details.cshtml" />
     <Content Include="Areas\admin\Views\sanpham\edit.cshtml" />
     <Content Include="Areas\admin\Views\sanpham\index.cshtml" />
+    <Content Include="Areas\admin\Views\khohang\create.cshtml" />
+    <Content Include="Areas\admin\Views\khohang\details.cshtml" />
+    <Content Include="Areas\admin\Views\khohang\edit.cshtml" />
+    <Content Include="Areas\admin\Views\khohang\index.cshtml" />
+    <Content Include="Areas\admin\Views\nhacungcap\create.cshtml" />
+    <Content Include="Areas\admin\Views\nhacungcap\edit.cshtml" />
+    <Content Include="Areas\admin\Views\nhacungcap\index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

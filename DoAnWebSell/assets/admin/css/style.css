@@ -1,4 +1,8 @@
-﻿.validation-summary-errors ul {
+﻿.bg-hide-under {
+    background-image: url('/assets/admin/images/background-hide-under.jpg')
+}
+
+.validation-summary-errors ul {
     list-style: none;
     padding-left: 6px;
 }
@@ -99,4 +103,13 @@ tbody tr td a:last-child{
 
 .user-admin .user-name{
 	font-family: cursive;
+}
+
+.user-admin a:nth-child(2) {
+    text-decoration: none; 
+    margin-left: 1.6rem;
+}
+
+.user-admin a:nth-child(3) {
+    margin-left: .6rem;
 }   

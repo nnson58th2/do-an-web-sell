@@ -17,21 +17,23 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SanPham()
         {
-            this.ChiTietKho = new HashSet<ChiTietKho>();
             this.ChiTietDatHang = new HashSet<ChiTietDatHang>();
+            this.ChiTietKho = new HashSet<ChiTietKho>();
+            this.KhoHang = new HashSet<KhoHang>();
         }
     
         public long MaSP { get; set; }
         public string TenSP { get; set; }
         public string MetaTitle { get; set; }
         public int SoLuong { get; set; }
+        [DisplayFormat(DataFormatString = "{0:#,##0}", ApplyFormatInEditMode = true)]
         public Nullable<decimal> DonGia { get; set; }
+        [DisplayFormat(DataFormatString = "{0:#,##0}", ApplyFormatInEditMode = true)]
         public Nullable<decimal> GiaKhuyenMai { get; set; }
         public string HinhAnh { get; set; }
         public string MoTa { get; set; }
         public string ChiTiet { get; set; }
         public string ThoiHanBaoHanh { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> NgaySanXuat { get; set; }
         public Nullable<bool> TrangThai { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -41,10 +43,12 @@ namespace Model.EF
         public string MaNCC { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietDatHang> ChiTietDatHang { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKho> ChiTietKho { get; set; }
         public virtual DanhMucSanPham DanhMucSanPham { get; set; }
-        public virtual NhaCungCap NhaCungCap { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDatHang> ChiTietDatHang { get; set; }
+        public virtual ICollection<KhoHang> KhoHang { get; set; }
+        public virtual NhaCungCap NhaCungCap { get; set; }
     }
 }

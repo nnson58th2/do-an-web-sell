@@ -49,8 +49,6 @@ namespace DoAnWebSell.Areas.admin.Controllers
         }
 
         // POST: admin/dondathang/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult edit([Bind(Include = "MaDon,NgayDat,TenNguoiDat,DiaChiGiaoHang,SoDienThoai,Email,MaNV,MaKH,TrangThai")] DonDatHang donDatHang)

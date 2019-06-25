@@ -68,7 +68,9 @@
     <Compile Include="Dao\ProductCategoryDao.cs" />
     <Compile Include="Dao\ProductDao.cs" />
     <Compile Include="Dao\SlideDao.cs" />
+    <Compile Include="Dao\SupplierDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="Dao\WarehouseDao.cs" />
     <Compile Include="EF\BoPhan.cs">
       <DependentUpon>DatabaseSellDbContext.tt</DependentUpon>
     </Compile>
@@ -153,6 +155,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

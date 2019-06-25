@@ -21,9 +21,11 @@ namespace Model.EF
         }
     
         public string MaKho { get; set; }
+        public string TenKho { get; set; }
         public Nullable<long> MaSP { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKho> ChiTietKho { get; set; }
+        public virtual SanPham SanPham { get; set; }
     }
 }

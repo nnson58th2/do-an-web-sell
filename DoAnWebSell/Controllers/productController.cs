@@ -32,7 +32,7 @@ namespace DoAnWebSell.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult category(long id, int page = 1, int pageSize = 2)
+        public ActionResult category(long id, int page = 1, int pageSize = 4)
         {
             var category = new CategoryDao().ViewDetail(id);
             ViewBag.Category = category;

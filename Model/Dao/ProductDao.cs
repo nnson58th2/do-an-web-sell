@@ -17,6 +17,14 @@ namespace Model.Dao
             db = new DatabaseSellEntities();
         }
 
+        //Thêm sản phẩm vào database
+        public long Insert(SanPham entity)
+        {
+            db.SanPham.Add(entity);
+            db.SaveChanges();
+            return entity.MaSP;
+        }
+
         public IEnumerable<SanPham> ListAllPaging(string search, int page, int pageSize)
         {
             IQueryable<SanPham> model = db.SanPham;

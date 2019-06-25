@@ -142,15 +142,15 @@
                                             <h4 class="pt-1">
                                                 <a href="single.html">@item.TenSP</a>
                                             </h4>
-                                            <div class="info-product-price my-2">
+                                            <div class="info-product-price">
                                                 @if (item.GiaKhuyenMai != null)
                                                 {
-                                                    <span class="item_price">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")đ</span>
-                                                    <del>@item.DonGia.Value.ToString("N0")đ</del>
+                                                    <span class="item_price">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")₫</span>
+                                                    <del>@item.DonGia.Value.ToString("N0")₫</del>
                                                 }
                                                 else
                                                 {
-                                                    <span class="item_price">@(item.DonGia.HasValue ? item.DonGia.Value.ToString("N0") : "Liên hệ")đ</span>
+                                                    <span class="item_price">@(item.DonGia.HasValue ? item.DonGia.Value.ToString("N0") : "Liên hệ")₫</span>
                                                 }
                                             </div>
                                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">

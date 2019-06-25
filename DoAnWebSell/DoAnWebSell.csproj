@@ -283,6 +283,9 @@
     <Content Include="assets\client\css\popuo-box.css" />
     <Content Include="assets\client\css\style.css" />
     <Content Include="assets\client\images\drop_arrow.png" />
+    <Content Include="assets\client\images\noi-com-dien-panasonic.jpg" />
+    <Content Include="assets\client\images\noi-com-dien-shape.jpg" />
+    <Content Include="assets\client\images\noi-com-dien-toshiba.jpg" />
     <Content Include="assets\client\images\tivi-samsung.png" />
     <Content Include="assets\client\js\bootstrap.bundle.js" />
     <Content Include="assets\client\js\bootstrap.bundle.min.js" />

@@ -13,7 +13,7 @@
             @foreach (var item in Model)
             {
                 var link = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
-                <div class="col-md-4 product-men mt-4">
+                <div class="col-md-3 product-men mt-4">
                     <div class="men-pro-item simpleCart_shelfItem">
                         <div class="men-thumb-item text-center">
                             <a href="@link"><img src="/assets/client/images/@item.HinhAnh" alt="@item.TenSP"></a>
@@ -27,7 +27,7 @@
                             <h4 class="pt-1">
                                 <a href="#">@item.TenSP</a>
                             </h4>
-                            <div class="info-product-price my-2">
+                            <div class="info-product-price">
                                 @if (item.GiaKhuyenMai != null)
                                 {
                                     <span class="item_price">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")đ</span>

@@ -45,6 +45,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
         {
             ViewBag.DanhMucSanPhamID = new SelectList(db.DanhMucSanPham, "Id", "Name");
             ViewBag.MaNCC = new SelectList(db.NhaCungCap, "MaNCC", "TenNCC");
+            ViewBag.NgayTao = DateTime.Now;
             return View();
         }
 
@@ -58,12 +59,13 @@ namespace DoAnWebSell.Areas.admin.Controllers
             //Lấy thông tin từ input type=file có tên Avatar
             string postedFileName = System.IO.Path.GetFileName(images.FileName);
             //Lưu hình đại diện về Server
-            var path = Server.MapPath("/assets/admin/images/" + postedFileName);
+            var path = Server.MapPath("/assets/client/images/" + postedFileName);
             images.SaveAs(path);
 
             if (ModelState.IsValid)
             {
                 sanPham.HinhAnh = postedFileName;
+                sanPham.NgayTao = DateTime.Now;
                 db.SanPham.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("index");

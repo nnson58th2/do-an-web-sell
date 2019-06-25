@@ -38,6 +38,6 @@
   });
 
   $("#alert-box").removeClass('hide');
-  $("#alert-box").delay(3000).slideUp(1000);
+  $("#alert-box").delay(4000).slideUp(1000);
 
 })(jQuery); // End of use strict

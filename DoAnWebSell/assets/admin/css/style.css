@@ -103,6 +103,7 @@ tbody tr td a:last-child{
 
 .user-admin .user-name{
 	font-family: cursive;
+    text-transform: capitalize;
 }
 
 .user-admin a:nth-child(2) {

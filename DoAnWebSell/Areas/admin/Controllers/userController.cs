@@ -6,11 +6,14 @@ using System.Web.Mvc;
 using Model.EF;
 using Model.Dao;
 using DoAnWebSell.Common;
+using System.Net;
 
 namespace DoAnWebSell.Areas.admin.Controllers
 {
     public class userController : BaseController
     {
+        private DatabaseSellEntities db = new DatabaseSellEntities();
+
         // GET: admin/user
         public ActionResult index(string search, int page = 1, int pageSize = 3)
         {
@@ -20,11 +23,20 @@ namespace DoAnWebSell.Areas.admin.Controllers
             ViewBag.Search = search;
             return View(model);
         }
+
+        // GET: admin/user/Details/5
+        public ActionResult details(int id)
+        {
+            var user = new UserDao().ViewDetail(id);
+            return View(user);
+        }
+
         [HttpGet]
         public ActionResult create()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult create(QuanTri user)
         {

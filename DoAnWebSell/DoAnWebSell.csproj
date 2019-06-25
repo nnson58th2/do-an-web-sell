@@ -360,6 +360,7 @@
     <Content Include="Areas\admin\Views\nhacungcap\create.cshtml" />
     <Content Include="Areas\admin\Views\nhacungcap\edit.cshtml" />
     <Content Include="Areas\admin\Views\nhacungcap\index.cshtml" />
+    <Content Include="Areas\admin\Views\user\details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -13,6 +13,7 @@ namespace DoAnWebSell
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //User section
             routes.MapRoute(
                 name: "Product Category",
                 url: "san-pham/{metatitle}-{id}",
@@ -84,7 +85,7 @@ namespace DoAnWebSell
           );
 
             routes.MapRoute(
-              name: "Login",
+              name: "Login user",
               url: "dang-nhap",
               defaults: new { controller = "user", action = "login", id = UrlParameter.Optional },
               namespaces: new[] { "DoAnWebSell.Controllers" }

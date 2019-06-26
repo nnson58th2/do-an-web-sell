@@ -283,9 +283,14 @@
     <Content Include="assets\client\css\popuo-box.css" />
     <Content Include="assets\client\css\style.css" />
     <Content Include="assets\client\images\drop_arrow.png" />
+    <Content Include="assets\client\images\hot-product.gif" />
+    <Content Include="assets\client\images\main-content-1.jpg" />
+    <Content Include="assets\client\images\main-content-2.png" />
+    <Content Include="assets\client\images\main-content-3.png" />
     <Content Include="assets\client\images\noi-com-dien-panasonic.jpg" />
     <Content Include="assets\client\images\noi-com-dien-shape.jpg" />
     <Content Include="assets\client\images\noi-com-dien-toshiba.jpg" />
+    <Content Include="assets\client\images\pannel-dung-thu-mien-phi.png" />
     <Content Include="assets\client\images\tivi-samsung.png" />
     <Content Include="assets\client\js\bootstrap.bundle.js" />
     <Content Include="assets\client\js\bootstrap.bundle.min.js" />

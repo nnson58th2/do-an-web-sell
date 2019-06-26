@@ -45,7 +45,7 @@ namespace DoAnWebSell.Controllers
             int maxPage = 5;
             int totalPage = 0;
 
-            totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
+            totalPage = (int)Math.Round((double)(totalRecord / pageSize));
             ViewBag.TotalPage = totalPage;
 
             ViewBag.MaxPage = maxPage;

@@ -7,3 +7,4 @@ F:\Github\do-an-web-sell\Common\bin\Debug\Common.dll
 F:\Github\do-an-web-sell\Common\bin\Debug\Common.pdb
 F:\Github\do-an-web-sell\Common\obj\Debug\Common.dll
 F:\Github\do-an-web-sell\Common\obj\Debug\Common.pdb
+F:\Github\do-an-web-sell\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

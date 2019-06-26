@@ -113,4 +113,17 @@ tbody tr td a:last-child{
 
 .user-admin a:nth-child(3) {
     margin-left: .6rem;
-}   
+}
+
+/*Functional labels*/
+.functional-label {
+    background-color: #444;
+    text-transform: uppercase;
+}
+
+.functional-label span {
+    margin-left: .6rem;
+    color: #ccc;
+    font-weight: bold;
+}
+   

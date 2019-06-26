@@ -30,12 +30,12 @@
                             <div class="info-product-price">
                                 @if (item.GiaKhuyenMai != null)
                                 {
-                                    <span class="item_price">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")đ</span>
-                                    <del>@item.DonGia.Value.ToString("N0")đ</del>
+                                    <span class="item_price">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")₫</span>
+                                    <del>@item.DonGia.Value.ToString("N0")₫</del>
                                 }
                                 else
                                 {
-                                    <span class="item_price">@(item.DonGia.HasValue ? item.DonGia.Value.ToString("N0") : "Liên hệ")đ</span>
+                                    <span class="item_price">@(item.DonGia.HasValue ? item.DonGia.Value.ToString("N0") : "Liên hệ")₫</span>
                                 }
                             </div>
                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -48,7 +48,7 @@
         </div>
         <div class="clear"></div>
         <!--Phân trang-->
-        @if (ViewBag.TotalPage >= 1)
+        @if (ViewBag.TotalPage >= 0)
             {
                 var pageDisplay = (int)ViewBag.MaxPage;
                 int totalPage = (int)ViewBag.TotalPage;
@@ -65,9 +65,9 @@
                         @if (currentPage > ViewBag.First)
                         {
                             <li><a href="@link?page=@ViewBag.First" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
-                                <li>
-                                    <a href="@link?page=@ViewBag.Prev" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
-                                </li>
+                            <li>
+                                <a href="@link?page=@ViewBag.Prev" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
+                            </li>
 
                         }
                         @for (int i = startPageIndex; i <= endPageIndex; i++)
@@ -85,16 +85,11 @@
                         @if (currentPage < totalPage)
                         {
                             <li><a href="@link?page=@ViewBag.Next" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
-                                <li> <a href="@link?page=@ViewBag.Last" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
+                            <li> <a href="@link?page=@ViewBag.Last" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
                         }
-
                     </ul>
                 </nav>
             </div>
-        }
-        else
-        {
-            <span>Không có bản ghi nào</span>
         }
     </div>
 </div>

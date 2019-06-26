@@ -38,7 +38,6 @@ namespace DoAnWebSell
                      "~/assets/client/js/bootstrap.js",
                      "~/assets/client/js/jquery-2.2.3.min.js",
                      "~/assets/client/js/jquery-ui.js",
-                     "~/assets/client/js/jquery-ui.js",
                      "~/assets/client/js/jquery.magnific-popup.js",
                      "~/assets/client/js/imagezoom.js",
                      "~/assets/client/js/jquery.flexslider.js",

@@ -43,8 +43,8 @@ namespace DoAnWebSell.Areas.admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MaKH = new SelectList(db.KhachHang, "MaKH", "HoKH", donDatHang.MaKH);
-            ViewBag.MaNV = new SelectList(db.NhanVien, "MaNV", "HoNV", donDatHang.MaNV);
+            ViewBag.MaKH = new SelectList(db.KhachHang, "MaKH", "TenKH", donDatHang.MaKH);
+            ViewBag.MaNV = new SelectList(db.NhanVien, "MaNV", "TenNV", donDatHang.MaNV);
             return View(donDatHang);
         }
 

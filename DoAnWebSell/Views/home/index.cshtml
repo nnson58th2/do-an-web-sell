@@ -4,7 +4,7 @@
     var listNewProduct = (List<Model.EF.SanPham>)ViewBag.NewProduct;
 }
 @section slide {
-    <div class="container py-xl-2 py-lg-2"> 
+    <div class="container py-xl-2 py-lg-2">
         <div class="row">
             <div class="col-md-12 col-lg-3 categories">
                 @{ Html.RenderAction("productCategory", "product"); }
@@ -140,7 +140,7 @@
                                         </div>
                                         <div class="item-info-product text-center border-top mt-4">
                                             <h4 class="pt-1">
-                                                <a href="single.html">@item.TenSP</a>
+                                                <a href="@url">@item.TenSP</a>
                                             </h4>
                                             <div class="info-product-price">
                                                 @if (item.GiaKhuyenMai != null)
@@ -338,31 +338,28 @@
                         <div class="box-scroll">
                             <div class="scroll">
                                 <div class="row">
-                                    <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                                        <img src="/assets/client/images/k1.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                                        <a href="">Samsung Galaxy On7 Prime (Gold, 4GB RAM + 64GB Memory)</a>
-                                        <a href="" class="price-mar mt-2">12,990.00đ</a>
-                                    </div>
-                                </div>
-                                <div class="row my-4">
-                                    <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                                        <img src="/assets/client/images/k2.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                                        <a href="">Haier 195 L 4 Star Direct-Cool Single Door Refrigerator</a>
-                                        <a href="" class="price-mar mt-2">12,499.00đ</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                                        <img src="/assets/client/images/k3.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                                        <a href="">Ambrane 13000 mAh Power Bank (P-1310 Premium)</a>
-                                        <a href="" class="price-mar mt-2">1,199.00đ</a>
-                                    </div>
+                                    @foreach (var item in listNewProduct)
+                                    {
+                                        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
+                                        <div class="col-lg-3 col-sm-2 col-3 left-mar">
+                                            <img src="/assets/client/images/@item.HinhAnh" alt="@item.TenSP" class="img-fluid">
+                                        </div>
+                                        <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
+                                            <a href="@url">@item.TenSP</a>
+                                            <div class="price-slide">
+                                                @if (item.GiaKhuyenMai != null)
+                                                {
+                                                    <span class="price-mar mt-2" style="color: #d60404">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")₫</span>
+                                                    <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                                }
+                                                else
+                                                {
+                                                    <span class="price-mar mt-2">@(item.DonGia.HasValue ? item.DonGia.Value.ToString("N0") : "Liên hệ")₫</span>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="my-2 w-100" style="border-bottom: 1px solid #ddd;"></div>
+                                    }
                                 </div>
                             </div>
                         </div>

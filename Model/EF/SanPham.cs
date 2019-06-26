@@ -26,9 +26,7 @@ namespace Model.EF
         public string TenSP { get; set; }
         public string MetaTitle { get; set; }
         public int SoLuong { get; set; }
-        [DisplayFormat(DataFormatString = "{0:#,##0}", ApplyFormatInEditMode = true)]
         public Nullable<decimal> DonGia { get; set; }
-        [DisplayFormat(DataFormatString = "{0:#,##0}", ApplyFormatInEditMode = true)]
         public Nullable<decimal> GiaKhuyenMai { get; set; }
         public string HinhAnh { get; set; }
         public string MoTa { get; set; }
@@ -36,7 +34,6 @@ namespace Model.EF
         public string ThoiHanBaoHanh { get; set; }
         public Nullable<System.DateTime> NgaySanXuat { get; set; }
         public Nullable<bool> TrangThai { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> NgayTao { get; set; }
         public string TaoBoi { get; set; }
         public Nullable<long> DanhMucSanPhamID { get; set; }

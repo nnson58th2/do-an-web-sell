@@ -10758,6 +10758,7 @@ body {
   .sidebar.toggled .nav-item .nav-link span {
     font-size: 0.65rem;
     display: block;
+    margin: 0;
   }
   .sidebar.toggled .nav-item .dropdown-menu {
     position: absolute !important;

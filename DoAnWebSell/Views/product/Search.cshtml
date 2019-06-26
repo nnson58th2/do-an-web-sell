@@ -31,12 +31,12 @@
                                 <div class="info-product-price">
                                     @if (item.PromotionPrice != null)
                                     {
-                                        <span class="item_price">@(item.PromotionPrice.HasValue ? item.PromotionPrice.Value.ToString("N0") : "Liên hệ")đ</span>
-                                        <del>@item.Price.Value.ToString("N0")đ</del>
+                                        <span class="item_price">@(item.PromotionPrice.HasValue ? item.PromotionPrice.Value.ToString("N0") : "Liên hệ")₫</span>
+                                        <del>@item.Price.Value.ToString("N0")₫</del>
                                     }
                                     else
                                     {
-                                        <span class="item_price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")đ</span>
+                                        <span class="item_price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")₫</span>
                                     }
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">

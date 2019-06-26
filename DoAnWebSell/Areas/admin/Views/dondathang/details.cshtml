@@ -4,6 +4,7 @@
     ViewBag.Title = "Chi tiết đơn hàng";
     Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
     int i = 0;
+    decimal sum = 0;
 }
 
 @section header {
@@ -47,7 +48,7 @@
                     <th>Sản phẩm</th>
                     <th width="9%">Số lượng</th>
                     <th width="17%">Đơn giá</th>
-                    <th width="17%">Tổng tiền</th>
+                    <th width="17%">Thành tiền</th>
                 </tr>
             </thead>
             <tbody>
@@ -61,11 +62,29 @@
                         <td style="text-align: center;"><img src="/assets/client/images/@item.SanPham.HinhAnh" width="70" /></td>
                         <td style="font-weight:bold; color:#337ab7;">@item.SanPham.TenSP</td>
                         <td style="text-align: center;">@item.SoLuong</td>
-                        <td style="text-align: center;">@item.DonGia</td>
-                        <td style="text-align: center;">@(item.DonGia.GetValueOrDefault(0) * item.SoLuong)đ</td>
+                        <td style="text-align: center;">@item.DonGia ₫</td>
+                        <td style="text-align: center;">@(item.DonGia.GetValueOrDefault(0) * item.SoLuong) ₫</td>
                     </tr>
+                    //Tính tổng tiền
+                    sum += decimal.Parse((string)(item.DonGia.GetValueOrDefault(0) * item.SoLuong).ToString());
                 }
             </tbody>
+
+            <thead>
+                <tr>
+                    <th colspan="5" style="border: none; background-color: #FFF"></th>
+                    <th style="text-align: center;">Tổng tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5" style="border: none"></td>
+                    <td style="text-align: center;">
+                        @sum.ToString("0#,##0") ₫
+                    </td>
+                </tr>
+            </tbody>
+
         </table>
     </div>
 </div>

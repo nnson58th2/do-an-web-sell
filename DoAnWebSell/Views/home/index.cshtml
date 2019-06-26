@@ -25,24 +25,6 @@
                                 <div class="w3l-space-banner">
                                     <div class="carousel-caption p-lg-5 p-sm-4 p-3">
                                         <p>
-                                            Get flat
-                                            <span>10%</span> Cashback
-                                        </p>
-                                        <h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">
-                                            The
-                                            <span>Big</span>
-                                            Sale
-                                        </h3>
-                                        <a class="button2" href="#">Shop Now </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item item2">
-                            <div class="container">
-                                <div class="w3l-space-banner">
-                                    <div class="carousel-caption p-lg-5 p-sm-4 p-3">
-                                        <p>
                                             advanced
                                             <span>Wireless</span> earbuds
                                         </p>
@@ -55,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item item3">
+                        <div class="carousel-item item2">
                             <div class="container">
                                 <div class="w3l-space-banner">
                                     <div class="carousel-caption p-lg-5 p-sm-4 p-3">
@@ -66,6 +48,23 @@
                                         <h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">
                                             New
                                             <span>Standard</span>
+                                        </h3>
+                                        <a class="button2" href="product.html">Shop Now </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item item3">
+                            <div class="container">
+                                <div class="w3l-space-banner">
+                                    <div class="carousel-caption p-lg-5 p-sm-4 p-3">
+                                        <p>
+                                            Get Now
+                                            <span>40%</span> Discount
+                                        </p>
+                                        <h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">
+                                            Today
+                                            <span>Discount</span>
                                         </h3>
                                         <a class="button2" href="product.html">Shop Now </a>
                                     </div>
@@ -145,12 +144,26 @@
                                             <div class="info-product-price">
                                                 @if (item.GiaKhuyenMai != null)
                                                 {
-                                                    <span class="item_price">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")₫</span>
-                                                    <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                                    if (item.GiaKhuyenMai.HasValue)
+                                                    {
+                                                        <span class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</span>
+                                                        <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="item_price">Liên hệ</span>
+                                                    }
                                                 }
                                                 else
                                                 {
-                                                    <span class="item_price">@(item.DonGia.HasValue ? item.DonGia.Value.ToString("N0") : "Liên hệ")₫</span>
+                                                    if (item.DonGia.HasValue)
+                                                    {
+                                                        <span class="item_price">@item.DonGia.Value.ToString("N0")₫</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="item_price">Liên hệ</span>
+                                                    }
                                                 }
                                             </div>
                                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -349,12 +362,26 @@
                                             <div class="price-slide">
                                                 @if (item.GiaKhuyenMai != null)
                                                 {
-                                                    <span class="price-mar mt-2" style="color: #d60404">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")₫</span>
-                                                    <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                                    if (item.GiaKhuyenMai.HasValue)
+                                                    {
+                                                        <span class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</span>
+                                                        <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="item_price">Liên hệ</span>
+                                                    }
                                                 }
                                                 else
                                                 {
-                                                    <span class="price-mar mt-2">@(item.DonGia.HasValue ? item.DonGia.Value.ToString("N0") : "Liên hệ")₫</span>
+                                                    if (item.DonGia.HasValue)
+                                                    {
+                                                        <span class="item_price">@item.DonGia.Value.ToString("N0")₫</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="item_price">Liên hệ</span>
+                                                    }
                                                 }
                                             </div>
                                         </div>

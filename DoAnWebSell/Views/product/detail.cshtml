@@ -47,12 +47,26 @@
                 <p class="mb-3">
                     @if (Model.GiaKhuyenMai != null)
                     {
-                        <span class="item_price">@(Model.GiaKhuyenMai.HasValue ? Model.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")đ</span>
-                        <del>@Model.DonGia.Value.ToString("N0")đ</del>
+                        if (Model.GiaKhuyenMai.HasValue)
+                        {
+                            <span class="item_price">@Model.GiaKhuyenMai.Value.ToString("N0")₫</span>
+                                                        <del>@Model.DonGia.Value.ToString("N0")₫</del>
+                        }
+                        else
+                        {
+                            <span class="item_price">Liên hệ</span>
+                        }
                     }
                     else
                     {
-                        <span class="item_price">@(Model.DonGia.HasValue ? Model.DonGia.Value.ToString("N0") : "Liên hệ")đ</span>
+                        if (Model.DonGia.HasValue)
+                        {
+                            <span class="item_price">@Model.DonGia.Value.ToString("N0")₫</span>
+                        }
+                        else
+                        {
+                            <span class="item_price">Liên hệ</span>
+                        }
                     }
                 </p>
                 <div class="single-infoagile">

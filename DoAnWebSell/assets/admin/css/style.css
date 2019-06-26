@@ -117,7 +117,7 @@ tbody tr td a:last-child{
 
 /*Functional labels*/
 .functional-label {
-    background-color: #535353;
+    background-color: #1a2225;
     text-transform: uppercase;
 }
 
@@ -126,4 +126,18 @@ tbody tr td a:last-child{
     color: #ccc;
     font-weight: bold;
 }
+
+/*Top menu*/
+.static-top {
+
+  background: #3a7bd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3a7bd5, #3a6073); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3a7bd5, #3a6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.title-admin {
+    width: 200px;
+}
+
    

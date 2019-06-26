@@ -2,6 +2,11 @@
 @{
     ViewBag.Title = "Thanh toán đơn hàng";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    decimal sum = 0;
+}
+
+@section jsFooter {
+    <script src="/assets/client/js/controller/cartController.js"></script>
 }
 
 <div class="container">
@@ -29,33 +34,60 @@
                             @*Nếu có giá khuyến mãi thì lấy giá khuyến mãi*@
                             @if (item.Product.GiaKhuyenMai != null)
                             {
-                                <td style="text-align: center;">@item.Product.GiaKhuyenMai.GetValueOrDefault(0).ToString("N0")đ</td>
+                                <td style="text-align: center;">@item.Product.GiaKhuyenMai.GetValueOrDefault(0).ToString("N0") ₫</td>
                             }
                             else
                             {
-                                <td style="text-align: center;">@item.Product.DonGia.GetValueOrDefault(0).ToString("N0")đ</td>
+                                <td style="text-align: center;">@item.Product.DonGia.GetValueOrDefault(0).ToString("N0") ₫</td>
                             }
 
                             <td style="text-align: center;">
-                                <input type="text" class="txtQuantity text-center" data-id="@item.Product.MaSP" value="@item.Quantity" style="width:30px" />
+                                <input type="text" class="txtQuantity text-center" data-id="@item.Product.MaSP" value="@item.Quantity" style="width:50px" />
                             </td>
 
                             @*Nếu có giá khuyến mãi thì lấy giá khuyến mãi để tính thành tiền*@
                             @if (item.Product.GiaKhuyenMai != null)
                             {
-                                <td style="text-align: center;">@((item.Product.GiaKhuyenMai.GetValueOrDefault(0) * item.Quantity).ToString("N0"))đ</td>
+                                <td style="text-align: center;">@((item.Product.GiaKhuyenMai.GetValueOrDefault(0) * item.Quantity).ToString("N0")) ₫</td>
                             }
                             else
                             {
-                                <td style="text-align: center;">@((item.Product.DonGia.GetValueOrDefault(0) * item.Quantity).ToString("N0"))đ</td>
+                                <td style="text-align: center;">@((item.Product.DonGia.GetValueOrDefault(0) * item.Quantity).ToString("N0")) ₫</td>
                             }
 
                             <td style="text-align: center;"><a href="#" data-id="@item.Product.MaSP" class="btn-delete"><i class="fa fa-trash"></i></a></td>
                         </tr>
+                        //Tính tổng tiền
+                        if (item.Product.GiaKhuyenMai != null)
+                        {
+                            sum += decimal.Parse((string)(item.Product.GiaKhuyenMai.GetValueOrDefault(0) * item.Quantity).ToString("N0"));
+                        }
+                        else
+                        {
+                            sum += decimal.Parse((string)(item.Product.DonGia.GetValueOrDefault(0) * item.Quantity).ToString("N0"));
+                        }
                     }
                 </tbody>
+
+                <thead>
+                    <tr>
+                        <th colspan="4" style="border: none; background-color: #FFF"></th>
+                        <th colspan="2">Tổng tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="border: none; background-color: #FFF"></td>
+                        <td colspan="2" style="text-align: center;">
+                            @sum.ToString("0#,##0") ₫
+                        </td>
+                    </tr>
+                </tbody>
+
             </table>
         </div>
+
+        <button id="btnContinue" class="btn btn-info mb-4 ml-3">Tiếp tục mua hàng</button>
     }
 
     <div class="session-group">

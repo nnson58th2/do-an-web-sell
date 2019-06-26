@@ -248,6 +248,7 @@ button.w3view-cart {
 .navbar-inner {
     background: #f8f9fa;
     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.13);
+    z-index: 1;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -311,7 +312,7 @@ ul.multi-column-dropdown li {
 /*-- carousel-slider --*/
 
 .carousel-item.item1 {
-    background: url(../images/b1.jpg) no-repeat center;
+    background: url(../images/bg.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -350,7 +351,7 @@ ul.multi-column-dropdown li {
 .carousel-item.item3,
 .carousel-item.item2,
 .carousel-item.item1 {
-    min-height: 640px;
+   
 }
 
 .w3l-space-banner {
@@ -3680,14 +3681,22 @@ div#testimonials h4.m-title {
 }
 
 .main-content img {
-    width: 280px;
-    height: 230px;
+    width: 200px;
+    height: 150px;
 }
 
 .content {
     margin-top: 2.2rem;
 }
 
+.content .list-content {
+    list-style: none;
+}
+
+.content .list-content li {
+    line-height: 2rem;
+}
+
 .content a {
-    text-decoration: none
+    text-decoration: none;
 }

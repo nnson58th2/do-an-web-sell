@@ -282,6 +282,11 @@
     <Content Include="assets\client\css\menu.css" />
     <Content Include="assets\client\css\popuo-box.css" />
     <Content Include="assets\client\css\style.css" />
+    <Content Include="assets\client\images\banner-gia-dung-690-300.png" />
+    <Content Include="assets\client\images\banner-may-giat-panasonic-690-300.png" />
+    <Content Include="assets\client\images\banner-may-Lanh-690-300.gif" />
+    <Content Include="assets\client\images\banner-tu-lanh-may-giat-690-300.png" />
+    <Content Include="assets\client\images\banner_mua.png" />
     <Content Include="assets\client\images\drop_arrow.png" />
     <Content Include="assets\client\images\hot-product.gif" />
     <Content Include="assets\client\images\main-content-1.jpg" />

@@ -34,17 +34,6 @@ namespace DoAnWebSell
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jscore").Include(
-                     "~/assets/client/js/bootstrap.js",
-                     "~/assets/client/js/jquery-2.2.3.min.js",
-                     "~/assets/client/js/jquery-ui.js",
-                     "~/assets/client/js/jquery.magnific-popup.js",
-                     "~/assets/client/js/imagezoom.js",
-                     "~/assets/client/js/jquery.flexslider.js",
-                     "~/assets/client/js/scroll.js",
-                     "~/assets/client/js/SmoothScroll.min.js",
-                     "~/assets/client/js/move-top.js",
-                     "~/assets/client/js/easing.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/controller").Include(
                     "~/assets/client/js/controller/baseController.js"));

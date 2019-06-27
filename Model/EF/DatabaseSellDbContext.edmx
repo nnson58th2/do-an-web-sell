@@ -60,11 +60,10 @@
             <PropertyRef Name="MaKH" />
           </Key>
           <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="HoKH" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HoTenKH" Type="nvarchar" MaxLength="100" />
           <Property Name="GioiTinh" Type="bit" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="SDT" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="SDT" Type="varchar" MaxLength="11" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="UserID" Type="bigint" />
         </EntityType>
@@ -431,11 +430,10 @@
             <PropertyRef Name="MaKH" />
           </Key>
           <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="HoKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HoTenKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="GioiTinh" Type="Boolean" />
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserID" Type="Int64" />
           <NavigationProperty Name="DonDatHang" Relationship="Self.FK__DonDatHang__MaKH__29572725" FromRole="KhachHang" ToRole="DonDatHang" />
@@ -811,8 +809,7 @@
             <EntityTypeMapping TypeName="DatabaseSellModel.KhachHang">
               <MappingFragment StoreEntitySet="KhachHang">
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-                <ScalarProperty Name="HoKH" ColumnName="HoKH" />
-                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+                <ScalarProperty Name="HoTenKH" ColumnName="HoTenKH" />
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />

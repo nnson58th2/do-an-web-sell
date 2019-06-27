@@ -55,11 +55,10 @@
       <PropertyRef Name="MaKH" />
     </Key>
     <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="HoKH" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoTenKH" Type="nvarchar" MaxLength="100" />
     <Property Name="GioiTinh" Type="bit" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-    <Property Name="SDT" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="11" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="UserID" Type="bigint" />
   </EntityType>

@@ -24,17 +24,20 @@ namespace DoAnWebSell.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new UserDao();
-                if (dao.CheckUserName(model.UserName))
+                var customerDao = new CustomersDao();
+                var userDao = new UserDao();
+
+                if (userDao.CheckUserName(model.UserName))
                 {
                     ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
                 }
-                else if (dao.CheckEmail(model.Email))
+                else if (userDao.CheckEmail(model.Email))
                 {
                     ModelState.AddModelError("", "Email đã tồn tại");
                 }
                 else
                 {
+                    // Thêm thông tin đăng nhập vào bảng quản trị
                     var user = new QuanTri();
                     user.UserName = model.UserName;
                     user.Password = Encryptor.MD5Hash(model.Password);
@@ -45,8 +48,19 @@ namespace DoAnWebSell.Controllers
                     user.Quyen = false;
                     user.TrangThai = true;
 
-                    var result = dao.Insert(user);
-                    if (result > 0)
+                    // Thêm thông tin đăng nhập vào bảng khách hàng
+                    var customer = new KhachHang();
+                    customer.HoTenKH = model.Name;
+                    customer.GioiTinh = model.Gender;
+                    customer.DiaChi = model.Address;
+                    customer.SDT = model.Phone;
+                    customer.Email = model.Email;
+                    customer.UserID = model.ID;
+
+                    var resultUser = userDao.Insert(user);
+                    var resultCustomer = customerDao.Insert(customer);
+
+                    if (resultUser > 0)
                     {
                         ViewBag.Success = "Đăng ký thành công";
                         model = new RegisterModel();
@@ -55,6 +69,7 @@ namespace DoAnWebSell.Controllers
                     {
                         ModelState.AddModelError("", "Đăng ký không thành công!");
                     }
+
                 }
             }
             return View(model);
@@ -95,10 +110,6 @@ namespace DoAnWebSell.Controllers
                 else if (result == -2)
                 {
                     ModelState.AddModelError("", "Mật khẩu không đúng");
-                }
-                else if (result == -3)
-                {
-                    ModelState.AddModelError("", "Tài khoản của bạn không có quyền đăng nhập");
                 }
                 else
                 {

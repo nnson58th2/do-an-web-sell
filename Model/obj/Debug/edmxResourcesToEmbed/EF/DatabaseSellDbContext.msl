@@ -58,8 +58,7 @@
       <EntityTypeMapping TypeName="DatabaseSellModel.KhachHang">
         <MappingFragment StoreEntitySet="KhachHang">
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="HoKH" ColumnName="HoKH" />
-          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="HoTenKH" ColumnName="HoTenKH" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />

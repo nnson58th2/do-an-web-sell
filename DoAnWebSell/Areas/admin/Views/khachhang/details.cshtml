@@ -1,7 +1,7 @@
-﻿@model Model.EF.NhanVien
+﻿@model Model.EF.KhachHang
 
 @{
-    ViewBag.Title = "Thông tin chi tiết nhân viên";
+    ViewBag.Title = "Thông tin chi tiết khách hàng";
     Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
     string gtinh = "";
     string trangThai = "";
@@ -16,13 +16,12 @@
         <td>
             <table cellpadding="2" cellspacing="10">
                 <tr>
-                    <td rowspan="12" class="pr-3"><img src="/assets/admin/images/@Html.DisplayFor(model => model.AnhNV)" width="100" height="100" /></td>
-                    <td><label>Mã nhân viên:</label></td>
-                    <td>@Html.DisplayFor(model => model.MaNV)</td>
+                    <td><label>Mã khách hàng:</label></td>
+                    <td>@Html.DisplayFor(model => model.MaKH)</td>
                 </tr>
                 <tr>
-                    <td><label>Họ tên nhân viên:</label></td>
-                    <td>@Html.DisplayFor(model => model.HoNV) @Html.DisplayFor(model => model.TenNV)</td>
+                    <td><label>Họ tên khách hàng:</label></td>
+                    <td>@Html.DisplayFor(model => model.HoKH) @Html.DisplayFor(model => model.TenKH)</td>
                 </tr>
                 <tr>
                     <td><label>Giới tính:</label></td>
@@ -36,28 +35,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label>Ngày sinh:</label></td>
-                    <td>@Html.DisplayFor(model => Model.NgaySinh)</td>
-                </tr>
-                <tr>
-                    <td><label>Lương</label></td>
-                    <td>@Html.DisplayFor(model => model.Luong)</td>
-                </tr>
-                <tr>
-                    <td><label>Số điện thoại:</label></td>
-                    <td>@Html.DisplayFor(model => model.SDT)</td>
-                </tr>
-                <tr>
                     <td><label>Địa chỉ:</label></td>
                     <td>@Html.DisplayFor(model => model.DiaChi)</td>
                 </tr>
                 <tr>
+                    <td><label>Số điện thoại:</label></td>
+                    <td>@Html.DisplayFor(model => model.SDT)</td>
+                </tr>               
+                <tr>
                     <td><label>Email</label></td>
                     <td>@Html.DisplayFor(model => model.Email)</td>
-                </tr>
-                <tr>
-                    <td><label>Phòng ban:</label></td>
-                    <td>@Html.DisplayFor(model => model.BoPhan.TenBP)</td>
                 </tr>
                 @*Kiểm tra xem nhân viên có tài khoản hay không*@
                 @if (Model.UserID != null)

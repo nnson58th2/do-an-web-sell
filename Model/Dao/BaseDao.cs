@@ -30,6 +30,21 @@ namespace Model.Dao
             }
         }
 
+        public bool DeleteCustomer(string id)
+        {
+            try
+            {
+                var customer = db.KhachHang.Find(id);
+                db.KhachHang.Remove(customer);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool DeleteProduct(long id)
         {
             try

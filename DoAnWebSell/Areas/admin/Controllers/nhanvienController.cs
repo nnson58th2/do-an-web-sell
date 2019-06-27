@@ -15,7 +15,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
     {
         private DatabaseSellEntities db = new DatabaseSellEntities();
 
-        // GET: admin/nhanvien
+        // GET: Mã nhân viên tự động
         string LayMaNV()
         {
             var maMax = db.NhanVien.ToList().Select(n => n.MaNV).Max();
@@ -60,7 +60,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
         // POST: admin/nhanvien/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult create([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,Luong,AnhNV,SDT,DiaChi,Email,MaBP")] NhanVien nhanVien)
+        public ActionResult create([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,Luong,AnhNV,SDT,DiaChi,Email,MaBP,UserID")] NhanVien nhanVien)
         {
             //System.Web.HttpPostedFileBase Avatar;
             var imgNV = Request.Files["Avatar"];
@@ -102,7 +102,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
         // POST: admin/nhanvien/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult edit([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,Luong,AnhNV,SDT,DiaChi,Email,MaBP")] NhanVien nhanVien)
+        public ActionResult edit([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,Luong,AnhNV,SDT,DiaChi,Email,MaBP,UserID")] NhanVien nhanVien)
         {
             //System.Web.HttpPostedFileBase Avatar;
             var imgNV = Request.Files["Avatar"];

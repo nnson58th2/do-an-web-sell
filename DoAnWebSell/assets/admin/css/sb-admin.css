@@ -4924,6 +4924,7 @@ input[type="button"].btn-block {
 }
 
 .card-header {
+  font-weight: 600;
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
@@ -10821,7 +10822,7 @@ body {
 }
 
 .card-register {
-  max-width: 40rem;
+    max-width: 30rem;
 }
 
 .form-label-group {

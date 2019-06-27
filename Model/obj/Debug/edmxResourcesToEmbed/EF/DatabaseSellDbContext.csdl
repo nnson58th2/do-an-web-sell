@@ -71,6 +71,7 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="UserID" Type="Int64" />
     <NavigationProperty Name="DonDatHang" Relationship="Self.FK__DonDatHang__MaKH__29572725" FromRole="KhachHang" ToRole="DonDatHang" />
+    <NavigationProperty Name="QuanTri" Relationship="Self.FK_KhachHang_QuanTri" FromRole="KhachHang" ToRole="QuanTri" />
   </EntityType>
   <EntityType Name="KhoHang">
     <Key>
@@ -127,6 +128,7 @@
     <Property Name="UserID" Type="Int64" />
     <NavigationProperty Name="BoPhan" Relationship="Self.FK__NhanVien__MaBP__1367E606" FromRole="NhanVien" ToRole="BoPhan" />
     <NavigationProperty Name="DonDatHang" Relationship="Self.FK__DonDatHang__MaNV__286302EC" FromRole="NhanVien" ToRole="DonDatHang" />
+    <NavigationProperty Name="QuanTri" Relationship="Self.FK_NhanVien_QuanTri" FromRole="NhanVien" ToRole="QuanTri" />
   </EntityType>
   <EntityType Name="QuanTri">
     <Key>
@@ -141,6 +143,8 @@
     <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="Quyen" Type="Boolean" />
     <Property Name="TrangThai" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK_KhachHang_QuanTri" FromRole="QuanTri" ToRole="KhachHang" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_NhanVien_QuanTri" FromRole="QuanTri" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="SanPham">
     <Key>
@@ -265,6 +269,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_KhachHang_QuanTri">
+    <End Role="QuanTri" Type="Self.QuanTri" Multiplicity="0..1" />
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuanTri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="KhachHang">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Menu_MenuType">
     <End Role="MenuType" Type="Self.MenuType" Multiplicity="0..1" />
     <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
@@ -286,6 +302,18 @@
       </Principal>
       <Dependent Role="SanPham">
         <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_QuanTri">
+    <End Role="QuanTri" Type="Self.QuanTri" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuanTri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -335,6 +363,10 @@
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="DonDatHang" EntitySet="DonDatHang" />
     </AssociationSet>
+    <AssociationSet Name="FK_KhachHang_QuanTri" Association="Self.FK_KhachHang_QuanTri">
+      <End Role="QuanTri" EntitySet="QuanTri" />
+      <End Role="KhachHang" EntitySet="KhachHang" />
+    </AssociationSet>
     <AssociationSet Name="FK_Menu_MenuType" Association="Self.FK_Menu_MenuType">
       <End Role="MenuType" EntitySet="MenuType" />
       <End Role="Menu" EntitySet="Menu" />
@@ -342,6 +374,10 @@
     <AssociationSet Name="FK__SanPham__MaNCC__1BFD2C07" Association="Self.FK__SanPham__MaNCC__1BFD2C07">
       <End Role="NhaCungCap" EntitySet="NhaCungCap" />
       <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_QuanTri" Association="Self.FK_NhanVien_QuanTri">
+      <End Role="QuanTri" EntitySet="QuanTri" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

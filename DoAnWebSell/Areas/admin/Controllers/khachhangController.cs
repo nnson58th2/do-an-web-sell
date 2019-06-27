@@ -15,15 +15,6 @@ namespace DoAnWebSell.Areas.admin.Controllers
     {
         private DatabaseSellEntities db = new DatabaseSellEntities();
 
-        // GET: Mã khách tự động
-        string LayMaKH()
-        {
-            var maMax = db.KhachHang.ToList().Select(n => n.MaKH).Max();
-            int maKH = int.Parse(maMax.Substring(2)) + 1;
-            string KH = String.Concat("000", maKH.ToString());
-            return "KH" + KH.Substring(maKH.ToString().Length - 1);
-        }
-
         public ActionResult index(string search, int page = 1, int pageSize = 5)
         {
             var dao = new CustomersDao();
@@ -48,32 +39,6 @@ namespace DoAnWebSell.Areas.admin.Controllers
             return View(khachHang);
         }
 
-        // GET: admin/khachhang/Create
-        public ActionResult create()
-        {
-            // Tạo mã khách hàng tự động
-            ViewBag.MaKhachHang = LayMaKH();
-            ViewBag.UserID = new SelectList(db.QuanTri, "Id", "UserName");
-            return View();
-        }
-
-        // POST: admin/khachhang/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult create([Bind(Include = "MaKH,HoKH,TenKH,GioiTinh,DiaChi,SDT,Email,UserID")] KhachHang khachHang)
-        {
-            if (ModelState.IsValid)
-            {
-                khachHang.MaKH = LayMaKH();
-                db.KhachHang.Add(khachHang);
-                db.SaveChanges();
-                return RedirectToAction("index");
-            }
-
-            ViewBag.UserID = new SelectList(db.QuanTri, "Id", "UserName", khachHang.UserID);
-            return View(khachHang);
-        }
-
         // GET: admin/khachhang/Edit/5
         public ActionResult edit(string id)
         {
@@ -93,7 +58,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
         // POST: admin/khachhang/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult edit([Bind(Include = "MaKH,HoKH,TenKH,GioiTinh,DiaChi,SDT,Email,UserID")] KhachHang khachHang)
+        public ActionResult edit([Bind(Include = "MaKH,HoTenKH,GioiTinh,DiaChi,SDT,Email,UserID")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {

@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b6bce50caed34103a65bf8f82b40c093" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseSellModel.BoPhan" Width="1.5" PointX="1.5" PointY="20.125" IsExpanded="true" />
+      <Diagram DiagramId="bac9ff0222fb49d9aadcc13d67752ffe" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseSellModel.BoPhan" Width="1.5" PointX="1.5" PointY="27.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseSellModel.ChiTietDatHang" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseSellModel.ChiTietKho" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseSellModel.DanhMucSanPham" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseSellModel.DonDatHang" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseSellModel.KhachHang" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseSellModel.DonDatHang" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseSellModel.KhachHang" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseSellModel.KhoHang" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseSellModel.Menu" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseSellModel.MenuType" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseSellModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseSellModel.NhanVien" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseSellModel.QuanTri" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseSellModel.NhanVien" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseSellModel.QuanTri" Width="1.5" PointX="1.5" PointY="18.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseSellModel.SanPham" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
         <AssociationConnector Association="DatabaseSellModel.FK__NhanVien__MaBP__1367E606" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseSellModel.FK_ChiTietDatHang_DonDatHang" ManuallyRouted="false" />
@@ -26,8 +26,10 @@
         <AssociationConnector Association="DatabaseSellModel.FK_SanPham_DanhMucSanPham" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseSellModel.FK__DonDatHang__MaKH__29572725" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseSellModel.FK__DonDatHang__MaNV__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseSellModel.FK_KhachHang_QuanTri" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseSellModel.FK_Menu_MenuType" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseSellModel.FK__SanPham__MaNCC__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseSellModel.FK_NhanVien_QuanTri" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -29,6 +29,9 @@ namespace DoAnWebSell.Models
         [Required(ErrorMessage = "Yêu cầu nhập họ tên")]
         public string Name { get; set; }
 
+        [Display(Name = "Giới tính")]
+        public bool? Gender { get; set; }
+
         [Display(Name = "Địa chỉ")]
         public string Address { get; set; }
 
@@ -38,8 +41,5 @@ namespace DoAnWebSell.Models
         [Display(Name = "Email")]
         [Required(ErrorMessage = "Yêu cầu nhập email")]
         public string Email { get; set; }
-
-        [Display(Name = "Giới tính")]
-        public bool? Gender { get; set; }
     }
 }

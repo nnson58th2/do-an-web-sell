@@ -48,6 +48,8 @@ namespace DoAnWebSell.Controllers
                 }
                 else
                 {
+                    long keyCustomer = 0;
+
                     // Thêm thông tin đăng nhập vào bảng quản trị
                     var user = new QuanTri();
                     user.UserName = model.UserName;
@@ -59,7 +61,7 @@ namespace DoAnWebSell.Controllers
                     user.Quyen = false;
                     user.TrangThai = true;
 
-                    // Thêm thông tin đăng nhập vào bảng khách hàng
+                    // Thêm thông tin đăng ký vào bảng khách hàng
                     var customer = new KhachHang();
                     customer.MaKH = getKeyCustomer();
                     customer.HoTenKH = model.Name;
@@ -68,11 +70,12 @@ namespace DoAnWebSell.Controllers
                     customer.SDT = model.Phone;
                     customer.Email = model.Email;
 
+                    var resultUser = userDao.Insert(user);
+
                     //Lấy mã tài khoản và chuyển đổi sáng cho mã tài khoản của khác hàng
-                    long keyCustomer = user.Id;
+                    keyCustomer = user.Id;
                     customer.UserID = keyCustomer;
 
-                    var resultUser = userDao.Insert(user);                 
                     var resultCustomer = customerDao.Insert(customer);
 
                     if (resultUser > 0)

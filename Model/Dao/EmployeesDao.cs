@@ -16,6 +16,13 @@ namespace Model.Dao
             db = new DatabaseSellEntities();
         }
 
+        public string Insert(NhanVien entity)
+        {
+            db.NhanVien.Add(entity);
+            db.SaveChanges();
+            return entity.MaNV;
+        }
+
         public IEnumerable<NhanVien> ListAllPaging(string search, int page, int pageSize)
         {
             IQueryable<NhanVien> model = db.NhanVien;

@@ -30,5 +30,6 @@ namespace Model.EF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonDatHang> DonDatHang { get; set; }
+        public virtual QuanTri QuanTri { get; set; }
     }
 }

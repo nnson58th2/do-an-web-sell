@@ -27,18 +27,10 @@
             </div>
 
             <div class="form-group col-md-4">
-                @Html.LabelFor(model => model.HoKH, "Họ", htmlAttributes: new { @class = "control-label col-md-10" })
+                @Html.LabelFor(model => model.HoTenKH, "Họ tên khách hàng", htmlAttributes: new { @class = "control-label col-md-10" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.HoKH, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.HoKH, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group col-md-4">
-                @Html.LabelFor(model => model.TenKH, "Tên khách hàng", htmlAttributes: new { @class = "control-label col-md-10" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TenKH, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.TenKH, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.HoTenKH, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HoTenKH, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

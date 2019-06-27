@@ -44,14 +44,13 @@ namespace DoAnWebSell.Areas.admin.Controllers
         public ActionResult create()
         {
             ViewBag.MaKho = LayMaKho();
-            ViewBag.MaSP = new SelectList(db.SanPham, "MaSP", "TenSP");
             return View();
         }
 
         // POST: admin/khohang/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult create([Bind(Include = "MaKho,TenKho,MaSP")] KhoHang khoHang)
+        public ActionResult create([Bind(Include = "MaKho,TenKho")] KhoHang khoHang)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +60,6 @@ namespace DoAnWebSell.Areas.admin.Controllers
                 return RedirectToAction("index");
             }
 
-            ViewBag.MaSP = new SelectList(db.SanPham, "MaSP", "TenSP", khoHang.MaSP);
             return View(khoHang);
         }
 
@@ -77,14 +75,14 @@ namespace DoAnWebSell.Areas.admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MaSP = new SelectList(db.SanPham, "MaSP", "TenSP", khoHang.MaSP);
+
             return View(khoHang);
         }
 
         // POST: admin/khohang/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult edit([Bind(Include = "MaKho,TenKho,MaSP")] KhoHang khoHang)
+        public ActionResult edit([Bind(Include = "MaKho,TenKho")] KhoHang khoHang)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +90,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("index");
             }
-            ViewBag.MaSP = new SelectList(db.SanPham, "MaSP", "TenSP", khoHang.MaSP);
+
             return View(khoHang);
         }
 

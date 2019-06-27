@@ -11,7 +11,7 @@ namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    
     public partial class SanPham
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,6 @@ namespace Model.EF
         {
             this.ChiTietDatHang = new HashSet<ChiTietDatHang>();
             this.ChiTietKho = new HashSet<ChiTietKho>();
-            this.KhoHang = new HashSet<KhoHang>();
         }
     
         public long MaSP { get; set; }
@@ -44,8 +43,6 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKho> ChiTietKho { get; set; }
         public virtual DanhMucSanPham DanhMucSanPham { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhoHang> KhoHang { get; set; }
         public virtual NhaCungCap NhaCungCap { get; set; }
     }
 }

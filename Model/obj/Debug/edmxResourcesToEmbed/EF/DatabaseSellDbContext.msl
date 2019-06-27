@@ -72,7 +72,6 @@
         <MappingFragment StoreEntitySet="KhoHang">
           <ScalarProperty Name="MaKho" ColumnName="MaKho" />
           <ScalarProperty Name="TenKho" ColumnName="TenKho" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

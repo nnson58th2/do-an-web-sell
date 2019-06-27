@@ -73,7 +73,6 @@
           </Key>
           <Property Name="MaKho" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TenKho" Type="nvarchar" MaxLength="250" />
-          <Property Name="MaSP" Type="bigint" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -250,18 +249,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KhoHang_SanPham">
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
-          <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SanPham">
-              <PropertyRef Name="MaSP" />
-            </Principal>
-            <Dependent Role="KhoHang">
-              <PropertyRef Name="MaSP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Menu_MenuType">
           <End Role="MenuType" Type="Self.MenuType" Multiplicity="0..1" />
           <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
@@ -331,10 +318,6 @@
           <AssociationSet Name="FK_ChiTietKho_SanPham" Association="Self.FK_ChiTietKho_SanPham">
             <End Role="SanPham" EntitySet="SanPham" />
             <End Role="ChiTietKho" EntitySet="ChiTietKho" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KhoHang_SanPham" Association="Self.FK_KhoHang_SanPham">
-            <End Role="SanPham" EntitySet="SanPham" />
-            <End Role="KhoHang" EntitySet="KhoHang" />
           </AssociationSet>
           <AssociationSet Name="FK_Menu_MenuType" Association="Self.FK_Menu_MenuType">
             <End Role="MenuType" EntitySet="MenuType" />
@@ -428,9 +411,7 @@
           </Key>
           <Property Name="MaKho" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenKho" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="MaSP" Type="Int64" />
           <NavigationProperty Name="ChiTietKho" Relationship="Self.FK_ChiTietKho_KhoHang" FromRole="KhoHang" ToRole="ChiTietKho" />
-          <NavigationProperty Name="SanPham" Relationship="Self.FK_KhoHang_SanPham" FromRole="KhoHang" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -516,7 +497,6 @@
           <NavigationProperty Name="ChiTietDatHang" Relationship="Self.FK_ChiTietDatHang_SanPham" FromRole="SanPham" ToRole="ChiTietDatHang" />
           <NavigationProperty Name="ChiTietKho" Relationship="Self.FK_ChiTietKho_SanPham" FromRole="SanPham" ToRole="ChiTietKho" />
           <NavigationProperty Name="DanhMucSanPham" Relationship="Self.FK_SanPham_DanhMucSanPham" FromRole="SanPham" ToRole="DanhMucSanPham" />
-          <NavigationProperty Name="KhoHang" Relationship="Self.FK_KhoHang_SanPham" FromRole="SanPham" ToRole="KhoHang" />
           <NavigationProperty Name="NhaCungCap" Relationship="Self.FK__SanPham__MaNCC__1BFD2C07" FromRole="SanPham" ToRole="NhaCungCap" />
         </EntityType>
         <Association Name="FK__NhanVien__MaBP__1367E606">
@@ -617,18 +597,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KhoHang_SanPham">
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
-          <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SanPham">
-              <PropertyRef Name="MaSP" />
-            </Principal>
-            <Dependent Role="KhoHang">
-              <PropertyRef Name="MaSP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Menu_MenuType">
           <End Role="MenuType" Type="Self.MenuType" Multiplicity="0..1" />
           <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
@@ -698,10 +666,6 @@
           <AssociationSet Name="FK__DonDatHang__MaNV__286302EC" Association="Self.FK__DonDatHang__MaNV__286302EC">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="DonDatHang" EntitySet="DonDatHang" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KhoHang_SanPham" Association="Self.FK_KhoHang_SanPham">
-            <End Role="SanPham" EntitySet="SanPham" />
-            <End Role="KhoHang" EntitySet="KhoHang" />
           </AssociationSet>
           <AssociationSet Name="FK_Menu_MenuType" Association="Self.FK_Menu_MenuType">
             <End Role="MenuType" EntitySet="MenuType" />
@@ -789,7 +753,6 @@
               <MappingFragment StoreEntitySet="KhoHang">
                 <ScalarProperty Name="MaKho" ColumnName="MaKho" />
                 <ScalarProperty Name="TenKho" ColumnName="TenKho" />
-                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

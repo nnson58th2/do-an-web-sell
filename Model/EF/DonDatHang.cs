@@ -11,7 +11,7 @@ namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    
     public partial class DonDatHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +21,6 @@ namespace Model.EF
         }
     
         public long MaDon { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> NgayDat { get; set; }
         public string TenNguoiDat { get; set; }
         public string DiaChiGiaoHang { get; set; }

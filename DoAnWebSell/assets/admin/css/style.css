@@ -26,9 +26,9 @@
 }
 
 /*Format label*/
-/*label {
+.display-label {
     font-weight: 600;
-}*/
+}
 
 /*List page*/
 .pagination {

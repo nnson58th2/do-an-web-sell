@@ -15,27 +15,27 @@
         <td>
             <table cellpadding="2" cellspacing="10">
                 <tr>                    
-                    <td><label>Tài khoản:</label></td>
+                    <td><label class="display-label">Tài khoản:</label></td>
                     <td>@Html.DisplayFor(model => model.UserName)</td>
                 </tr>
                 <tr>
-                    <td><label>Họ tên:</label></td>
+                    <td><label class="display-label">Họ tên:</label></td>
                     <td>@Html.DisplayFor(model => model.HoTen)</td>
                 </tr>
                 <tr>
-                    <td><label>Email:</label></td>
+                    <td><label class="display-label">Email:</label></td>
                     <td>@Html.DisplayFor(model => model.Email)</td>
                 </tr>
                 <tr>
-                    <td><label>Diện thoại:</label></td>
+                    <td><label class="display-label">Diện thoại:</label></td>
                     <td>@Html.DisplayFor(model => model.DienThoai)</td>
                 </tr>
                 <tr>
-                    <td><label>Địa chỉ:</label></td>
+                    <td><label class="display-label">Địa chỉ:</label></td>
                     <td>@Html.DisplayFor(model => model.DiaChi)</td>
                 </tr>
                 <tr>
-                    <td><label>Trạng thái:</label></td>
+                    <td><label class="display-label">Trạng thái:</label></td>
                     <td>
                         @{if (Model.TrangThai == true)
                             { trangThai = "Hoạt động"; }

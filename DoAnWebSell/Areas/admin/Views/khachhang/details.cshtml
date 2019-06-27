@@ -16,15 +16,15 @@
         <td>
             <table cellpadding="2" cellspacing="10">
                 <tr>
-                    <td><label>Mã khách hàng:</label></td>
+                    <td><label class="display-label">Mã khách hàng:</label></td>
                     <td>@Html.DisplayFor(model => model.MaKH)</td>
                 </tr>
                 <tr>
-                    <td><label>Họ tên khách hàng:</label></td>
+                    <td><label class="display-label">Họ tên khách hàng:</label></td>
                     <td>@Html.DisplayFor(model => model.HoTenKH)</td>
                 </tr>
                 <tr>
-                    <td><label>Giới tính:</label></td>
+                    <td><label class="display-label">Giới tính:</label></td>
                     <td>
                         @{if (Model.GioiTinh == true)
                             { gtinh = "Nam"; }
@@ -35,32 +35,32 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label>Địa chỉ:</label></td>
+                    <td><label class="display-label">Địa chỉ:</label></td>
                     <td>@Html.DisplayFor(model => model.DiaChi)</td>
                 </tr>
                 <tr>
-                    <td><label>Số điện thoại:</label></td>
+                    <td><label class="display-label">Số điện thoại:</label></td>
                     <td>@Html.DisplayFor(model => model.SDT)</td>
                 </tr>               
                 <tr>
-                    <td><label>Email</label></td>
+                    <td><label class="display-label">Email</label></td>
                     <td>@Html.DisplayFor(model => model.Email)</td>
                 </tr>
                 @*Kiểm tra xem nhân viên có tài khoản hay không*@
                 @if (Model.UserID != null)
                 {
                     <tr>
-                        <td><label>Tài khoản:</label></td>
+                        <td><label class="display-label">Tài khoản:</label></td>
                         <td>@Html.DisplayFor(model => model.QuanTri.UserName)</td>
                     </tr>
 
                     <tr>
-                        <td><label>Mật khẩu:</label></td>
+                        <td><label class="display-label">Mật khẩu:</label></td>
                         <td>@Html.DisplayFor(model => model.QuanTri.Password)</td>
                     </tr>
 
                     <tr>
-                        <td><label>Trạng thái:</label></td>
+                        <td><label class="display-label">Trạng thái:</label></td>
                         <td>
                             @{if (Model.QuanTri.TrangThai == true)
                                 { trangThai = "Kích hoạt"; }

@@ -81,7 +81,7 @@ namespace DoAnWebSell.Controllers
                     if (resultUser > 0)
                     {
                         ViewBag.Success = "Đăng ký thành công";
-                        model = new RegisterModel();
+                        return RedirectToAction("login", "user");
                     }
                     else
                     {
@@ -90,7 +90,7 @@ namespace DoAnWebSell.Controllers
 
                 }
             }
-            return View(model);
+            return View("register");
         }
 
         [HttpGet]

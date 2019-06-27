@@ -219,6 +219,7 @@
     <Compile Include="Areas\admin\Controllers\danhmucsanphamController.cs" />
     <Compile Include="Areas\admin\Controllers\dondathangController.cs" />
     <Compile Include="Areas\admin\Controllers\homeController.cs" />
+    <Compile Include="Areas\admin\Controllers\khachhangController.cs" />
     <Compile Include="Areas\admin\Controllers\khohangController.cs" />
     <Compile Include="Areas\admin\Controllers\loginController.cs" />
     <Compile Include="Areas\admin\Controllers\nhacungcapController.cs" />
@@ -381,6 +382,11 @@
     <Content Include="Areas\admin\Views\nhacungcap\edit.cshtml" />
     <Content Include="Areas\admin\Views\nhacungcap\index.cshtml" />
     <Content Include="Areas\admin\Views\user\details.cshtml" />
+    <Content Include="Areas\admin\Views\khachhang\Create.cshtml" />
+    <Content Include="Areas\admin\Views\khachhang\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\khachhang\Details.cshtml" />
+    <Content Include="Areas\admin\Views\khachhang\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\khachhang\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

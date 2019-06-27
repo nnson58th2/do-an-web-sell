@@ -27,8 +27,10 @@ namespace Model.EF
         public string DiaChi { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
+        public Nullable<long> UserID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonDatHang> DonDatHang { get; set; }
+        public virtual QuanTri QuanTri { get; set; }
     }
 }

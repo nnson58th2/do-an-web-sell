@@ -39,7 +39,6 @@
                     <th>Giới tính</th>
                     <th>Ngày sinh</th>
                     <th>Số điện thoại</th>
-                    <th>Địa chỉ</th>
                     <th>Bộ phận</th>
                     <th>Chức năng</th>
                 </tr>
@@ -64,9 +63,8 @@
                             }
                             @gioiTinh
                         </td>
-                        <td>@item.NgaySinh.ToString()</td>
+                        <td>@item.NgaySinh</td>
                         <td>@item.SDT</td>
-                        <td>@item.DiaChi</td>
                         <td>@item.BoPhan.TenBP</td>
                         <td>
                             <a class="format-function-edit" href="/admin/nhanvien/edit/@item.MaNV"><i class="fas fa-edit"></i> Chỉnh sửa</a>

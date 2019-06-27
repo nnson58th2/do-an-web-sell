@@ -15,6 +15,14 @@ namespace DoAnWebSell.Areas.admin.Controllers
     {
         private DatabaseSellEntities db = new DatabaseSellEntities();
 
+        string LayMaNCC()
+        {
+            var maMax = db.NhaCungCap.ToList().Select(n => n.MaNCC).Max();
+            int maNCC = int.Parse(maMax.Substring(3)) + 1;
+            string result = String.Concat("0", maNCC.ToString());
+            return "NCC" + result.Substring(maNCC.ToString().Length - 1);
+        }
+
         // GET: admin/nhacungcap
         public ActionResult index(string search, int page = 1, int pageSize = 5)
         {
@@ -28,6 +36,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
         // GET: admin/nhacungcap/Create
         public ActionResult create()
         {
+            ViewBag.MaNCC = LayMaNCC();
             return View();
         }
 
@@ -38,6 +47,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                nhaCungCap.MaNCC = LayMaNCC();
                 db.NhaCungCap.Add(nhaCungCap);
                 db.SaveChanges();
                 return RedirectToAction("index");

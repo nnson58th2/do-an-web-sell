@@ -14,13 +14,6 @@ namespace Model.EF
     
     public partial class QuanTri
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public QuanTri()
-        {
-            this.KhachHang = new HashSet<KhachHang>();
-            this.NhanVien = new HashSet<NhanVien>();
-        }
-    
         public long Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -30,10 +23,5 @@ namespace Model.EF
         public string DiaChi { get; set; }
         public Nullable<bool> Quyen { get; set; }
         public bool TrangThai { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhachHang> KhachHang { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NhanVien> NhanVien { get; set; }
     }
 }

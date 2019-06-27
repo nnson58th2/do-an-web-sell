@@ -245,18 +245,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_KhachHang_QuanTri">
-    <End Role="QuanTri" Type="Self.QuanTri" Multiplicity="0..1" />
-    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="QuanTri">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="KhachHang">
-        <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Menu_MenuType">
     <End Role="MenuType" Type="Self.MenuType" Multiplicity="0..1" />
     <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
@@ -266,18 +254,6 @@
       </Principal>
       <Dependent Role="Menu">
         <PropertyRef Name="TypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_NhanVien_QuanTri">
-    <End Role="QuanTri" Type="Self.QuanTri" Multiplicity="0..1" />
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="QuanTri">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="NhanVien">
-        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -339,17 +315,9 @@
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="ChiTietKho" EntitySet="ChiTietKho" />
     </AssociationSet>
-    <AssociationSet Name="FK_KhachHang_QuanTri" Association="Self.FK_KhachHang_QuanTri">
-      <End Role="QuanTri" EntitySet="QuanTri" />
-      <End Role="KhachHang" EntitySet="KhachHang" />
-    </AssociationSet>
     <AssociationSet Name="FK_Menu_MenuType" Association="Self.FK_Menu_MenuType">
       <End Role="MenuType" EntitySet="MenuType" />
       <End Role="Menu" EntitySet="Menu" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NhanVien_QuanTri" Association="Self.FK_NhanVien_QuanTri">
-      <End Role="QuanTri" EntitySet="QuanTri" />
-      <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>
     <AssociationSet Name="FK_SanPham_DanhMucSanPham" Association="Self.FK_SanPham_DanhMucSanPham">
       <End Role="DanhMucSanPham" EntitySet="DanhMucSanPham" />

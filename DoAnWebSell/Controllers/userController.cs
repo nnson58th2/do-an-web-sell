@@ -12,6 +12,17 @@ namespace DoAnWebSell.Controllers
 {
     public class userController : Controller
     {
+        private DatabaseSellEntities db = new DatabaseSellEntities();
+
+        // GET: Mã khách tự động
+        string getKeyCustomer()
+        {
+            var maMax = db.KhachHang.ToList().Select(n => n.MaKH).Max();
+            int maKH = int.Parse(maMax.Substring(2)) + 1;
+            string KH = String.Concat("000", maKH.ToString());
+            return "KH" + KH.Substring(maKH.ToString().Length - 1);
+        }
+
         // GET: user
         [HttpGet]
         public ActionResult register()
@@ -50,14 +61,18 @@ namespace DoAnWebSell.Controllers
 
                     // Thêm thông tin đăng nhập vào bảng khách hàng
                     var customer = new KhachHang();
+                    customer.MaKH = getKeyCustomer();
                     customer.HoTenKH = model.Name;
                     customer.GioiTinh = model.Gender;
                     customer.DiaChi = model.Address;
                     customer.SDT = model.Phone;
                     customer.Email = model.Email;
-                    customer.UserID = model.ID;
 
-                    var resultUser = userDao.Insert(user);
+                    //Lấy mã tài khoản và chuyển đổi sáng cho mã tài khoản của khác hàng
+                    long keyCustomer = user.Id;
+                    customer.UserID = keyCustomer;
+
+                    var resultUser = userDao.Insert(user);                 
                     var resultCustomer = customerDao.Insert(customer);
 
                     if (resultUser > 0)

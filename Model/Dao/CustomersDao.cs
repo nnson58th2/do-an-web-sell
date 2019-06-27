@@ -16,18 +16,8 @@ namespace Model.Dao
             db = new DatabaseSellEntities();
         }
 
-        // GET: Mã khách tự động
-        string getKeyCustomer()
-        {
-            var maMax = db.KhachHang.ToList().Select(n => n.MaKH).Max();
-            int maKH = int.Parse(maMax.Substring(2)) + 1;
-            string KH = String.Concat("000", maKH.ToString());
-            return "KH" + KH.Substring(maKH.ToString().Length - 1);
-        }
-
         public string Insert(KhachHang entity)
         {
-            entity.MaKH = getKeyCustomer();
             db.KhachHang.Add(entity);
             db.SaveChanges();
             return entity.MaKH;

@@ -13,10 +13,10 @@ namespace Model.EF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DatabaseSellEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public DatabaseSellEntities()
-            : base("name=DatabaseSellEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     

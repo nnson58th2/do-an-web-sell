@@ -24,13 +24,13 @@ namespace Model.EF
         public long MaSP { get; set; }
         public string TenSP { get; set; }
         public string MetaTitle { get; set; }
-        public int SoLuong { get; set; }
+        public Nullable<int> SoLuong { get; set; }
         public Nullable<decimal> DonGia { get; set; }
         public Nullable<decimal> GiaKhuyenMai { get; set; }
         public string HinhAnh { get; set; }
         public string MoTa { get; set; }
         public string ChiTiet { get; set; }
-        public string ThoiHanBaoHanh { get; set; }
+        public Nullable<int> ThoiHanBaoHanh { get; set; }
         public Nullable<System.DateTime> NgaySanXuat { get; set; }
         public Nullable<bool> TrangThai { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }

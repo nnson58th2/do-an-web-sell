@@ -3759,3 +3759,27 @@ div#testimonials h4.m-title {
 .product-desc-bottom .view-all-product::after {
     content: ' >>';
 }
+
+/*Guarantee*/
+.guarantee {
+    padding: 10px 20px;
+    color: #F45C5D;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: .4px solid #eee;
+}
+
+.list-guarantee li {
+    padding: 10px 5px;
+    color: #444;
+    border-top: .9px solid #eee;
+}
+
+.list-guarantee li i {
+    padding: .4rem;
+    color: #FB9191;
+    font-size: 1.2rem;
+}
+

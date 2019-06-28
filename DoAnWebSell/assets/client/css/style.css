@@ -3700,10 +3700,18 @@ div#testimonials h4.m-title {
 }
 
 /*Product Description*/
+.horizontal-tab {
+   border-bottom: 1.2px solid #dedede;
+}
+
+.horizontal-tab .resp-tabs-container {
+    margin-bottom: 1.2rem;
+}
+
 .product-desc-container .resp-tabs-list {
     list-style: none;
     border-bottom: 2px solid #eee;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.2rem;
 }
 
 .product-desc-container .resp-tabs-list li {
@@ -3730,11 +3738,14 @@ div#testimonials h4.m-title {
     max-height: 3rem;
 }
 
+.product-related-title {
+    margin-top: 1rem;
+}
+
 .product-related-title span {
     font-size: 1.25rem;
     font-weight: 500;
     color: #2879c6;
-    border-bottom: 1.5px solid
 }
 
 .product-desc-bottom .view-all-product {

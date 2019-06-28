@@ -34,7 +34,7 @@
             </div>
             <thead>
                 <tr>
-                    <th>Mã sản phẩm</th>
+                    <th>Mã</th>
                     <th>Hình ảnh</th>
                     <th>Tên sản phẩm</th>
                     <th>Số lượng</th>
@@ -69,6 +69,7 @@
                         <td>@item.TaoBoi</td>
                         <td>
                             <a class="format-function-edit" href="/admin/sanpham/edit/@item.MaSP"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+                            <a class="format-function-detail" href="/admin/sanpham/details/@item.MaSP"><i class="fas fa-info"></i> Chi tiết</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaSP }, new AjaxOptions
                        {
                            Confirm = "Bạn có muốn xóa sản phẩm này?",

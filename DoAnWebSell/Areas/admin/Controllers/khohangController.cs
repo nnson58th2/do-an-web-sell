@@ -11,7 +11,7 @@ using Model.Dao;
 
 namespace DoAnWebSell.Areas.admin.Controllers
 {
-    public class khohangController : Controller
+    public class khohangController : BaseController
     {
         private DatabaseSellEntities db = new DatabaseSellEntities();
 

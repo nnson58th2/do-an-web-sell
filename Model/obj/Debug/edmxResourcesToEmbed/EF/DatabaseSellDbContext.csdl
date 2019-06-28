@@ -153,13 +153,13 @@
     <Property Name="MaSP" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenSP" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="MetaTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
     <Property Name="DonGia" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="GiaKhuyenMai" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="HinhAnh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="ChiTiet" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="ThoiHanBaoHanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ThoiHanBaoHanh" Type="Int32" />
     <Property Name="NgaySanXuat" Type="DateTime" Precision="0" />
     <Property Name="TrangThai" Type="Boolean" />
     <Property Name="NgayTao" Type="DateTime" Precision="3" />

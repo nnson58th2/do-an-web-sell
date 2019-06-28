@@ -15,7 +15,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
         private DatabaseSellEntities db = new DatabaseSellEntities();
 
         // GET: admin/user
-        public ActionResult index(string search, int page = 1, int pageSize = 3)
+        public ActionResult index(string search, int page = 1, int pageSize = 5)
         {
             var dao = new UserDao();
             //Tạo page sử dụng Pagedlist
@@ -94,8 +94,25 @@ namespace DoAnWebSell.Areas.admin.Controllers
         }
 
         [HttpDelete]
-        public ActionResult delete(int id)
+        public ActionResult delete(NhanVien useEmployesID, KhachHang useCustomerID, long id)
         {
+            // Kiểm tra xem user cần xóa có năm trong user id của nhân viên hay không
+            if (useEmployesID.UserID == id)
+            {
+                // Xóa nhân viên ra khỏi danh sách
+                var employes = db.NhanVien.Single(x => x.UserID == id);
+                db.NhanVien.Remove(employes);
+                db.SaveChanges();
+            }
+            else
+            {
+                // Xóa khách hàng ra khỏi danh sách
+                var customer = db.KhachHang.Single(x => x.UserID == id);
+                db.KhachHang.Remove(customer);
+                db.SaveChanges();
+            }                       
+
+            // Xóa user ra khỏi danh sách
             new UserDao().Delete(id);
             return RedirectToAction("index");
         }

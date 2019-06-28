@@ -89,5 +89,20 @@ namespace Model.Dao
                 return false;
             }
         }
+
+        public bool DeleteMenu(int id)
+        {
+            try
+            {
+                var menu = db.Menu.Find(id);
+                db.Menu.Remove(menu);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

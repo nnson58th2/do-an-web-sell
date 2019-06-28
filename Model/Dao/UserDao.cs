@@ -120,7 +120,7 @@ namespace Model.Dao
             }
         }
 
-        public bool Delete(int id)
+        public bool Delete(long id)
         {
             try
             {

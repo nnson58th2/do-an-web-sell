@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Model.EF.NhaCungCap>
+
+@{
+    ViewBag.Title = "Thông tin các nhà cung cấp";
+    Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+    int i = 0;
+}
+
+@section header {
+    Danh sách nhà cung cấp
+}
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" cellspacing="0">
+            <div class="d-flex">
+                <div class="create w-80">
+                    <a href="/admin/nhacungcap/create" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a>
+                </div>
+                @using (Html.BeginForm("index", "nhacungcap", FormMethod.Get))
+                {
+                    <div class="form-inline form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã nhà cung cấp</th>
+                    <th>Tên nhà cung cấp</th>
+                    <th>Địa chỉ</th>
+                    <th>Số điện thoại</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="row_@item.MaNCC">
+                        <td>
+                            @{ i++; }
+                            @i
+                        </td>
+                        <td>@item.MaNCC</td>
+                        <td>@item.TenNCC</td>
+                        <td>@item.DiaChi</td>
+                        <td>@item.SoDienThoai</td>
+                        <td>
+                            <a class="format-function-edit" href="/admin/nhacungcap/edit/@item.MaNCC"><i class="fas fa-edit"></i> Chỉnh sửa</a>                            
+                            @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaNCC }, new AjaxOptions
+                       {
+                           Confirm = "Bạn có muốn xóa nhà cung cấp này?",
+                           OnComplete = "$(' #row_" + @item.MaNCC + " ').remove()",
+                           HttpMethod = "Delete"
+                       })
+                        </td>
+                    </tr>
+                                }
+            </tbody>
+        </table>
+    </div>
+</div>

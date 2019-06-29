@@ -1,0 +1,13 @@
+F:\Github\do-an-web-sell\Model\bin\Release\Model.dll.config
+F:\Github\do-an-web-sell\Model\bin\Release\Model.dll
+F:\Github\do-an-web-sell\Model\bin\Release\Model.pdb
+F:\Github\do-an-web-sell\Model\bin\Release\EntityFramework.dll
+F:\Github\do-an-web-sell\Model\bin\Release\EntityFramework.SqlServer.dll
+F:\Github\do-an-web-sell\Model\bin\Release\PagedList.dll
+F:\Github\do-an-web-sell\Model\bin\Release\PagedList.Mvc.dll
+F:\Github\do-an-web-sell\Model\bin\Release\EntityFramework.xml
+F:\Github\do-an-web-sell\Model\bin\Release\EntityFramework.SqlServer.xml
+F:\Github\do-an-web-sell\Model\bin\Release\PagedList.xml
+F:\Github\do-an-web-sell\Model\bin\Release\PagedList.Mvc.xml
+F:\Github\do-an-web-sell\Model\obj\Release\Model.dll
+F:\Github\do-an-web-sell\Model\obj\Release\Model.pdb

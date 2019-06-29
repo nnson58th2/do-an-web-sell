@@ -1,0 +1,149 @@
+﻿.bg-hide-under {
+    background-image: url('/assets/admin/images/background-hide-under.jpg')
+}
+
+.validation-summary-errors ul {
+    list-style: none;
+    padding-left: 6px;
+}
+
+/*Available width*/
+.w-60 {
+  width: 60% !important;
+}
+
+.w-80 {
+  width: 80% !important;
+}
+
+.w-90 {
+  width: 90% !important;
+}
+
+/*Format table*/
+.table {
+    font-size: .9rem;
+}
+
+/*Format label*/
+.display-label {
+    font-weight: 600;
+}
+
+/*List page*/
+.pagination {
+    justify-content: center;
+}
+
+.pagination-container ul li {
+    padding: 1px 9px;
+    border: 1px solid #ddd;
+}
+
+.pagination-container ul li:hover {
+    border-bottom: 2.5px solid #8ec5ff;
+}
+
+.pagination-container ul .active {
+    color: #6c9ed5;
+    border-bottom: 3px solid #459efe;
+
+}
+
+.pagination li:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.pagination li:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/*Images*/
+.format-function-edit, .format-function-detail {
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #28a745;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+.format-function-edit:hover, .format-function-detail:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+tbody tr td a:last-child{
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #dc3545;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+/*Top menu*/
+.fa {
+	color: white;
+    font-size: 1.2rem;
+}
+
+.user-admin a {
+    text-decoration: none;
+}
+
+.user-admin span {
+    font-size: .8rem;
+	color: white;
+}
+
+.user-admin .user-name{
+	font-family: cursive;
+    text-transform: capitalize;
+}
+
+.user-admin a:nth-child(2) {
+    text-decoration: none; 
+    margin-left: 1.6rem;
+}
+
+.user-admin a:nth-child(3) {
+    margin-left: .6rem;
+}
+
+/*Functional labels*/
+.functional-label {
+    background-color: #1a2225;
+    text-transform: uppercase;
+}
+
+.functional-label span {
+    margin-left: .6rem;
+    color: #ccc;
+    font-weight: bold;
+}
+
+/*Top menu*/
+.static-top {
+    background: #3a7bd5;
+    background: -webkit-linear-gradient(to right, #3a7bd5, #3a6073); 
+    background: linear-gradient(to right, #3a7bd5, #3a6073); 
+}
+
+.title-admin {
+    width: 200px;
+}
+
+.title-admin a {
+    font-weight: bold;
+}
+
+.static-top .btn-sm {
+    font-size: 1.3rem;
+}
+
+   

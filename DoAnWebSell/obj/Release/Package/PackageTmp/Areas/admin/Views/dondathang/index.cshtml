@@ -1,0 +1,68 @@
+﻿@model PagedList.IPagedList<Model.EF.DonDatHang>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Danh sách đơn đặt hàng";
+    Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section header {
+    Danh sách đơn đặt hàng
+}
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" cellspacing="0">
+            @using (Html.BeginForm("index", "dondathang", FormMethod.Get))
+            {
+                <div class="d-none d-md-inline-block form-inline form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-dark" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+            <thead>
+                <tr>
+                    <th>Mã đơn</th>
+                    <th>Tên người đặt</th>
+                    <th>Địa chỉ giao</th>
+                    <th>Điện thoại</th>
+                    <th>Ngày đặt hàng</th>
+                    <th>Trạng thái</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="row_@item.MaDon">
+                        <td>@item.MaDon</td>
+                        <td>@item.TenNguoiDat</td>
+                        <td>@item.DiaChiGiaoHang</td>
+                        <td>@item.SoDienThoai</td>
+                        <td>@item.NgayDat</td>
+                        <td>@item.TrangThai</td>
+                        <td>
+                            <a class="format-function-edit" href="/admin/dondathang/edit/@item.MaDon"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+                            <a class="format-function-detail" href="/admin/dondathang/details/@item.MaDon"><i class="fas fa-info"></i> Chi tiết</a>
+                            @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaDon }, new AjaxOptions
+                       {
+                           Confirm = "Bạn có muốn xóa đơn hàng này?",
+                           OnComplete = "$(' #row_" + @item.MaDon + " ').remove()",
+                           HttpMethod = "Delete"
+                       })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))
+    </div>
+</div>
+

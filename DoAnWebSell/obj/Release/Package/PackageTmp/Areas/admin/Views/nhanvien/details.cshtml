@@ -1,0 +1,90 @@
+﻿@model Model.EF.NhanVien
+
+@{
+    ViewBag.Title = "Thông tin chi tiết nhân viên";
+    Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+    string gtinh = "";
+    string trangThai = "";
+}
+
+@section header {
+    Thông tin của nhân viên
+}
+
+<table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
+    <tr>
+        <td>
+            <table cellpadding="2" cellspacing="10">
+                <tr>
+                    <td rowspan="12" class="pr-3"><img src="/assets/admin/images/@Html.DisplayFor(model => model.AnhNV)" width="100" height="100" /></td>
+                    <td><label class="display-label">Mã nhân viên:</label></td>
+                    <td>@Html.DisplayFor(model => model.MaNV)</td>
+                </tr>
+                <tr>
+                    <td><label class="display-label">Họ tên nhân viên:</label></td>
+                    <td>@Html.DisplayFor(model => model.HoNV) @Html.DisplayFor(model => model.TenNV)</td>
+                </tr>
+                <tr>
+                    <td><label class="display-label">Giới tính:</label></td>
+                    <td>
+                        @{if (Model.GioiTinh == true)
+                            { gtinh = "Nam"; }
+                            else
+                            { gtinh = "Nữ"; }
+                        }
+                        @gtinh
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="display-label">Ngày sinh:</label></td>
+                    <td>@Html.DisplayFor(model => Model.NgaySinh)</td>
+                </tr>
+                <tr>
+                    <td><label class="display-label">Lương</label></td>
+                    <td>@Html.DisplayFor(model => model.Luong)</td>
+                </tr>
+                <tr>
+                    <td><label class="display-label">Số điện thoại:</label></td>
+                    <td>@Html.DisplayFor(model => model.SDT)</td>
+                </tr>
+                <tr>
+                    <td><label class="display-label">Địa chỉ:</label></td>
+                    <td>@Html.DisplayFor(model => model.DiaChi)</td>
+                </tr>
+                <tr>
+                    <td><label class="display-label">Email</label></td>
+                    <td>@Html.DisplayFor(model => model.Email)</td>
+                </tr>
+                <tr>
+                    <td><label class="display-label">Phòng ban:</label></td>
+                    <td>@Html.DisplayFor(model => model.BoPhan.TenBP)</td>
+                </tr>
+                @*Kiểm tra xem nhân viên có tài khoản hay không*@
+                @if (Model.UserID != null)
+                {
+                    <tr>
+                        <td><label class="display-label">Tài khoản:</label></td>
+                        <td>@Html.DisplayFor(model => model.QuanTri.UserName)</td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="display-label">Mật khẩu:</label></td>
+                        <td>@Html.DisplayFor(model => model.QuanTri.Password)</td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="display-label">Trạng thái:</label></td>
+                        <td>
+                            @{if (Model.QuanTri.TrangThai == true)
+                                { trangThai = "Kích hoạt"; }
+                                else
+                                { trangThai = "khóa"; }
+                            }
+                            @trangThai
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>

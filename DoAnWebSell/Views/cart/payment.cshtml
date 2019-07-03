@@ -78,9 +78,14 @@
                 <tbody>
                     <tr>
                         <td colspan="4" style="border: none; background-color: #FFF"></td>
-                        <td colspan="2" style="text-align: center;">
-                            @sum.ToString("0#,##0") ₫
-                        </td>
+                        @if (sum == 0)
+                        {
+                            <td colspan="2" style="text-align: center;">0 ₫</td>
+                        }
+                        else
+                        {
+                            <td colspan="2" style="text-align: center;">@sum.ToString("0#,##0") ₫</td>
+                        }                                
                     </tr>
                 </tbody>
 

@@ -139,14 +139,23 @@ namespace DoAnWebSell.Controllers
             {
                 var id = new OrderDao().Insert(order);
                 var cart = (List<CartItem>)Session[CommonConstants.CART_SEDSSION];
-                var detailDao = new Model.Dao.OrderDetailDao();
+                var detailDao = new OrderDetailDao();
                 decimal total = 0;
                 foreach (var item in cart)
                 {
                     var orderDetail = new ChiTietDatHang();
-                    orderDetail.MaSP = item.Product.MaSP;
                     orderDetail.MaDon = id;
-                    orderDetail.DonGia = item.Product.DonGia;
+                    orderDetail.MaSP = item.Product.MaSP;
+                    
+                    if (item.Product.GiaKhuyenMai != null)
+                    {
+                        orderDetail.DonGia = item.Product.GiaKhuyenMai;
+                    }
+                    else
+                    {
+                        orderDetail.DonGia = item.Product.DonGia;
+                    }
+
                     orderDetail.SoLuong = item.Quantity;
                     detailDao.Insert(orderDetail);
 

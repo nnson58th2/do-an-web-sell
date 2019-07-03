@@ -15,7 +15,7 @@ namespace DoAnWebSell.Controllers
             return View();
         }
 
-        public ActionResult productAll(int page = 1, int pageSize = 4)
+        public ActionResult productAll(int page = 1, int pageSize = 8)
         {
             var dao = new ProductDao();
             var model = dao.ListAllProduct(page, pageSize);

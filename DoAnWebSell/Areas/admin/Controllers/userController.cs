@@ -72,6 +72,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
+
                 //Kiểm tra người dùng có nhập password vào không
                 if (!string.IsNullOrEmpty(user.Password))
                 {

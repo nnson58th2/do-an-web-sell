@@ -31,12 +31,26 @@
                             <div class="info-product-price">
                                 @if (item.GiaKhuyenMai != null)
                                 {
-                                    <span class="item_price">@(item.GiaKhuyenMai.HasValue ? item.GiaKhuyenMai.Value.ToString("N0") : "Liên hệ")₫</span>
-                                    <del>@item.GiaKhuyenMai.Value.ToString("N0")₫</del>
+                                    if (item.GiaKhuyenMai.HasValue)
+                                    {
+                                        <span class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</span>
+                                        <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                    }
+                                    else
+                                    {
+                                        <span class="item_price">Liên hệ</span>
+                                    }
                                 }
                                 else
                                 {
-                                    <span class="item_price">@(item.DonGia.HasValue ? item.DonGia.Value.ToString("N0") : "Liên hệ")₫</span>
+                                    if (item.DonGia.HasValue)
+                                    {
+                                        <span class="item_price">@item.DonGia.Value.ToString("N0")₫</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="item_price">Liên hệ</span>
+                                    }
                                 }
                             </div>
                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">

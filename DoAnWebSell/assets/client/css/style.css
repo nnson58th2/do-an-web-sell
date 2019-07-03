@@ -2394,7 +2394,13 @@ div#testimonials h4.m-title {
         letter-spacing: 1px;
         font-size: 1.6rem;
         font-weight: bold;
+        font-style: italic;
         height: 3.3rem;
+        margin-right: 0;
+    }
+
+    .navbar-inner nav .img-label a {
+        color: #F45C5D;
     }
 
     p {
@@ -2616,7 +2622,13 @@ div#testimonials h4.m-title {
         letter-spacing: 1px;
         font-size: 1.6rem;
         font-weight: bold;
+        font-style: italic;
         height: 3.3rem;
+        margin-right: 0;
+    }
+
+    .navbar-inner nav .img-label a {
+        color: #F45C5D;
     }
 
     .carousel-item.item4,

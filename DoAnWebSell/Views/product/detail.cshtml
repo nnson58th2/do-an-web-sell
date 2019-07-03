@@ -41,30 +41,30 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <h2 class="mb-3">@Model.TenSP</h2>
+                <h3 class="mb-3">@Model.TenSP</h3>
                 <p>@Model.MoTa</p>
                 <p class="mb-3">
                     @if (Model.GiaKhuyenMai != null)
                     {
                         if (Model.GiaKhuyenMai.HasValue)
                         {
-                            <span class="item_price">@Model.GiaKhuyenMai.Value.ToString("N0")₫</span>
+                            <strong class="item_price-detail mr-3">@Model.GiaKhuyenMai.Value.ToString("N0")₫</strong>
                             <del>@Model.DonGia.Value.ToString("N0")₫</del>
                         }
                         else
                         {
-                            <span class="item_price">Liên hệ</span>
+                            <strong class="item_price-detail">Liên hệ</strong>
                         }
                     }
                     else
                     {
                         if (Model.DonGia.HasValue)
                         {
-                            <span class="item_price">@Model.DonGia.Value.ToString("N0")₫</span>
+                            <strong class="item_price-detail">@Model.DonGia.Value.ToString("N0")₫</strong>
                         }
                         else
                         {
-                            <span class="item_price">Liên hệ</span>
+                            <strong class="item_price-detail">Liên hệ</strong>
                         }
                     }
                 </p>

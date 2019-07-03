@@ -61,6 +61,15 @@
                 </div>
             }           
         </div>
-        @Html.PagedListPager(Model, page => Url.Action("productAll", new { page }))      
+        <div class="clear"></div>
+        @Html.PagedListPager(Model, page => Url.Action("productAll",
+                     new { page }), new PagedListRenderOptions
+                     {
+                         DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                         DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                         DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                         DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                         MaximumPageNumbersToDisplay = 5
+                     })       
     </div>
 </div>

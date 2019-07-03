@@ -56,11 +56,17 @@ namespace Model.Dao
         /// </summary>
         /// <param name="categoryID"></param>
         /// <returns></returns>
-        public List<SanPham> ListByCategoryId(long categoryID, ref int totalRecord, int pageIndex = 1, int pageSize = 2)
+        //public List<SanPham> ListByCategoryId(long categoryID, ref int totalRecord, int pageIndex = 1, int pageSize = 2)
+        //{
+        //    totalRecord = db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).Count();
+        //    var model =  db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).OrderByDescending(x => x.NgayTao).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+        //    return model;
+        //}
+
+         public IEnumerable<SanPham> ListByCategoryId(long categoryID, int page, int pageSize)
         {
-            totalRecord = db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).Count();
-            var model =  db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).OrderByDescending(x => x.NgayTao).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
-            return model;
+            IQueryable<SanPham> model = db.SanPham;
+            return model.Where(x => x.DanhMucSanPhamID == categoryID).OrderBy(x => x.NgayTao).ToPagedList(page, pageSize);
         }
 
         public List<SanPham> ListRelatedProducts(long productId, int top)

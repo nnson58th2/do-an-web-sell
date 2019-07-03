@@ -1,4 +1,5 @@
-﻿@model List<Model.EF.SanPham>
+﻿@model PagedList.IPagedList<Model.EF.SanPham>
+@using PagedList.Mvc
 
 @{
     var category = (Model.EF.DanhMucSanPham)ViewBag.Category;
@@ -9,7 +10,7 @@
 <div class="container ">
     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
         <h3 class="heading-tittle text-center font-italic">@category.Name</h3>
-        <div class="row">
+        <div class="row mb-4">
             @foreach (var item in Model)
             {
                 var link = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
@@ -61,49 +62,14 @@
             }
         </div>
         <div class="clear"></div>
-        <!--Phân trang-->
-        @if (ViewBag.TotalPage >= 0)
-            {
-                var pageDisplay = (int)ViewBag.MaxPage;
-                int totalPage = (int)ViewBag.TotalPage;
-                int currentPage = ((int)ViewBag.Page);
-
-                // Create numeric links
-                var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
-                var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
-
-                var link = "/san-pham/" + category.MetaTitle + "-" + category.Id;
-            <div class="pagination-container mt-3">
-                <nav>
-                    <ul class="pagination">
-                        @if (currentPage > ViewBag.First)
-                        {
-                            <li><a href="@link?page=@ViewBag.First" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
-                            <li>
-                                <a href="@link?page=@ViewBag.Prev" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
-                            </li>
-
-                        }
-                        @for (int i = startPageIndex; i <= endPageIndex; i++)
-                        {
-                            if (currentPage == i)
-                            {
-
-                                <li> <a href="@link?page=@i" class="active" title="Trang @i">@i</a></li>
-                            }
-                            else
-                            {
-                                <li><a href="@link?page=@i" title="Trang @i" class="pos">@i</a></li>
-                            }
-                        }
-                        @if (currentPage < totalPage)
-                        {
-                            <li><a href="@link?page=@ViewBag.Next" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
-                            <li><a href="@link?page=@ViewBag.Last" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
-                        }
-                    </ul>
-                </nav>
-            </div>
-        }
+        @Html.PagedListPager(Model, page => Url.Action("category",
+                     new { page }), new PagedListRenderOptions
+                     {
+                         DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                         DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                         DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                         DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                         MaximumPageNumbersToDisplay = 5
+                     })       
     </div>
 </div>

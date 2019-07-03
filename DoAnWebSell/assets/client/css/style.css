@@ -82,6 +82,10 @@ label {
 }
 
 /*-- header Lists --*/
+.header-right {
+    display: flex;
+    flex-wrap: nowrap;
+}
 
 .header-right ul li {
     display: inline-block;
@@ -96,11 +100,6 @@ label {
 
 .header-right ul li i {
     font-size: 15px;
-}
-
-.header-right ul li:last-child {
-    width: 5.6rem;
-    background-color: #4298d5;
 }
 
 /*-- modal login --*/
@@ -3296,11 +3295,14 @@ div#testimonials h4.m-title {
         font-size: 12px;
     }
 
-        .header-right ul li:nth-last-child(2) {
-            margin-top: .6rem;
-            margin-left: 20%;
-            width: 6.6rem;
-        }
+    .header-right ul li:nth-last-child(2) {
+        margin-top: .6rem;
+        width: 50%;
+    }
+
+    .header-right ul li:last-child {
+        width: 38%;
+    }
 
     .carousel-caption h2,
     .carousel-caption h3 {
@@ -3448,16 +3450,10 @@ div#testimonials h4.m-title {
         font-size: 11px;
     }
 
-        .header-right ul li:nth-last-child(2) {
-            margin-top: .6rem;
-            margin-left: 18%;
-            width: 6.6rem;
-        }
-
-        .header-right ul li:last-child {
-            width: 6.6rem;
-            background-color: #4298d5;
-        }
+    .header-right ul li:nth-last-child(2) {
+        margin-top: .6rem;
+        width: 58%;
+    }
 
     .carousel-caption h2,
     .carousel-caption h3 {

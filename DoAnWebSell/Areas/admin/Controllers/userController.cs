@@ -107,10 +107,13 @@ namespace DoAnWebSell.Areas.admin.Controllers
             }
             else
             {
-                // Xóa khách hàng ra khỏi danh sách
-                var customer = db.KhachHang.Single(x => x.UserID == id);
-                db.KhachHang.Remove(customer);
-                db.SaveChanges();
+                if (useCustomerID.UserID == id)
+                {
+                    // Xóa khách hàng ra khỏi danh sách
+                    var customer = db.KhachHang.Single(x => x.UserID == id);
+                    db.KhachHang.Remove(customer);
+                    db.SaveChanges();
+                }            
             }                       
 
             // Xóa user ra khỏi danh sách

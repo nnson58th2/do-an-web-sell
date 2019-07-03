@@ -12,6 +12,7 @@ namespace DoAnWebSell.Areas.admin.Controllers
 {
     public class registerController : Controller
     {
+
         // GET: admin/register
         public ActionResult index()
         {

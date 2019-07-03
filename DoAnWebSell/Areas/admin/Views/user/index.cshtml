@@ -70,7 +70,7 @@
                             <a class="format-function-edit" href="/admin/user/edit/@item.Id"><i class="fas fa-edit"></i> Chỉnh sửa</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.Id }, new AjaxOptions
                        {
-                           Confirm = "Bạn có muốn xóa user này?",
+                           Confirm = "Dữ liệu liên quan có thể bị mất \nBạn có muốn xóa user này?",
                            OnComplete = "$(' #row_" + @item.Id + " ').remove()",
                            HttpMethod = "Delete"
                        })

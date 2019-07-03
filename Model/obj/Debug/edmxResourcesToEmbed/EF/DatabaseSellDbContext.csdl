@@ -6,7 +6,7 @@
     </Key>
     <Property Name="MaBP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenBP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="NhanVien" Relationship="Self.FK__NhanVien__MaBP__1367E606" FromRole="BoPhan" ToRole="NhanVien" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_NhanVien_BoPhan" FromRole="BoPhan" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="ChiTietDatHang">
     <Key>
@@ -120,13 +120,13 @@
     <Property Name="GioiTinh" Type="Boolean" />
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
     <Property Name="Luong" Type="Int32" />
-    <Property Name="AnhNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AnhNV" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MaBP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="UserID" Type="Int64" />
-    <NavigationProperty Name="BoPhan" Relationship="Self.FK__NhanVien__MaBP__1367E606" FromRole="NhanVien" ToRole="BoPhan" />
+    <NavigationProperty Name="BoPhan" Relationship="Self.FK_NhanVien_BoPhan" FromRole="NhanVien" ToRole="BoPhan" />
     <NavigationProperty Name="DonDatHang" Relationship="Self.FK__DonDatHang__MaNV__286302EC" FromRole="NhanVien" ToRole="DonDatHang" />
     <NavigationProperty Name="QuanTri" Relationship="Self.FK_NhanVien_QuanTri" FromRole="NhanVien" ToRole="QuanTri" />
   </EntityType>
@@ -152,11 +152,11 @@
     </Key>
     <Property Name="MaSP" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenSP" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="MetaTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
     <Property Name="SoLuong" Type="Int32" />
     <Property Name="DonGia" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="GiaKhuyenMai" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="HinhAnh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
     <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="ChiTiet" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="ThoiHanBaoHanh" Type="Int32" />
@@ -171,10 +171,8 @@
     <NavigationProperty Name="DanhMucSanPham" Relationship="Self.FK_SanPham_DanhMucSanPham" FromRole="SanPham" ToRole="DanhMucSanPham" />
     <NavigationProperty Name="NhaCungCap" Relationship="Self.FK__SanPham__MaNCC__1BFD2C07" FromRole="SanPham" ToRole="NhaCungCap" />
   </EntityType>
-  <Association Name="FK__NhanVien__MaBP__1367E606">
-    <End Role="BoPhan" Type="Self.BoPhan" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+  <Association Name="FK_NhanVien_BoPhan">
+    <End Role="BoPhan" Type="Self.BoPhan" Multiplicity="1" />
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="BoPhan">
@@ -186,7 +184,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ChiTietDatHang_DonDatHang">
-    <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="1" />
+    <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="ChiTietDatHang" Type="Self.ChiTietDatHang" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="DonDatHang">
@@ -198,7 +198,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ChiTietDatHang_SanPham">
-    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="ChiTietDatHang" Type="Self.ChiTietDatHang" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SanPham">
@@ -210,7 +212,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ChiTietKho_KhoHang">
-    <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="1" />
+    <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="ChiTietKho" Type="Self.ChiTietKho" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="KhoHang">
@@ -222,7 +226,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ChiTietKho_SanPham">
-    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="ChiTietKho" Type="Self.ChiTietKho" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SanPham">
@@ -270,7 +276,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_KhachHang_QuanTri">
-    <End Role="QuanTri" Type="Self.QuanTri" Multiplicity="0..1" />
+    <End Role="QuanTri" Type="Self.QuanTri" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="QuanTri">
@@ -294,7 +302,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__SanPham__MaNCC__1BFD2C07">
-    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1" />
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="NhaCungCap">
@@ -306,7 +316,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_NhanVien_QuanTri">
-    <End Role="QuanTri" Type="Self.QuanTri" Multiplicity="0..1" />
+    <End Role="QuanTri" Type="Self.QuanTri" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="QuanTri">
@@ -331,7 +343,7 @@
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" />
     <EntitySet Name="QuanTri" EntityType="Self.QuanTri" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" />
-    <AssociationSet Name="FK__NhanVien__MaBP__1367E606" Association="Self.FK__NhanVien__MaBP__1367E606">
+    <AssociationSet Name="FK_NhanVien_BoPhan" Association="Self.FK_NhanVien_BoPhan">
       <End Role="BoPhan" EntitySet="BoPhan" />
       <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>

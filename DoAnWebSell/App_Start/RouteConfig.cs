@@ -36,6 +36,13 @@ namespace DoAnWebSell
             );
 
             routes.MapRoute(
+               name: "All Product",
+               url: "san-pham",
+               defaults: new { controller = "product", action = "productAll", id = UrlParameter.Optional },
+               namespaces: new[] { "DoAnWebSell.Controllers" }
+           );
+
+            routes.MapRoute(
                name: "Contact",
                url: "lien-he",
                defaults: new { controller = "contact", action = "index", id = UrlParameter.Optional },

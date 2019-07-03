@@ -1,0 +1,4 @@
+F:\Github\do-an-web-sell\Common\bin\Release\Common.dll
+F:\Github\do-an-web-sell\Common\bin\Release\Common.pdb
+F:\Github\do-an-web-sell\Common\obj\Release\Common.dll
+F:\Github\do-an-web-sell\Common\obj\Release\Common.pdb

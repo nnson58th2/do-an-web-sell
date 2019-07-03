@@ -1,20 +1,15 @@
 ﻿@model List<Model.EF.Menu>
 
-<ul>
+<ul class="header-most-top">
     <li class="text-center border-right text-white">
-        <a class="play-icon popup-with-zoom-anim text-white" href="#">
-            <i class="fas fa-map-marker-alt mr-2"></i>Chọn địa điểm
+        <a href="#" class="text-white">
+            <i class="fa fa-truck mr-2"></i>Theo dõi đơn hàng
         </a>
     </li>
-    <li class="text-center border-right text-white">
-        <a href="#" data-toggle="modal" data-target="#exampleModal" class="text-white">
-            <i class="fas fa-truck mr-2"></i>Theo dõi đơn hàng
-        </a>
+    <li class="text-center text-white mr-3">
+        <i class="fa fa-phone mr-2"></i> 001 234 5678
     </li>
-    <li class="text-center text-white mr-4">
-        <i class="fas fa-phone mr-2"></i> 001 234 5678
-    </li>
-    @{ 
+    @{
         var session = (UserLogin)Session[DoAnWebSell.Common.CommonConstants.USER_SESSION];
     }
 
@@ -29,7 +24,7 @@
     }
     else
     {
-        <li class="font-weight-bold text-capitalize text-white pl-4"><i class="fas fa-user-circle" style="font-size:1.3rem;"></i> @session.Name</li>
+        <li class="font-weight-bold text-capitalize text-white pl-4"><i class="fa fa-user-circle" style="font-size:1.3rem;"></i> @session.Name</li>
         <li><a href="/user/logout" class="btn btn-danger" style="font-size: .8rem">Đăng xuất</a></li>
     }
 </ul>

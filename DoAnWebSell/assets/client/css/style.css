@@ -98,6 +98,11 @@ label {
         font-size: 15px;
     }
 
+    .header-right ul li:last-child {
+        width: 5.6rem;
+        background-color: #4298d5;
+    }
+
 /*-- modal login --*/
 
 .modal-title {
@@ -188,7 +193,7 @@ input[type="submit"] {
 
 .agileits_search input[type="search"] {
     color: #191e21;
-    width: 78%;
+    width: 70%;
     letter-spacing: 1px;
     padding: 10px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.22);
@@ -310,90 +315,52 @@ ul.multi-column-dropdown li {
 /*-- banner --*/
 
 /*-- carousel-slider --*/
-
 .carousel-item.item1 {
-    background: url(../images/bg.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
+    width: 100%;
+    height: 30vw;
 }
 
 .carousel-item.item2 {
-    background: url(../images/b2.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
+    width: 100%;
+    height: 30vw;
 }
 
 .carousel-item.item3 {
-    background: url(../images/b3.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
+    width: 100%;
+    height: 30vw;
 }
 
 .carousel-item.item4 {
-    background: url(../images/b4.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-}
-
-.carousel-item.item4,
-.carousel-item.item3,
-.carousel-item.item2,
-.carousel-item.item1 {
-   
+    width: 100%;
+    height: 30vw;
 }
 
 .w3l-space-banner {
     padding-top: 9em;
 }
 
-.carousel-caption {
-    background: rgba(16, 16, 16, 0.27);
-    text-align: left;
-    position: inherit;
-    box-shadow: 0px 2px 2px 2px rgba(2, 2, 2, 0.43);
-}
-
-    .carousel-caption h2,
-    .carousel-caption h3 {
-        font-size: 60px;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        text-shadow: 3px 8px 2px rgb(12, 12, 12);
-    }
-
-        .carousel-caption h2 span,
-        .carousel-caption h3 span {
-            font-weight: 800;
-            color: #F45C5D;
-        }
-
-    .carousel-caption p {
-        letter-spacing: 5px;
-        font-size: 24px;
-        color: #fff;
-        text-shadow: 3px 5px 2px rgb(12, 12, 12);
-    }
-
-        .carousel-caption p span {
-            font-size: 40px;
-            letter-spacing: 0px;
-            font-weight: 600;
-        }
-
 .carousel-indicators {
-    bottom: 4%;
+    bottom: 8%;
 }
 
     .carousel-indicators li {
@@ -475,9 +442,9 @@ h3.tittle-w3l {
     -ms-transition: 0.5s all;
 }
 
-.snipcart-details a.btn:hover {
-    background: #000;
-}
+    .snipcart-details a.btn:hover {
+        background: #000;
+    }
 
 .product_list_header input.button {
     color: #fff;
@@ -600,13 +567,13 @@ h3.tittle-w3l {
     border: 1px solid #d6dde3;
 }
 
-.product-men:nth-child(3) .product-new-top {
-    background: #FFC107;
-}
+    .product-men:nth-child(3) .product-new-top {
+        background: #FFC107;
+    }
 
-.product-men:nth-child(4) .product-new-top {
-    background: #219ff3;
-}
+    .product-men:nth-child(4) .product-new-top {
+        background: #219ff3;
+    }
 
 .product-new-top {
     background: #ff2978;
@@ -967,11 +934,11 @@ span.item_price {
     height: 4.2rem;
 }
 
-.info-product-price del {
-    font-weight: 300;
-    margin-left: 13px;
-    font-size: 15px;
-}
+    .info-product-price del {
+        font-weight: 300;
+        margin-left: 13px;
+        font-size: 15px;
+    }
 
 .product-sec1.product-sec2 {
     background: #F45C5D;
@@ -1024,16 +991,6 @@ p.w3l-nut-middle {
 /*-- //product right --*/
 
 /*-- middle section --*/
-
-.join-w3l1 {
-    background: url(../images/bg.jpg) no-repeat center fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    text-align: center;
-}
 
 .join-agile {
     background: #efedee;
@@ -2149,14 +2106,14 @@ div#testimonials h4.m-title {
     cursor: pointer;
 }
 
-.contact-grids1 input[type="submit"]:hover {
-    background: #000000;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
+    .contact-grids1 input[type="submit"]:hover {
+        background: #000000;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
 
 .map iframe {
     width: 100%;
@@ -2170,7 +2127,12 @@ div#testimonials h4.m-title {
 .categories {
     border: 1px solid #EEE;
     padding: 0;
+    height: 100%;
 }
+
+    .categories ul {
+        margin-bottom: 2rem;
+    }
 
 .product-category {
     padding: 10px 20px;
@@ -2198,9 +2160,9 @@ div#testimonials h4.m-title {
     border-bottom: 1px solid #EEE;
 }
 
-.categories li a:hover {
-    font-size: 1rem;
-}
+    .categories li a:hover {
+        font-size: 1rem;
+    }
 
 .categories li:first-child a {
     border-top: 1px solid #EEE;
@@ -2211,6 +2173,12 @@ div#testimonials h4.m-title {
 }
 
 /*-- //produc category  --*/
+
+/*Images command label name shop*/
+.navbar-inner nav .img-label {
+    opacity: 0;
+    height: 2.2rem;
+}
 
 /*-- //contact page --*/
 
@@ -2237,9 +2205,9 @@ div#testimonials h4.m-title {
         padding: 26px 0 21px 42px;
     }
 
-        .logo_agile h1 a img {
-            left: -34%;
-        }
+    .logo_agile h1 a img {
+        left: -34%;
+    }
 }
 
 @media(max-width: 1080px) {
@@ -2255,15 +2223,15 @@ div#testimonials h4.m-title {
         padding: 24px 0 21px 35px;
     }
 
-        .logo_agile h1 a {
-            font-size: 36px;
-        }
+    .logo_agile h1 a {
+        font-size: 36px;
+    }
 
-            .logo_agile h1 a img {
-                left: -34%;
-                width: 40%;
-                top: -14px;
-            }
+    .logo_agile h1 a img {
+        left: -34%;
+        width: 40%;
+        top: -14px;
+    }
 
     .navbar-light .navbar-nav .nav-link {
         font-size: 13px;
@@ -2398,12 +2366,12 @@ div#testimonials h4.m-title {
     }
 
     .logo_agile {
-        padding: 20px 0 21px 46px;
+        display: none;
     }
 
-        .logo_agile h1 a {
-            font-size: 34px;
-        }
+    .logo_agile h1 a {
+        font-size: 34px;
+    }
 
     .agile_inner_drop_nav_info {
         min-width: 530px;
@@ -2420,6 +2388,15 @@ div#testimonials h4.m-title {
         letter-spacing: 1px;
     }
 
+    .navbar-inner nav .img-label {
+        opacity: 1;
+        color: #F45C5D;
+        letter-spacing: 1px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        height: 3.3rem;
+    }
+
     p {
         font-size: 14px;
     }
@@ -2430,15 +2407,15 @@ div#testimonials h4.m-title {
         padding: 20px 0 21px;
     }
 
-        .logo_agile h1 a {
-            font-size: 31px;
-        }
+    .logo_agile h1 a {
+        font-size: 31px;
+    }
 
-            .logo_agile h1 a img {
-                left: -37%;
-                width: 41%;
-                top: -11px;
-            }
+    .logo_agile h1 a img {
+        left: -37%;
+        width: 41%;
+        top: -11px;
+    }
 
     .navbar-light .navbar-nav .nav-link {
         font-size: 15px;
@@ -2578,11 +2555,11 @@ div#testimonials h4.m-title {
         font-size: 28px;
     }
 
-        .logo_agile h1 a img {
-            left: -29%;
-            width: 37%;
-            top: -11px;
-        }
+    .logo_agile h1 a img {
+        left: -29%;
+        width: 37%;
+        top: -11px;
+    }
 
     .logo_agile {
         padding: 20px 0 21px 18px;
@@ -2620,17 +2597,27 @@ div#testimonials h4.m-title {
 @media(max-width: 736px) {
     .logo_agile {
         padding: 10px 0 0;
+        display: none;
     }
 
-        .logo_agile h1 a {
-            font-size: 34px;
-        }
+    .logo_agile h1 a {
+        font-size: 34px;
+    }
 
-            .logo_agile h1 a img {
-                left: -36%;
-                width: 38%;
-                top: -8px;
-            }
+    .logo_agile h1 a img {
+        left: -36%;
+        width: 38%;
+        top: -8px;
+    }
+
+    .navbar-inner nav .img-label {
+        opacity: 1;
+        color: #F45C5D;
+        letter-spacing: 1px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        height: 3.3rem;
+    }
 
     .carousel-item.item4,
     .carousel-item.item3,
@@ -2791,10 +2778,6 @@ div#testimonials h4.m-title {
 
 @media(max-width: 600px) {
     .header-right ul li {
-        width: 32%;
-    }
-
-    .header-right ul li {
         font-size: 13px;
     }
 
@@ -2856,6 +2839,12 @@ div#testimonials h4.m-title {
 @media(max-width: 480px) {
     .header-right ul li {
         font-size: 12px;
+    }
+
+    .header-right ul li:nth-last-child(2) {
+        margin-top: .6rem;
+        margin-left: 20%;
+        width: 6.6rem;
     }
 
     .carousel-caption h2,
@@ -2928,6 +2917,13 @@ div#testimonials h4.m-title {
 }
 
 @media(max-width: 440px) {
+    .top_nav_right {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding: 0;
+    }
+
     .carousel-item.item4,
     .carousel-item.item3,
     .carousel-item.item2,
@@ -2954,7 +2950,7 @@ div#testimonials h4.m-title {
     }
 
     .agileits_search button {
-        width: 22%;
+        width: 30%;
     }
 
     h3.tittle-w3l {
@@ -2993,7 +2989,19 @@ div#testimonials h4.m-title {
 
 @media(max-width: 414px) {
     .header-right ul li {
+        margin: 0 auto;
         font-size: 11px;
+    }
+
+    .header-right ul li:nth-last-child(2) {
+        margin-top: .6rem;
+        margin-left: 18%;
+        width: 6.6rem;
+    }
+
+    .header-right ul li:last-child {
+        width: 6.6rem;
+        background-color: #4298d5;
     }
 
     .carousel-caption h2,
@@ -3040,17 +3048,13 @@ div#testimonials h4.m-title {
 }
 
 @media(max-width: 384px) {
-    .header-right ul li {
-        width: 46%;
-    }
-
     .logo_agile h1 a {
         font-size: 32px;
     }
 
         .logo_agile h1 a img {
             left: -32%;
-            width: 35%;
+            width: 30%;
             top: -8px;
         }
 
@@ -3059,11 +3063,14 @@ div#testimonials h4.m-title {
     }
 
     .agileits_search button {
-        padding: 10px 0;
+        padding: 6.5px 0;
         font-size: 15px;
     }
 
     .top_nav_right {
+        justify-content: center;
+        align-items: center;
+        display: flex;
         padding: 0;
     }
 
@@ -3445,11 +3452,11 @@ div#testimonials h4.m-title {
     margin-bottom: 0.8rem;
 }
 
-.back-links a {
-    color: #666;
-    font-weight: 400;
-    font-size: .9rem;
-}
+    .back-links a {
+        color: #666;
+        font-weight: 400;
+        font-size: .9rem;
+    }
 
 /*Format images*/
 .men-thumb-item img {
@@ -3586,12 +3593,12 @@ div#testimonials h4.m-title {
         padding-bottom: calc(0.75rem / 3);
     }
 
-    .form-label-group input:not(:placeholder-shown) ~ label {
-        padding-top: calc(0.75rem / 3);
-        padding-bottom: calc(0.75rem / 3);
-        font-size: 12px;
-        color: #777;
-    }
+        .form-label-group input:not(:placeholder-shown) ~ label {
+            padding-top: calc(0.75rem / 3);
+            padding-bottom: calc(0.75rem / 3);
+            font-size: 12px;
+            color: #777;
+        }
 
 /*Style list*/
 .validation-summary-errors ul {
@@ -3603,7 +3610,7 @@ div#testimonials h4.m-title {
     float: right;
 }
 
-.dropdown-menu li{
+.dropdown-menu li {
     width: 260px;
 }
 
@@ -3613,10 +3620,10 @@ div#testimonials h4.m-title {
     color: #666;
 }
 
-.ui-autocomplete li:hover {
-    background-color: #eee;
-    border: none;
-}
+    .ui-autocomplete li:hover {
+        background-color: #eee;
+        border: none;
+    }
 
 /*Top menu*/
 .btn--pypl {
@@ -3624,15 +3631,6 @@ div#testimonials h4.m-title {
     border: 1px solid #fafafa;
     border-radius: 20px;
     margin-left: 8px;
-}
-
-/*Page list*/
-.page-list {
-    margin-top: 1rem;
-}
-
-.page-list ul {
-    justify-content: center;
 }
 
 /*Introduce*/
@@ -3650,9 +3648,9 @@ div#testimonials h4.m-title {
     margin: auto;
 }
 
-.hearder-img img {
-    width: 45%;
-}
+    .hearder-img img {
+        width: 45%;
+    }
 
 .hearder-title {
     display: flex;
@@ -3687,26 +3685,26 @@ div#testimonials h4.m-title {
     margin-top: 2.2rem;
 }
 
-.content .list-content {
-    list-style: none;
-}
+    .content .list-content {
+        list-style: none;
+    }
 
-.content .list-content li {
-    line-height: 2rem;
-}
+        .content .list-content li {
+            line-height: 2rem;
+        }
 
-.content a {
-    text-decoration: none;
-}
+    .content a {
+        text-decoration: none;
+    }
 
 /*Product Description*/
 .horizontal-tab {
-   border-bottom: 1.2px solid #dedede;
+    border-bottom: 1.2px solid #dedede;
 }
 
-.horizontal-tab .resp-tabs-container {
-    margin-bottom: 1.2rem;
-}
+    .horizontal-tab .resp-tabs-container {
+        margin-bottom: 1.2rem;
+    }
 
 .product-desc-container .resp-tabs-list {
     list-style: none;
@@ -3714,13 +3712,13 @@ div#testimonials h4.m-title {
     margin-bottom: 1.2rem;
 }
 
-.product-desc-container .resp-tabs-list li {
-    display: inline-block;    
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #F45C5D;
-    border-bottom: 3px solid
-}
+    .product-desc-container .resp-tabs-list li {
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #F45C5D;
+        border-bottom: 3px solid;
+    }
 
 .product-desc-container .product-desc-content {
     font-size: 1.1rem;
@@ -3742,23 +3740,23 @@ div#testimonials h4.m-title {
     margin-top: 1rem;
 }
 
-.product-related-title span {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #2879c6;
-}
+    .product-related-title span {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #2879c6;
+    }
 
 .product-desc-bottom .view-all-product {
     background-color: #aaa;
     color: #FFF;
     padding: .4rem;
     border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px; 
+    border-bottom-right-radius: 20px;
 }
 
-.product-desc-bottom .view-all-product::after {
-    content: ' >>';
-}
+    .product-desc-bottom .view-all-product::after {
+        content: ' >>';
+    }
 
 /*Guarantee*/
 .guarantee {
@@ -3777,9 +3775,38 @@ div#testimonials h4.m-title {
     border-top: .9px solid #eee;
 }
 
-.list-guarantee li i {
-    padding: .4rem;
-    color: #FB9191;
-    font-size: 1.2rem;
+    .list-guarantee li i {
+        padding: .4rem;
+        color: #FB9191;
+        font-size: 1.2rem;
+    }
+
+/*Scroll*/
+.sortable-handler {
+    touch-action: none;
 }
 
+/*Pagination*/
+.pagination {
+    justify-content: center;
+}
+
+.pagination-container ul li {
+    padding: 1px 9px;
+    border: 1px solid #ddd;
+}
+
+.pagination li:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.pagination-container ul .active {
+    color: #6c9ed5;
+    border-bottom: 3px solid #459efe;
+}
+
+/*Login and sigin of the use*/
+.header-most-top {
+    margin: auto 0;
+}

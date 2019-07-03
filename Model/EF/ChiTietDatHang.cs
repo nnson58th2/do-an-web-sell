@@ -11,13 +11,12 @@ namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    
     public partial class ChiTietDatHang
     {
         public long MaDon { get; set; }
         public long MaSP { get; set; }
         public Nullable<int> SoLuong { get; set; }
-        [DisplayFormat(DataFormatString = "{0:#,##0}", ApplyFormatInEditMode = true)]
         public Nullable<decimal> DonGia { get; set; }
     
         public virtual DonDatHang DonDatHang { get; set; }

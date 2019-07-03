@@ -1861,10 +1861,6 @@
     <Content Include="assets\client\css\popuo-box.css" />
     <Content Include="assets\client\css\style.css" />
     <Content Include="assets\client\images\arrow.png" />
-    <Content Include="assets\client\images\b2.jpg" />
-    <Content Include="assets\client\images\b3.jpg" />
-    <Content Include="assets\client\images\b4.jpg" />
-    <Content Include="assets\client\images\bg.jpg" />
     <Content Include="assets\client\images\close_1.png" />
     <Content Include="assets\client\images\drop_arrow.png" />
     <Content Include="assets\client\images\facebook.png" />
@@ -1898,14 +1894,18 @@
     <Content Include="assets\client\images\quat-senko.jpg" />
     <Content Include="assets\client\images\search.png" />
     <Content Include="assets\client\images\skype.png" />
+    <Content Include="assets\client\images\slide-img-dien-lanh.jpg" />
+    <Content Include="assets\client\images\slide-img-dien-tu-dien-lanh.png" />
     <Content Include="assets\client\images\slide-img-gia-dung-690-300.png" />
     <Content Include="assets\client\images\slide-img-may-giat-panasonic-690-300.png" />
+    <Content Include="assets\client\images\slide-img-mua-may-lanh.jpg" />
     <Content Include="assets\client\images\slide-img-tu-lanh-may-giat-690-300.png" />
     <Content Include="assets\client\images\slide-img-mua.png" />
     <Content Include="assets\client\images\tivi-samsung-32-inch.jpg" />
     <Content Include="assets\client\images\tivi-samsung.png" />
     <Content Include="assets\client\images\tu-lanh-toshiba.jpg" />
     <Content Include="assets\client\images\twitter.png" />
+    <Content Include="assets\client\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="assets\client\images\zalo.png" />
     <Content Include="assets\client\js\bootstrap.bundle.js" />
     <Content Include="assets\client\js\bootstrap.bundle.min.js" />
@@ -1994,18 +1994,6 @@
     <Content Include="Areas\admin\Views\menu\create.cshtml" />
     <Content Include="Areas\admin\Views\menu\edit.cshtml" />
     <Content Include="Areas\admin\Views\menu\index.cshtml" />
-    <Content Include="assets\client\webfonts\fa-brands-400.eot" />
-    <Content Include="assets\client\webfonts\fa-brands-400.ttf" />
-    <Content Include="assets\client\webfonts\fa-brands-400.woff" />
-    <Content Include="assets\client\webfonts\fa-brands-400.woff2" />
-    <Content Include="assets\client\webfonts\fa-regular-400.eot" />
-    <Content Include="assets\client\webfonts\fa-regular-400.ttf" />
-    <Content Include="assets\client\webfonts\fa-regular-400.woff" />
-    <Content Include="assets\client\webfonts\fa-regular-400.woff2" />
-    <Content Include="assets\client\webfonts\fa-solid-900.eot" />
-    <Content Include="assets\client\webfonts\fa-solid-900.ttf" />
-    <Content Include="assets\client\webfonts\fa-solid-900.woff" />
-    <Content Include="assets\client\webfonts\fa-solid-900.woff2" />
     <Content Include="assets\admin\scss\sb-admin.scss" />
     <Content Include="assets\admin\scss\_cards.scss" />
     <Content Include="assets\admin\scss\_footer.scss" />
@@ -2159,6 +2147,18 @@
     <Content Include="assets\admin\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="assets\admin\vendor\jquery\jquery.min.map" />
     <Content Include="assets\admin\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="assets\client\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\client\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\client\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\client\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\client\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\client\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\client\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\client\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\client\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\client\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\client\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\client\webfonts\fa-solid-900.woff2" />
     <None Include="Properties\PublishProfiles\DoAnWebSell.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -2201,6 +2201,7 @@
     <Content Include="Views\user\register.cshtml" />
     <Content Include="Views\user\login.cshtml" />
     <Content Include="Views\product\Search.cshtml" />
+    <Content Include="Views\product\productAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

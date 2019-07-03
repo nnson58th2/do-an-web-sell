@@ -42,8 +42,8 @@ namespace DoAnWebSell.Areas.admin.Controllers
             if (donDatHang == null)
             {
                 return HttpNotFound();
-            }
-            ViewBag.MaKH = new SelectList(db.KhachHang, "MaKH", "TenKH", donDatHang.MaKH);
+            }        
+
             ViewBag.MaNV = new SelectList(db.NhanVien, "MaNV", "TenNV", donDatHang.MaNV);
             return View(donDatHang);
         }
@@ -59,37 +59,10 @@ namespace DoAnWebSell.Areas.admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaKH = new SelectList(db.KhachHang, "MaKH", "HoKH", donDatHang.MaKH);
+            ViewBag.MaKH = new SelectList(db.KhachHang, "MaKH", "HoTenKH", donDatHang.MaKH);
             ViewBag.MaNV = new SelectList(db.NhanVien, "MaNV", "HoNV", donDatHang.MaNV);
             return View(donDatHang);
-        }
-
-        // GET: admin/dondathang/Delete/5
-
-        //public ActionResult delete(long? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    DonDatHang donDatHang = db.DonDatHang.Find(id);
-        //    if (donDatHang == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(donDatHang);
-        //}
-
-        //// POST: admin/dondathang/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(long id)
-        //{
-        //    DonDatHang donDatHang = db.DonDatHang.Find(id);
-        //    db.DonDatHang.Remove(donDatHang);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        }        
 
         [HttpDelete]
         public ActionResult delete(int id)
@@ -97,14 +70,5 @@ namespace DoAnWebSell.Areas.admin.Controllers
             new OrderDao().Delete(id);
             return RedirectToAction("index");
         }
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
     }
 }

@@ -9,7 +9,11 @@
     <meta name="keywords" content="Website thương mại điện tử chuyên mua bán các loại đồ điện tử da dụng" />
     <meta name="author" content="Nguyễn Như Sơn">
 
-    <link rel="icon" href="/assets/client/images/icon-compra.svg">
+    <meta property="og:url" content="http://dodientugiadung.azurewebsites.net">
+    <!-- Helpers -->
+    <link rel="canonical" href="http://dodientugiadung.azurewebsites.net">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/client/images/icon-compra.svg" type="image/x-icon" />
 
     <script>
         addEventListener("load", function () {
@@ -21,8 +25,11 @@
         }
     </script>
     <!-- //Meta tag Keywords -->
+
     <!-- Custom-Files -->
+    <!-- Bootstrap css -->
     <link href="/assets/client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/assets/client/css/jquery-ui.css" rel="stylesheet" />
     <!-- Main css -->
     <link rel="stylesheet" href="/assets/client/css/fontawesome-all.css">
@@ -34,21 +41,12 @@
     <link rel="stylesheet" href="/assets/client/css/flexslider.css" type="text/css" media="screen" />
     <!-- menu style -->
     <!-- //Custom-Files -->
-    <!-- Bootstrap css -->
-    <link href="/assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
-
-    @*Script and Jquery*@
-    <script src="/assets/client/js/jquery-2.2.3.min.js"></script>
-
-    <script src="/assets/client/js/jquery-ui.js"></script>
-
-    <script src="/assets/client/js/SmoothScroll.min.js"></script>
 
     <!-- web fonts -->
     <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
           rel="stylesheet">
-    <!-- //web fonts -->
+    <!-- //web fonts --> 
 
 </head>
 
@@ -56,14 +54,14 @@
     <!-- top-header -->
     <div class="agile-main-top">
         <div class="container-fluid">
-            <div class="row main-top-w3l py-2">
-                <div class="col-lg-4 header-most-top">
+            <div class="row main-top-w3l py-1">
+                <div class="col-sm-12 col-md-6 header-most-top">
                     <p class="text-white text-lg-left text-center">
                         Ưu đãi & Giảm giá hàng đầu khu vực
-                        <i class="fas fa-shopping-cart ml-1"></i>
+                        <i class="fa fa-shopping-cart ml-1"></i>
                     </p>
                 </div>
-                <div class="col-lg-8 header-right mt-lg-0 mt-2">
+                <div class="col-sm-12 col-lg-6 header-right d-flex mt-lg-0 mt-2">
                     <!-- header lists -->
                     @{Html.RenderAction("TopMenu", "home"); }
                     <!-- //header lists -->
@@ -121,22 +119,15 @@
             </p>
         </div>
     </div>
-    <!-- //copyright -->
+    <!-- //copyright -->  
 
-    @*Script and Jquery*@
-    <script src="/assets/client/js/bootstrap.js"></script>
+    <!-- js-files -->
+    <script src="/assets/client/js/jquery-2.2.3.min.js"></script>
+    <script src="/assets/client/js/jquery-ui.js"></script>
+    <!-- //jquery -->
 
-    <script src="/assets/client/js/jquery.magnific-popup.js"></script>
-
-    <script src="/assets/client/js/jquery.flexslider.js"></script>
-
+    @*Script and Jquery*@ 
     <script src="/assets/client/js/imagezoom.js"></script>
-
-    <script src="/assets/client/js/scroll.js"></script>
-
-    <script src="/assets/client/js/move-top.js"></script>
-
-    <script src="/assets/client/js/easing.js"></script>
 
     <!-- nav smooth scroll -->
     <script>
@@ -155,6 +146,49 @@
     </script>
     <!-- //nav smooth scroll -->
 
+    <!-- popup modal (for location)-->
+    <script src="/assets/client/js/jquery.magnific-popup.js"></script>
+    <script>
+		$(document).ready(function () {
+			$('.popup-with-zoom-anim').magnificPopup({
+				type: 'inline',
+				fixedContentPos: false,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeBtnInside: true,
+				preloader: false,
+				midClick: true,
+				removalDelay: 300,
+				mainClass: 'my-mfp-zoom-in'
+			});
+
+		});
+    </script>
+    <!-- //popup modal (for location)-->
+
+    <!-- scroll seller -->
+    <script src="/assets/client/js/scroll.js"></script>
+    <!-- //scroll seller -->
+    <!-- smoothscroll -->
+    <script src="/assets/client/js/SmoothScroll.min.js"></script>
+    <!-- //smoothscroll -->
+    <!-- start-smooth-scrolling -->
+    <script src="/assets/client/js/move-top.js"></script>
+    <script src="/assets/client/js/easing.js"></script>
+    <script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+    </script>
+    <!-- //end-smooth-scrolling -->
+
+    <script src="/assets/client/js/jquery.flexslider.js"></script>
     <script>
         // Can also be used with $(document).ready()
         $(window).load(function () {
@@ -165,18 +199,7 @@
         });
     </script>
     <!-- //FlexSlider-->
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
 
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script>
-    <!-- //end-smooth-scrolling -->
     <!-- smooth-scrolling-of-move-up -->
     <script type="text/javascript">
         $(document).ready(function () {
@@ -184,6 +207,10 @@
         });
     </script>
     <a href="#" id="toTop"><span id="toTopHover"></span></a>
+
+    <!-- for bootstrap working -->
+    <script src="/assets/client/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
     <!-- //smooth-scrolling-of-move-up -->
     @Scripts.Render("~/bundles/controller");
     @RenderSection("jsFooter", required: false)

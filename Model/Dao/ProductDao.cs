@@ -35,6 +35,12 @@ namespace Model.Dao
             return model.OrderBy(x => x.TenSP).ToPagedList(page, pageSize);
         }
 
+        public IEnumerable<SanPham> ListAllProduct(int page, int pageSize)
+        {
+            IQueryable<SanPham> model = db.SanPham;
+            return model.OrderBy(x => x.TenSP).ToPagedList(page, pageSize);
+        }
+
         public List<SanPham> ListNewProduct(int top)
         {
             return db.SanPham.OrderByDescending(x => x.NgayTao).Take(top).ToList();
@@ -63,7 +69,7 @@ namespace Model.Dao
             return db.SanPham.Where(x => x.MaSP != productId && x.DanhMucSanPhamID == product.DanhMucSanPhamID).ToList();
         }
 
-        public List<ProductViewModel> Search(string keyword, ref int totalRecord, int pageIndex = 1, int pageSize = 2)
+        public List<ProductViewModel> Search(string keyword, ref int totalRecord, int pageIndex = 1, int pageSize = 4)
         {
             totalRecord = db.SanPham.Where(x => x.TenSP == keyword).Count();
             var model = (from x in db.SanPham

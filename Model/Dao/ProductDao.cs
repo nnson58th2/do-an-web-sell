@@ -63,10 +63,10 @@ namespace Model.Dao
             return model;
         }
 
-        public List<SanPham> ListRelatedProducts(long productId)
+        public List<SanPham> ListRelatedProducts(long productId, int top)
         {
             var product = db.SanPham.Find(productId);
-            return db.SanPham.Where(x => x.MaSP != productId && x.DanhMucSanPhamID == product.DanhMucSanPhamID).ToList();
+            return db.SanPham.Where(x => x.MaSP != productId && x.DanhMucSanPhamID == product.DanhMucSanPhamID).Take(top).ToList();
         }
 
         public List<ProductViewModel> Search(string keyword, ref int totalRecord, int pageIndex = 1, int pageSize = 4)

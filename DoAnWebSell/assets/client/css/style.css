@@ -421,14 +421,14 @@ h3.tittle-w3l {
 }
 
 .snipcart-details a.btn {
-    font-size: 13px;
+    font-size: .72rem;
     color: #fff;
     background: #0879c9;
     text-decoration: none;
     border: none;
     border-radius: 0;
     text-transform: uppercase;
-    padding: 13px;
+    padding: 10px;
     outline: none;
     letter-spacing: 1px;
     box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
@@ -442,9 +442,9 @@ h3.tittle-w3l {
     -ms-transition: 0.5s all;
 }
 
-    .snipcart-details a.btn:hover {
-        background: #000;
-    }
+.snipcart-details a.btn:hover {
+    background: #000;
+}
 
 .product_list_header input.button {
     color: #fff;
@@ -613,11 +613,11 @@ h3.tittle-w3l {
     }
 
 .link-product-add-cart {
-    background: hsla(205, 92%, 41%, 0.72);
+    background: hsla(205, 82%, 45%, 0.72);
     color: #fff;
     display: inline-block;
     height: 37px;
-    font-size: 15px;
+    font-size: .8rem;
     letter-spacing: 1px;
     line-height: 34px;
     border-radius: 4px;
@@ -668,7 +668,7 @@ h3.tittle-w3l {
 }
 
 .men-thumb-item:hover .inner-men-cart-pro .link-product-add-cart {
-    top: 81%;
+    top: 66%;
 }
 
 .link-product-add-cart:hover {
@@ -918,27 +918,34 @@ h3.heading-tittle {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.19);
 }
 
-.item-info-product h4 a {
-    color: #000;
-    font-size: 17px;
+.item-info-product > label {
+    height: 33px;
+    overflow: hidden;   
+}
+
+.item-info-product > label a {
+    color: #333;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
     letter-spacing: 1px;
 }
 
-span.item_price {
-    font-size: 1.5rem;
+strong.item_price {
+    font-size: 1.1rem;    
     color: #d60404;
+    font-family: sans-serif;
 }
 
 .info-product-price {
     width: 100%;
-    height: 4.2rem;
+    height: 2.2rem;
 }
 
-    .info-product-price del {
-        font-weight: 300;
-        margin-left: 13px;
-        font-size: 15px;
-    }
+.info-product-price del {
+    font-weight: 300;
+    margin-left: 13px;
+    font-size: .8rem;
+}
 
 .product-sec1.product-sec2 {
     background: #F45C5D;
@@ -3472,8 +3479,8 @@ div#testimonials h4.m-title {
 
 /*Format images*/
 .men-thumb-item img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 }
 
 /*button*/

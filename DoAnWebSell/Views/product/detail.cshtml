@@ -128,7 +128,7 @@
                     @foreach (var item in relatedProducts)
                     {
                         var url = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
-                        <div class="col-md-4 product-men mt-5">
+                        <div class="col-md-3 product-men mt-5">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item text-center">
                                     <img src="/assets/client/images/@item.HinhAnh" alt="@item.TenSP">
@@ -141,36 +141,36 @@
 
                                 </div>
                                 <div class="item-info-product text-center border-top mt-4">
-                                    <h4 class="pt-1">
+                                    <label class="pt-2">
                                         <a href="@url">@item.TenSP</a>
-                                    </h4>
+                                    </label>
                                     <div class="info-product-price">
                                         @if (item.GiaKhuyenMai != null)
                                         {
                                             if (item.GiaKhuyenMai.HasValue)
                                             {
-                                                <span class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</span>
+                                                <strong class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</strong>
                                                         <del>@item.DonGia.Value.ToString("N0")₫</del>
                                             }
                                             else
                                             {
-                                                <span class="item_price">Liên hệ</span>
+                                                <strong class="item_price">Liên hệ</strong>
                                             }
                                         }
                                         else
                                         {
                                             if (item.DonGia.HasValue)
                                             {
-                                                <span class="item_price">@item.DonGia.Value.ToString("N0")₫</span>
+                                                <strong class="item_price">@item.DonGia.Value.ToString("N0")₫</strong>
                                             }
                                             else
                                             {
-                                                <span class="item_price">Liên hệ</span>
+                                                <strong class="item_price">Liên hệ</strong>
                                             }
                                         }
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <h4><a href="/them-gio-hang?productId=@item.MaSP&quantity=1" class="btn btn-cart">Thêm vào giỏ</a></h4>
+                                        <h5><a href="/them-gio-hang?productId=@item.MaSP&quantity=1" class="btn btn-cart">Thêm vào giỏ</a></h5>
                                     </div>
                                 </div>
                             </div>

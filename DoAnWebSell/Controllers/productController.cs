@@ -73,8 +73,9 @@ namespace DoAnWebSell.Controllers
 
             int maxPage = 5;
             int totalPage = 0;
+            double quantity = (((double)totalRecord) / pageSize);
 
-            totalPage = (int)Math.Round((double)(totalRecord / pageSize));
+            totalPage = (int)Math.Ceiling(quantity);
             ViewBag.TotalPage = totalPage;
 
             ViewBag.MaxPage = maxPage;
@@ -85,11 +86,11 @@ namespace DoAnWebSell.Controllers
             return View(model);
         }
 
-        public ActionResult detail(long id)
+        public ActionResult detail(long id, int top = 4)
         {
             var product = new ProductDao().ViewDetail(id);
             ViewBag.Category = new ProductCategoryDao().ViewDetail(product.DanhMucSanPhamID.Value);
-            ViewBag.RelatedProducts = new ProductDao().ListRelatedProducts(id);
+            ViewBag.RelatedProducts = new ProductDao().ListRelatedProducts(id, top);
             return View(product);
         }
     }

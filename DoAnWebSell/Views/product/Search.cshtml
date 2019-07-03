@@ -25,36 +25,36 @@
                                 </div>
                             </div>
                             <div class="item-info-product text-center border-top mt-4">
-                                <h4 class="pt-1">
-                                    <a href="#">@item.Name</a>
-                                </h4>
+                                <label class="pt-2">
+                                    <a href="@link">@item.Name</a>
+                                </label>
                                 <div class="info-product-price">
                                     @if (item.PromotionPrice != null)
                                     {
                                         if (item.PromotionPrice.HasValue)
                                         {
-                                            <span class="item_price">@item.PromotionPrice.Value.ToString("N0")₫</span>
+                                            <strong class="item_price">@item.PromotionPrice.Value.ToString("N0")₫</strong>
                                             <del>@item.Price.Value.ToString("N0")₫</del>
                                         }
                                         else
                                         {
-                                            <span class="item_price">Liên hệ</span>
+                                            <strong class="item_price">Liên hệ</strong>
                                         }
                                     }
                                     else
                                     {
                                         if (item.Price.HasValue)
                                         {
-                                            <span class="item_price">@item.Price.Value.ToString("N0")₫</span>
+                                            <strong class="item_price">@item.Price.Value.ToString("N0")₫</strong>
                                         }
                                         else
                                         {
-                                            <span class="item_price">Liên hệ</span>
+                                            <strong class="item_price">Liên hệ</strong>
                                         }
                                     }
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <h4><a href="/them-gio-hang?productId=@item.ID&quantity=1" class="button btn">Thêm vào giỏ</a></h4>
+                                    <h5><a href="/them-gio-hang?productId=@item.ID&quantity=1" class="button btn">Thêm vào giỏ</a></h5>
                                 </div>
                             </div>
                         </div>

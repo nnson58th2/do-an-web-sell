@@ -70,5 +70,15 @@ namespace DoAnWebSell.Areas.admin.Controllers
             new OrderDao().Delete(id);
             return RedirectToAction("index");
         }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new OrderDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
     }
 }

@@ -52,5 +52,15 @@ namespace Model.Dao
         {
             return db.DonDatHang.Find(id);
         }
+
+        public int ChangeStatus(long id)
+        {
+            var order = db.DonDatHang.Find(id);
+
+            int statusConfirmation = 2;
+            order.TrangThai = statusConfirmation;
+            db.SaveChanges();
+            return statusConfirmation;            
+        }
     }
 }

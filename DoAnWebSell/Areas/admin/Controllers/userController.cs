@@ -73,12 +73,12 @@ namespace DoAnWebSell.Areas.admin.Controllers
             {
                 var dao = new UserDao();
 
-                //Kiểm tra người dùng có nhập password vào không
-                if (!string.IsNullOrEmpty(user.Password))
-                {
-                    var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
-                    user.Password = encryptedMd5Pas;
-                }
+                ////Kiểm tra người dùng có nhập password vào không
+                //if (!string.IsNullOrEmpty(user.Password))
+                //{
+                //    var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
+                //    user.Password = encryptedMd5Pas;
+                //}
 
                 var result = dao.Update(user);
                 if (result)

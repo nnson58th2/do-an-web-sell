@@ -4,10 +4,15 @@
 @{
     ViewBag.Title = "Danh sách đơn đặt hàng";
     Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+    string trangThai = "";
 }
 
 @section header {
     Danh sách đơn đặt hàng
+}
+
+@section jsFooter {
+    <script src="/assets/admin/js/controller/orderController.js"></script>
 }
 
 <div class="card-body">
@@ -46,7 +51,19 @@
                         <td>@item.DiaChiGiaoHang</td>
                         <td>@item.SoDienThoai</td>
                         <td>@item.NgayDat</td>
-                        <td>@item.TrangThai</td>
+                        <td>
+                            <a href="#" class="btn-changeStatus btn-secondary" data-id="@item.MaDon">
+                                @if (item.TrangThai == 1)
+                                {
+                                    trangThai = "Mới đặt";
+                                }
+                                else
+                                {
+                                    trangThai = "Đã xác nhận";
+                                }
+                                @trangThai
+                            </a>
+                        </td>
                         <td>
                             <a class="format-function-edit" href="/admin/dondathang/edit/@item.MaDon"><i class="fas fa-edit"></i> Chỉnh sửa</a>
                             <a class="format-function-detail" href="/admin/dondathang/details/@item.MaDon"><i class="fas fa-info"></i> Chi tiết</a>

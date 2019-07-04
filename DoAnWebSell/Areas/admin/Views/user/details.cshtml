@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Thông tin chi tiết tài khoản";
     Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
-    string trangThai = "";
 }
 
 @section header {
@@ -36,14 +35,7 @@
                 </tr>
                 <tr>
                     <td><label class="display-label">Trạng thái:</label></td>
-                    <td>
-                        @{if (Model.TrangThai == true)
-                            { trangThai = "Hoạt động"; }
-                            else
-                            { trangThai = "Bị khóa"; }
-                        }
-                        @trangThai
-                    </td>
+                    <td>@(Model.TrangThai ? "Hoạt động" : "Bị khóa")</td>
                 </tr>
             </table>
         </td>

@@ -62,7 +62,15 @@
                 }
             </tbody>
         </table>
-        @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))
+        @Html.PagedListPager(Model, page => Url.Action("index",
+                     new { page, @searchString = @ViewBag.Search }), new PagedListRenderOptions
+                     {
+                         DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                         DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                         DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                         DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                         MaximumPageNumbersToDisplay = 5
+                     })
     </div>
 </div>
 

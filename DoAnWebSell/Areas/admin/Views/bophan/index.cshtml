@@ -40,7 +40,7 @@
                             <a class="format-function-edit" href="/admin/bophan/edit/@item.MaBP"><i class="fas fa-edit"></i> Chỉnh sửa</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaBP }, new AjaxOptions
                        {
-                           Confirm = "Bạn có muốn xóa bộ phận này?",
+                           Confirm = "Dữ liệu liên quan có thể bị mất \nBạn có muốn xóa bộ phận này?",
                            OnComplete = "$(' #row_" + @item.MaBP + " ').remove()",
                            HttpMethod = "Delete"
                        })

@@ -39,7 +39,7 @@
                     <th>Tên sản phẩm</th>
                     <th>Số lượng</th>
                     <th>Đơn giá</th>
-                    <th>Giá khuyến mãi</th>
+                    <th>Khuyến mãi</th>
                     <th>Trạng thái</th>
                     <th>Tạo bởi</th>
                     <th>Chức năng</th>
@@ -50,7 +50,7 @@
                 {
                     <tr id="row_@item.MaSP">
                         <td>@item.MaSP</td>
-                        <td style="text-align: center;"><img src="/assets/client/images/@item.HinhAnh" width="70" /></td>
+                        <td style="text-align: center;"><img src="/assets/client/images/@item.HinhAnh" width="65" /></td>
                         <td>@item.TenSP</td>
                         <td>@item.SoLuong</td>
                         <td>@item.DonGia</td>
@@ -81,6 +81,15 @@
                 }
             </tbody>
         </table>
-        @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))
+        <div class="clear"></div>
+        @Html.PagedListPager(Model, page => Url.Action("index",
+                     new { page, @searchString = @ViewBag.Search }), new PagedListRenderOptions
+                     {
+                         DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                         DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                         DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                         DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                         MaximumPageNumbersToDisplay = 5
+                     })
     </div>
 </div>

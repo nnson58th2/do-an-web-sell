@@ -71,7 +71,7 @@
                             <a class="format-function-detail" href="/admin/nhanvien/details/@item.MaNV"><i class="fas fa-info"></i> Chi tiết</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaNV }, new AjaxOptions
                        {
-                           Confirm = "Bạn có muốn xóa nhân viên này?",
+                           Confirm = "Dữ liệu liên quan có thể bị mất \nBạn có muốn xóa nhân viên này?",
                            OnComplete = "$(' #row_" + @item.MaNV + " ').remove()",
                            HttpMethod = "Delete"
                        })
@@ -81,6 +81,15 @@
                 }
             </tbody>
         </table>
-        @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))
+        <div class="clear"></div>
+        @Html.PagedListPager(Model, page => Url.Action("index",
+                     new { page, @searchString = @ViewBag.Search }), new PagedListRenderOptions
+                     {
+                         DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                         DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                         DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                         DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                         MaximumPageNumbersToDisplay = 5
+                     })
     </div>
 </div>

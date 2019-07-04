@@ -57,7 +57,7 @@
                             <a class="format-function-edit" href="/admin/nhacungcap/edit/@item.MaNCC"><i class="fas fa-edit"></i> Chỉnh sửa</a>                            
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaNCC }, new AjaxOptions
                        {
-                           Confirm = "Bạn có muốn xóa nhà cung cấp này?",
+                           Confirm = "Dữ liệu liên quan có thể bị mất \nBạn có muốn xóa nhà cung cấp này?",
                            OnComplete = "$(' #row_" + @item.MaNCC + " ').remove()",
                            HttpMethod = "Delete"
                        })

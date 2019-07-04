@@ -55,7 +55,7 @@
                             <a class="format-function-detail" href="/admin/khohang/details/@item.MaKho"><i class="fas fa-info"></i> Chi tiết</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaKho }, new AjaxOptions
                        {
-                           Confirm = "Bạn có muốn xóa kho hàng này?",
+                           Confirm = "Dữ liệu liên quan có thể bị mất \nBạn có muốn xóa kho hàng này?",
                            OnComplete = "$(' #row_" + @item.MaKho + " ').remove()",
                            HttpMethod = "Delete"
                        })
@@ -65,6 +65,15 @@
                 }
             </tbody>
         </table>
-        @Html.PagedListPager(Model, page => Url.Action("index", new { page, @searchString = @ViewBag.Search }))
+        <div class="clear"></div>
+        @Html.PagedListPager(Model, page => Url.Action("index",
+                     new { page, @searchString = @ViewBag.Search }), new PagedListRenderOptions
+                     {
+                         DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                         DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                         DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                         DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                         MaximumPageNumbersToDisplay = 5
+                     })
     </div>
 </div>

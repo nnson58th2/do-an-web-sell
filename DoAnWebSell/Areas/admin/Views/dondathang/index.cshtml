@@ -52,7 +52,7 @@
                             <a class="format-function-detail" href="/admin/dondathang/details/@item.MaDon"><i class="fas fa-info"></i> Chi tiết</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaDon }, new AjaxOptions
                        {
-                           Confirm = "Bạn có muốn xóa đơn hàng này?",
+                           Confirm = "Dữ liệu liên quan có thể bị mất \nBạn có muốn xóa đơn hàng này?",
                            OnComplete = "$(' #row_" + @item.MaDon + " ').remove()",
                            HttpMethod = "Delete"
                        })

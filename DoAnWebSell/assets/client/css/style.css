@@ -2960,16 +2960,6 @@ div#testimonials h4.m-title {
 }
 
 @media(max-width: 768px) {    
-    /*.header-right ul li:nth-last-child(2) {
-        margin-top: .6rem;
-        width: 56%;
-    }
-
-    .header-right ul li:last-child {
-        right: 0;
-        width: 36%;
-    }*/
-
     .header-right ul li:nth-last-child(2) {
         font-size: .8rem;
         margin-top: .6rem;

@@ -64,12 +64,11 @@
                 <div class="wrapper">
                     <!-- first section -->
                     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-                        <h3 class="heading-tittle text-center font-italic">Sản phẩm mới</h3>
                         <div class="row">
                             @foreach (var item in listNewProduct)
                             {
                                 var url = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
-                                <div class="col-md-3 product-men mt-5">
+                                <div class="col-md-3 product-men mt-1">
                                     <div class="men-pro-item simpleCart_shelfItem">
                                         <div class="men-thumb-item text-center">
                                             <img src="/assets/client/images/@item.HinhAnh" alt="@item.TenSP">
@@ -272,23 +271,23 @@
                                                 {
                                                     if (item.GiaKhuyenMai.HasValue)
                                                     {
-                                                        <span class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</span>
-                                                        <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                                        <strong class="item_price" style="font-size: 1rem;">@item.GiaKhuyenMai.Value.ToString("N0")₫</strong>
+                                                        <del style="font-size: .8rem;">@item.DonGia.Value.ToString("N0")₫</del>
                                                     }
                                                     else
                                                     {
-                                                        <span class="item_price">Liên hệ</span>
+                                                        <strong class="item_price" style="font-size: 1rem;">Liên hệ</strong>
                                                     }
                                                 }
                                                 else
                                                 {
                                                     if (item.DonGia.HasValue)
                                                     {
-                                                        <span class="item_price">@item.DonGia.Value.ToString("N0")₫</span>
+                                                        <strong class="item_price" style="font-size: 1rem;">@item.DonGia.Value.ToString("N0")₫</strong>
                                                     }
                                                     else
                                                     {
-                                                        <span class="item_price">Liên hệ</span>
+                                                        <strong class="item_price" style="font-size: 1rem;">Liên hệ</strong>
                                                     }
                                                 }
                                             </div>

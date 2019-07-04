@@ -22,7 +22,7 @@ namespace DoAnWebSell.Controllers
             return View(model);
         }
 
-        public ActionResult Search(string keyword, int page = 1, int pageSize = 1)
+        public ActionResult Search(string keyword, int page = 1, int pageSize = 2)
         {
             int totalRecord = 0;
             var model = new ProductDao().Search(keyword, ref totalRecord, page, pageSize);
@@ -33,7 +33,9 @@ namespace DoAnWebSell.Controllers
             int maxPage = 5;
             int totalPage = 0;
 
-            totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
+            double quantity = ((double)(totalRecord) / (pageSize));
+
+            totalPage = (int)Math.Ceiling(quantity);
             ViewBag.TotalPage = totalPage;
             ViewBag.MaxPage = maxPage;
             ViewBag.First = 1;

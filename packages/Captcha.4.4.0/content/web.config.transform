@@ -8,7 +8,7 @@
 	<system.web>
 		<httpHandlers>
 			<!-- Register the HttpHandler used for BotDetect Simple API requests -->
-			<add verb="GET" path="simple-captcha-endpoint.ashx" type="BotDetect.Web.SimpleCaptchaHandler, BotDetect"/>
+			<add verb="GET" path="BotDetectCaptcha.ashx" type="BotDetect.Web.SimpleCaptchaHandler, BotDetect"/>
 			
 			<!-- Register the HttpHandler used for BotDetect Traditional API requests --> 
 			<!-- Remove this comment to register register Traditional API HttpHandler
@@ -35,7 +35,7 @@
 		<handlers>
 			<!-- Register the HttpHandler used for BotDetect Simple API requests (IIS 7.0+) -->
 			<remove name="BotDetectCaptchaHandler"/>
-			<add name="BotDetectCaptchaHandler" preCondition="integratedMode" verb="GET" path="simple-captcha-endpoint.ashx" type="BotDetect.Web.SimpleCaptchaHandler, BotDetect"/>
+			<add name="BotDetectCaptchaHandler" preCondition="integratedMode" verb="GET" path="BotDetectCaptcha.ashx" type="BotDetect.Web.SimpleCaptchaHandler, BotDetect"/>
 
 			<!-- Register the HttpHandler used for BotDetect Traditional API requests (IIS 7.0+) -->
 			<!-- Remove this comment to register Traditional API HttpHandler

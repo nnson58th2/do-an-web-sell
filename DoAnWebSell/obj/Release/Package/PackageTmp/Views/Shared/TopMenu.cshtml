@@ -6,7 +6,7 @@
             <i class="fa fa-truck mr-2"></i>Theo dõi đơn hàng
         </a>
     </li>
-    <li class="text-center text-white mr-3">
+    <li class="text-center text-white">
         <i class="fa fa-phone mr-2"></i> 001 234 5678
     </li>
     @{
@@ -17,14 +17,14 @@
     {
         foreach (var item in Model)
         {
-            <li class="text-center pt-2 pb-2 btn--pypl">
+            <li class="text-center pt-2 pb-2 ml-3 btn--pypl">
                 <a href="@item.Link" target="@item.Target" class="text-white">@item.Text</a>
             </li>
         }
     }
     else
     {
-        <li class="font-weight-bold text-capitalize text-white pl-4"><i class="fa fa-user-circle" style="font-size:1.3rem;"></i> @session.Name</li>
-        <li><a href="/user/logout" class="btn btn-danger" style="font-size: .8rem">Đăng xuất</a></li>
+        <li class="font-weight-bold text-capitalize text-white"><i class="fa fa-user-circle" style="font-size:1.3rem;"></i> @session.Name</li>
+        <li><a href="/user/logout"><img src="/assets/admin/images/exit-logout.svg" title="Đăng xuất" width="20" /></a></li>
     }
 </ul>

@@ -6,5 +6,5 @@ The BotDetect ASP.NET CAPTCHA NuGet package has been added to your project.
 2. Captcha integration instructions:
    https://captcha.com/doc/aspnet/captcha-getting-started.html
 
-3. You can download BotDetect ASP.NET Captcha code examples here:
+3. You can download BotDetect ASP.NET (Core) Captcha code examples here:
    https://captcha.com/captcha-download.html?version=aspnet

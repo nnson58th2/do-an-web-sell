@@ -44,12 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BotDetect, Version=4.4.1.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Captcha.4.4.1\lib\net35\BotDetect.dll</HintPath>
+    <Reference Include="BotDetect, Version=4.4.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.4.0\lib\net35\BotDetect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="BotDetect.Web.Mvc, Version=4.4.1.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Captcha.4.4.1\lib\net35\BotDetect.Web.Mvc.dll</HintPath>
+    <Reference Include="BotDetect.Web.Mvc, Version=4.4.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.4.0\lib\net35\BotDetect.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -249,8 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\admin\404.html" />
-    <Content Include="assets\admin\blank.html" />
-    <Content Include="assets\admin\charts.html" />
     <Content Include="assets\admin\css\sb-admin.css" />
     <Content Include="assets\admin\css\sb-admin.min.css" />
     <Content Include="assets\admin\css\style.css" />
@@ -263,7 +261,6 @@
     <Content Include="assets\admin\images\exit-logout.svg" />
     <Content Include="assets\admin\images\nv-xuan-suong.jpg" />
     <Content Include="assets\admin\images\user-admin.svg" />
-    <Content Include="assets\admin\index.html" />
     <Content Include="assets\admin\js\demo\chart-area-demo.js" />
     <Content Include="assets\admin\js\demo\chart-bar-demo.js" />
     <Content Include="assets\admin\js\demo\chart-pie-demo.js" />
@@ -271,9 +268,6 @@
     <Content Include="assets\admin\js\sb-admin.js" />
     <Content Include="assets\admin\js\sb-admin.min.js" />
     <Content Include="assets\admin\js\simple-money-format.js" />
-    <Content Include="assets\admin\login.html" />
-    <Content Include="assets\admin\register.html" />
-    <Content Include="assets\admin\tables.html" />
     <Content Include="assets\admin\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="assets\admin\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="assets\admin\vendor\bootstrap\js\bootstrap.js" />

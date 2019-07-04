@@ -56,18 +56,6 @@ namespace Model.Dao
         /// </summary>
         /// <param name="categoryID"></param>
         /// <returns></returns>
-        //public List<SanPham> ListByCategoryId(long categoryID, ref int totalRecord, int pageIndex = 1, int pageSize = 2)
-        //{
-        //    totalRecord = db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).Count();
-        //    var model =  db.SanPham.Where(x => x.DanhMucSanPhamID == categoryID).OrderByDescending(x => x.NgayTao).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
-        //    return model;
-        //}
-
-         public IEnumerable<SanPham> ListByCategoryId(long categoryID, int page, int pageSize)
-        {
-            IQueryable<SanPham> model = db.SanPham;
-            return model.Where(x => x.DanhMucSanPhamID == categoryID).OrderBy(x => x.NgayTao).ToPagedList(page, pageSize);
-        }
 
         public List<SanPham> ListRelatedProducts(long productId, int top)
         {
@@ -75,9 +63,15 @@ namespace Model.Dao
             return db.SanPham.Where(x => x.MaSP != productId && x.DanhMucSanPhamID == product.DanhMucSanPhamID).Take(top).ToList();
         }
 
-        public List<ProductViewModel> Search(string keyword, ref int totalRecord, int pageIndex = 1, int pageSize = 4)
+        public IEnumerable<SanPham> ListByCategoryId(long categoryID, int page, int pageSize)
         {
-            totalRecord = db.SanPham.Where(x => x.TenSP == keyword).Count();
+            IQueryable<SanPham> model = db.SanPham;
+            return model.Where(x => x.DanhMucSanPhamID == categoryID).OrderBy(x => x.NgayTao).ToPagedList(page, pageSize);
+        }
+
+        public List<ProductViewModel> Search(string keyword, ref int totalRecord, int page = 1, int pageSize = 2)
+        {
+            totalRecord = db.SanPham.Where(x => x.TenSP.Contains(keyword)).Count();
             var model = (from x in db.SanPham
                          join y in db.DanhMucSanPham
                          on x.DanhMucSanPhamID equals y.Id
@@ -105,7 +99,7 @@ namespace Model.Dao
                              Price = x.Price,
                              PromotionPrice = x.PromotionPrice
                          });
-            model.OrderByDescending(x => x.CreatedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            model.OrderByDescending(x => x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize);
             return model.ToList();
         }
 

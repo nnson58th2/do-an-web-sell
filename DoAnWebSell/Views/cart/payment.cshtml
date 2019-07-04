@@ -16,10 +16,10 @@
             <table>
                 <thead>
                     <tr>
-                        <th width="14%">Ảnh</th>
+                        <th width="12%">Ảnh</th>
                         <th>Tên sản phẩm</th>
                         <th width="15%">Đơn giá</th>
-                        <th width="10%">Số lượng</th>
+                        <th width="12%">Số lượng</th>
                         <th width="15%">Thành tiền</th>
                         <th width="5%">Xóa</th>
                     </tr>
@@ -42,7 +42,9 @@
                             }
 
                             <td style="text-align: center;">
-                                <input type="text" class="txtQuantity text-center" data-id="@item.Product.MaSP" value="@item.Quantity" style="width:50px" />
+                                @*<button type="submit" class="value-minus" field="quantity" name="minus" id="value-minus2" onclick="minusqty()">-</button>*@
+                                <input type="number" class="txtQuantity text-center" data-id="@item.Product.MaSP" value="@item.Quantity" min="1" />
+                                @*<button type="submit" class="value-plus" field="quantity" name="plus" id="value-plus2">+</button>*@
                             </td>
 
                             @*Nếu có giá khuyến mãi thì lấy giá khuyến mãi để tính thành tiền*@
@@ -69,22 +71,16 @@
                     }
                 </tbody>
 
-                <thead>
-                    <tr>
-                        <th colspan="4" style="border: none; background-color: #FFF"></th>
-                        <th colspan="2">Tổng tiền</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
-                        <td colspan="4" style="border: none; background-color: #FFF"></td>
+                        <td colspan="4" class="font-weight-bold text-center text-uppercase">Tổng tiền</td>
                         @if (sum == 0)
                         {
-                            <td colspan="2" style="text-align: center;">0 ₫</td>
+                            <td colspan="1" style="text-align: center;">0 ₫</td>
                         }
                         else
                         {
-                            <td colspan="2" style="text-align: center;">@sum.ToString("0#,##0") ₫</td>
+                            <td colspan="1" class="font-weight-bold text-center">@sum.ToString("0#,##0") ₫</td>
                         }                                
                     </tr>
                 </tbody>

@@ -97,17 +97,17 @@ namespace DoAnWebSell.Controllers
             var jsonCart = new JavaScriptSerializer().Deserialize<List<CartItem>>(cartModel);
             var sessionCart = (List<CartItem>)Session[CommonConstants.CART_SEDSSION];
 
-            foreach(var item in sessionCart)
+            foreach (var item in sessionCart)
             {
                 var jsonItem = jsonCart.SingleOrDefault(x => x.Product.MaSP == item.Product.MaSP);
                 if (jsonItem != null)
                 {
                     item.Quantity = jsonItem.Quantity;
                 }
-                   
+
             }
             Session[CommonConstants.CART_SEDSSION] = sessionCart;
-            return Json(new 
+            return Json(new
             {
                 status = true
             });

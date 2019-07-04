@@ -35,6 +35,60 @@
             })
         });
 
+        //// Cập nhập giỏ hàng
+        //$('.value-minus').off('click').on('click', function () {
+        //    var txtQuantity = $('.txtQuantity');
+        //    var qtyVal = txtQuantity - 1;
+        //    var cartList = [];
+        //    $.each(txtQuantity, function (i, item) {
+        //        cartList.push({
+        //            Quantity: $(item).val(),
+        //            Product: {
+        //                MaSP: $(item).data('id')
+        //            }
+        //        });
+        //    });
+
+        //    $.ajax({
+        //        url: '/cart/update',
+        //        data: { cartModel: JSON.stringify(cartList) },
+        //        dataType: 'json',
+        //        type: 'POST',
+        //        success: function (res) {
+        //            if (res.status == true)
+        //            {
+        //                window.location.href = "/gio-hang";
+        //            }
+        //        }
+        //    })
+        //});
+
+        //$('.value-plus').off('click').on('click', function () {
+        //    var listProduct = $('.txtQuantity');
+        //    var cartList = [];
+        //    $.each(listProduct, function (i, item) {
+        //        cartList.push({
+        //            Quantity: $(item).val(),
+        //            Product: {
+        //                MaSP: $(item).data('id')
+        //            }
+        //        });
+        //    });
+
+        //    $.ajax({
+        //        url: '/cart/update',
+        //        data: { cartModel: JSON.stringify(cartList) },
+        //        dataType: 'json',
+        //        type: 'POST',
+        //        success: function (res) {
+        //            if (res.status == true) {
+        //                window.location.href = "/gio-hang";
+        //            }
+        //        }
+        //    })
+        //});
+
+
         // Xóa giỏ hàng
         $('#btnDeleteAll').off('click').on('click', function () {
             $.ajax({

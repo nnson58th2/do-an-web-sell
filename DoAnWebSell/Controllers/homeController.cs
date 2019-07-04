@@ -15,7 +15,7 @@ namespace DoAnWebSell.Controllers
         public ActionResult index()
         {
             ViewBag.Slides = new SlideDao();
-            ViewBag.NewProduct = new ProductDao().ListNewProduct(9);
+            ViewBag.NewProduct = new ProductDao().ListNewProduct(8);
             return View();
         }
 

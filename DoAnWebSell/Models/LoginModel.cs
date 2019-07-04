@@ -10,11 +10,11 @@ namespace DoAnWebSell.Models
     {
         [Key]
         [Display(Name ="Tên đăng nhập")]
-        [Required(ErrorMessage ="Bạn phải nhập tài khoản")]
+        [Required(ErrorMessage ="Mời bạn phải nhập tài khoản")]
         public string UserName { get; set; }
 
         [Display(Name = "Mật khẩu")]
-        [Required(ErrorMessage = "Bạn phải nhập mật khẩu")]
+        [Required(ErrorMessage = "Mời bạn phải nhập mật khẩu")]
         public string Password { get; set; }
     }
 }

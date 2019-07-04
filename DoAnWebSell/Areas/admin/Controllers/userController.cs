@@ -120,5 +120,15 @@ namespace DoAnWebSell.Areas.admin.Controllers
             new UserDao().Delete(id);
             return RedirectToAction("index");
         }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
     }
 }

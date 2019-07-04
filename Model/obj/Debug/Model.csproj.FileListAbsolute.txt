@@ -23,6 +23,6 @@ F:\Github\do-an-web-sell\Model\bin\Debug\EntityFramework.xml
 F:\Github\do-an-web-sell\Model\bin\Debug\EntityFramework.SqlServer.xml
 F:\Github\do-an-web-sell\Model\bin\Debug\PagedList.xml
 F:\Github\do-an-web-sell\Model\bin\Debug\PagedList.Mvc.xml
+F:\Github\do-an-web-sell\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 F:\Github\do-an-web-sell\Model\obj\Debug\Model.dll
 F:\Github\do-an-web-sell\Model\obj\Debug\Model.pdb
-F:\Github\do-an-web-sell\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

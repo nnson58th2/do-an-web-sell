@@ -144,5 +144,13 @@ namespace Model.Dao
         {
             return db.QuanTri.Count(x => x.Email == email) > 0;
         }
+
+        public bool ChangeStatus (long id)
+        {
+            var user = db.QuanTri.Find(id);
+            user.TrangThai = !user.TrangThai;
+            db.SaveChanges();
+            return user.TrangThai;
+        }
     }
 }

@@ -5,10 +5,13 @@
     ViewBag.Title = "Quản lý người dùng";
     Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
     string quyen = "";
-    string trthai = "";
 }
 @section header {
     Danh sách người dùng
+}
+
+@section jsFooter {
+    <script src="/assets/admin/js/controller/userController.js"></script>
 }
 
 <div class="card-body">
@@ -49,23 +52,17 @@
                         <td>@item.HoTen</td>
                         <td>@item.DienThoai</td>
                         <td>
-                            @{ if (@item.Quyen == true)
-                                { quyen = "Admin"; }
-                                else
-                                { quyen = "User"; }
-
+                            @if (item.Quyen == true)
+                            {
+                                quyen = "Admin";
+                            }
+                            else
+                            {
+                                quyen = "User";
                             }
                             @quyen
-                        </td>
-                        <td>
-                            @{ if (@item.TrangThai == true)
-                                { trthai = "Kích hoạt"; }
-                                else
-                                { trthai = "Khóa"; }
-
-                            }
-                            @trthai
-                        </td>
+                            </td>
+                        <td><a href="#" class="btn-changeStatus btn-secondary" data-id="@item.Id">@(item.TrangThai ? "Kích hoạt" : "Khóa")</a></td>
                         <td>
                             <a class="format-function-edit" href="/admin/user/edit/@item.Id"><i class="fas fa-edit"></i> Chỉnh sửa</a>
                             @Ajax.ActionLink("Xóa", "delete", new { @id = item.Id }, new AjaxOptions

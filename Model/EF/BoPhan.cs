@@ -19,8 +19,10 @@ namespace Model.EF
         {
             this.NhanVien = new HashSet<NhanVien>();
         }
-    
+
+        [Required(ErrorMessage = "Mời bạn nhập mã bộ phận")]
         public string MaBP { get; set; }
+        [Required(ErrorMessage = "Mời bạn nhập tên bộ phận")]
         public string TenBP { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

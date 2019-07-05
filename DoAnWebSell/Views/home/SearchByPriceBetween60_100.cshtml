@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Model.EF.SanPham>
+@{
     ViewBag.Title = "Hệ thống bán hàng điện tử gia dụng gia đình cửa hàng XM";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var listNewProduct = (List<Model.EF.SanPham>)ViewBag.NewProduct;
@@ -65,56 +66,63 @@
                     <!-- first section -->
                     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                         <div class="row">
-                            @foreach (var item in listNewProduct)
+                            @if (Model.Count() > 0)
                             {
-                                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
-                                <div class="col-md-3 product-men mt-1">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item text-center">
-                                            <img src="/assets/client/images/@item.HinhAnh" alt="@item.TenSP">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="@url" class="link-product-add-cart">Xem chi tiết</a>
+                                foreach (var item in Model)
+                                {
+                                    var url = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
+                                    <div class="col-md-3 product-men mt-1">
+                                        <div class="men-pro-item simpleCart_shelfItem">
+                                            <div class="men-thumb-item text-center">
+                                                <img src="/assets/client/images/@item.HinhAnh" alt="@item.TenSP">
+                                                <div class="men-cart-pro">
+                                                    <div class="inner-men-cart-pro">
+                                                        <a href="@url" class="link-product-add-cart">Xem chi tiết</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <span class="product-new-top">Mới</span>
+                                                <span class="product-new-top">Mới</span>
 
-                                        </div>
-                                        <div class="item-info-product text-center border-top mt-4">
-                                            <label class="pt-2">
-                                                <a href="@url">@item.TenSP</a>
-                                            </label>
-                                            <div class="info-product-price">
-                                                @if (item.GiaKhuyenMai != null)
-                                                {
-                                                    if (item.GiaKhuyenMai.HasValue)
-                                                    {
-                                                        <strong class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</strong>
-                                                            <del>@item.DonGia.Value.ToString("N0")₫</del>
-                                                    }
-                                                    else
-                                                    {
-                                                        <strong class="item_price">Liên hệ</strong>
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    if (item.DonGia.HasValue)
-                                                    {
-                                                        <strong class="item_price">@item.DonGia.Value.ToString("N0")₫</strong>
-                                                    }
-                                                    else
-                                                    {
-                                                        <strong class="item_price">Liên hệ</strong>
-                                                    }
-                                                }
                                             </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                                <h5><a href="/them-gio-hang?productId=@item.MaSP&quantity=1" class="btn btn-cart">Thêm vào giỏ</a></h5>
+                                            <div class="item-info-product text-center border-top mt-4">
+                                                <label class="pt-2">
+                                                    <a href="@url">@item.TenSP</a>
+                                                </label>
+                                                <div class="info-product-price">
+                                                    @if (item.GiaKhuyenMai != null)
+                                                    {
+                                                        if (item.GiaKhuyenMai.HasValue)
+                                                        {
+                                                            <strong class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</strong>
+                                                            <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                                        }
+                                                        else
+                                                        {
+                                                            <strong class="item_price">Liên hệ</strong>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (item.DonGia.HasValue)
+                                                        {
+                                                            <strong class="item_price">@item.DonGia.Value.ToString("N0")₫</strong>
+                                                        }
+                                                        else
+                                                        {
+                                                            <strong class="item_price">Liên hệ</strong>
+                                                        }
+                                                    }
+                                                </div>
+                                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                                                    <h5><a href="/them-gio-hang?productId=@item.MaSP&quantity=1" class="btn btn-cart">Thêm vào giỏ</a></h5>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                }
+                            }
+                            else
+                            {
+                                <h4 class="m-auto">Không có sản phẩm trong tầm giá</h4>
                             }
                         </div>
                     </div>
@@ -164,7 +172,7 @@
                                     <a href="tim-kiem-gia-tu-6000000-10000000">6,000,000 - 10,000,000</a>
                                 </li>
                                 <li class="my-1">
-                                <a href="tim-kiem-gia-tu-10000000-15000000">10,000,000 - 15,000,000</a>
+                                    <a href="tim-kiem-gia-tu-10000000-15000000">10,000,000 - 15,000,000</a>
                                 </li>
                             </ul>
                         </div>

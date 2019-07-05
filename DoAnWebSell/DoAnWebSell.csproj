@@ -2194,6 +2194,12 @@
     <Content Include="Views\user\login.cshtml" />
     <Content Include="Views\product\Search.cshtml" />
     <Content Include="Views\product\productAll.cshtml" />
+    <Content Include="Views\home\SearchByPriceBetween1_5.cshtml" />
+    <Content Include="Views\home\SearchByPriceBetween5_20.cshtml" />
+    <Content Include="Views\home\SearchByPriceBetween20_40.cshtml" />
+    <Content Include="Views\home\SearchByPriceBetween40_60.cshtml" />
+    <Content Include="Views\home\SearchByPriceBetween60_100.cshtml" />
+    <Content Include="Views\home\SearchByPriceBetween100_150.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

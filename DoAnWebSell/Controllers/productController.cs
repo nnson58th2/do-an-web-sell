@@ -22,27 +22,11 @@ namespace DoAnWebSell.Controllers
             return View(model);
         }
 
-        public ActionResult Search(string keyword, int page = 1, int pageSize = 2)
+        public ActionResult Search(string keyword, int page = 1, int pageSize = 8)
         {
-            int totalRecord = 0;
-            var model = new ProductDao().Search(keyword, ref totalRecord, page, pageSize);
-
-            ViewBag.Total = totalRecord;
-            ViewBag.Page = page;
             ViewBag.Keyword = keyword;
-            int maxPage = 5;
-            int totalPage = 0;
-
-            double quantity = ((double)(totalRecord) / (pageSize));
-
-            totalPage = (int)Math.Ceiling(quantity);
-            ViewBag.TotalPage = totalPage;
-            ViewBag.MaxPage = maxPage;
-            ViewBag.First = 1;
-            ViewBag.Last = totalPage;
-            ViewBag.Next = page + 1;
-            ViewBag.Prev = page - 1;
-
+            var dao = new ProductDao();
+            var model = dao.Search(keyword, page, pageSize);
             return View(model);
         }
 

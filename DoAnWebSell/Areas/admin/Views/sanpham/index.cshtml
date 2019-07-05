@@ -53,8 +53,8 @@
                         <td style="text-align: center;"><img src="/assets/client/images/@item.HinhAnh" width="65" /></td>
                         <td>@item.TenSP</td>
                         <td>@item.SoLuong</td>
-                        <td>@item.DonGia</td>
-                        <td>@item.GiaKhuyenMai</td>
+                        <td>@String.Format("{0:0,0}", item.DonGia)</td>
+                        <td>@String.Format("{0:0,0}", item.GiaKhuyenMai)</td>
                         <td>
                             @if (item.TrangThai == true)
                             {

@@ -134,6 +134,7 @@ namespace DoAnWebSell.Controllers
             order.SoDienThoai = mobile;
             order.TenNguoiDat = shipName;
             order.Email = email;
+            order.TrangThai = 1;
 
             try
             {

@@ -19,7 +19,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2019 23:04:32</publishTime>
     </File>
     <File Include="Areas/admin/Views/bophan/index.cshtml">
-      <publishTime>06/23/2019 09:44:48</publishTime>
+      <publishTime>07/04/2019 20:56:38</publishTime>
     </File>
     <File Include="Areas/admin/Views/danhmucsanpham/create.cshtml">
       <publishTime>06/20/2019 10:43:33</publishTime>
@@ -28,7 +28,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/20/2019 10:54:55</publishTime>
     </File>
     <File Include="Areas/admin/Views/danhmucsanpham/index.cshtml">
-      <publishTime>06/26/2019 12:07:40</publishTime>
+      <publishTime>07/04/2019 21:00:26</publishTime>
     </File>
     <File Include="Areas/admin/Views/dondathang/details.cshtml">
       <publishTime>07/03/2019 17:09:12</publishTime>
@@ -37,10 +37,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/02/2019 17:06:40</publishTime>
     </File>
     <File Include="Areas/admin/Views/dondathang/index.cshtml">
-      <publishTime>06/25/2019 18:01:56</publishTime>
+      <publishTime>07/05/2019 01:00:38</publishTime>
     </File>
     <File Include="Areas/admin/Views/home/index.cshtml">
-      <publishTime>05/22/2019 23:37:11</publishTime>
+      <publishTime>07/04/2019 21:23:44</publishTime>
     </File>
     <File Include="Areas/admin/Views/khachhang/details.cshtml">
       <publishTime>06/27/2019 21:07:45</publishTime>
@@ -49,7 +49,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/27/2019 17:42:33</publishTime>
     </File>
     <File Include="Areas/admin/Views/khachhang/index.cshtml">
-      <publishTime>06/27/2019 17:54:38</publishTime>
+      <publishTime>07/04/2019 20:55:01</publishTime>
     </File>
     <File Include="Areas/admin/Views/khohang/create.cshtml">
       <publishTime>06/27/2019 09:12:18</publishTime>
@@ -61,7 +61,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/27/2019 09:24:44</publishTime>
     </File>
     <File Include="Areas/admin/Views/khohang/index.cshtml">
-      <publishTime>06/27/2019 09:18:40</publishTime>
+      <publishTime>07/04/2019 20:56:02</publishTime>
     </File>
     <File Include="Areas/admin/Views/login/index.cshtml">
       <publishTime>06/28/2019 17:40:53</publishTime>
@@ -82,7 +82,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/27/2019 09:24:57</publishTime>
     </File>
     <File Include="Areas/admin/Views/nhacungcap/index.cshtml">
-      <publishTime>06/25/2019 15:22:23</publishTime>
+      <publishTime>07/04/2019 20:55:34</publishTime>
     </File>
     <File Include="Areas/admin/Views/nhanvien/create.cshtml">
       <publishTime>06/27/2019 13:19:26</publishTime>
@@ -94,7 +94,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/27/2019 13:19:43</publishTime>
     </File>
     <File Include="Areas/admin/Views/nhanvien/index.cshtml">
-      <publishTime>06/27/2019 10:59:10</publishTime>
+      <publishTime>07/04/2019 20:55:18</publishTime>
     </File>
     <File Include="Areas/admin/Views/register/index.cshtml">
       <publishTime>06/27/2019 20:25:50</publishTime>
@@ -109,10 +109,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/25/2019 17:32:55</publishTime>
     </File>
     <File Include="Areas/admin/Views/sanpham/index.cshtml">
-      <publishTime>06/28/2019 19:34:41</publishTime>
+      <publishTime>07/04/2019 20:51:29</publishTime>
     </File>
     <File Include="Areas/admin/Views/Shared/_Layouts.cshtml">
-      <publishTime>06/28/2019 17:41:38</publishTime>
+      <publishTime>07/04/2019 23:36:37</publishTime>
     </File>
     <File Include="Areas/admin/Views/Shared/_NavigationBar__left.cshtml">
       <publishTime>06/28/2019 17:21:24</publishTime>
@@ -124,13 +124,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2019 16:21:45</publishTime>
     </File>
     <File Include="Areas/admin/Views/user/details.cshtml">
-      <publishTime>06/27/2019 21:09:41</publishTime>
+      <publishTime>07/05/2019 00:07:14</publishTime>
     </File>
     <File Include="Areas/admin/Views/user/edit.cshtml">
       <publishTime>07/03/2019 09:05:02</publishTime>
     </File>
     <File Include="Areas/admin/Views/user/index.cshtml">
-      <publishTime>07/03/2019 09:58:35</publishTime>
+      <publishTime>07/05/2019 00:03:00</publishTime>
     </File>
     <File Include="Areas/admin/Views/web.config">
       <publishTime>05/19/2019 23:30:08</publishTime>
@@ -151,7 +151,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/19/2019 23:34:19</publishTime>
     </File>
     <File Include="assets/admin/css/style.css">
-      <publishTime>06/27/2019 21:10:59</publishTime>
+      <publishTime>07/04/2019 20:50:11</publishTime>
     </File>
     <File Include="assets/admin/forgot-password.html">
       <publishTime>05/19/2019 23:34:25</publishTime>
@@ -182,6 +182,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="assets/admin/index.html">
       <publishTime>05/19/2019 23:34:25</publishTime>
+    </File>
+    <File Include="assets/admin/js/controller/orderController.js">
+      <publishTime>07/05/2019 08:37:20</publishTime>
+    </File>
+    <File Include="assets/admin/js/controller/userController.js">
+      <publishTime>07/05/2019 08:37:33</publishTime>
     </File>
     <File Include="assets/admin/js/demo/chart-area-demo.js">
       <publishTime>05/19/2019 23:34:19</publishTime>
@@ -5446,7 +5452,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/26/2019 10:15:16</publishTime>
     </File>
     <File Include="assets/client/css/style.css">
-      <publishTime>07/04/2019 15:58:48</publishTime>
+      <publishTime>07/05/2019 17:15:25</publishTime>
     </File>
     <File Include="assets/client/images/arrow.png">
       <publishTime>05/23/2019 23:51:53</publishTime>
@@ -5728,7 +5734,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/04/2019 09:40:36</publishTime>
     </File>
     <File Include="bin/DoAnWebSell.dll">
-      <publishTime>07/04/2019 16:15:42</publishTime>
+      <publishTime>07/05/2019 18:13:38</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>05/19/2019 22:56:31</publishTime>
@@ -5800,7 +5806,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/19/2019 22:56:29</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>07/04/2019 16:15:38</publishTime>
+      <publishTime>07/05/2019 18:13:34</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>05/19/2019 22:56:31</publishTime>
@@ -5965,7 +5971,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/19/2019 22:56:30</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>06/29/2019 08:46:03</publishTime>
+      <publishTime>07/05/2019 00:44:18</publishTime>
     </File>
     <File Include="Views/about/index.cshtml">
       <publishTime>06/26/2019 22:45:31</publishTime>
@@ -5983,7 +5989,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/30/2019 11:42:05</publishTime>
     </File>
     <File Include="Views/home/index.cshtml">
-      <publishTime>07/04/2019 16:12:29</publishTime>
+      <publishTime>07/05/2019 12:19:11</publishTime>
+    </File>
+    <File Include="Views/home/SearchByPriceBetween100_150.cshtml">
+      <publishTime>07/05/2019 12:19:38</publishTime>
+    </File>
+    <File Include="Views/home/SearchByPriceBetween1_5.cshtml">
+      <publishTime>07/05/2019 12:19:25</publishTime>
+    </File>
+    <File Include="Views/home/SearchByPriceBetween20_40.cshtml">
+      <publishTime>07/05/2019 12:19:52</publishTime>
+    </File>
+    <File Include="Views/home/SearchByPriceBetween40_60.cshtml">
+      <publishTime>07/05/2019 12:20:05</publishTime>
+    </File>
+    <File Include="Views/home/SearchByPriceBetween5_20.cshtml">
+      <publishTime>07/05/2019 12:20:20</publishTime>
+    </File>
+    <File Include="Views/home/SearchByPriceBetween60_100.cshtml">
+      <publishTime>07/05/2019 12:20:35</publishTime>
     </File>
     <File Include="Views/product/category.cshtml">
       <publishTime>07/04/2019 12:29:28</publishTime>
@@ -5995,10 +6019,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/03/2019 18:02:30</publishTime>
     </File>
     <File Include="Views/product/Search.cshtml">
-      <publishTime>07/04/2019 12:35:06</publishTime>
+      <publishTime>07/05/2019 18:10:18</publishTime>
     </File>
     <File Include="Views/Shared/Footer.cshtml">
-      <publishTime>07/04/2019 10:12:07</publishTime>
+      <publishTime>07/05/2019 16:13:19</publishTime>
     </File>
     <File Include="Views/Shared/HeaderCart.cshtml">
       <publishTime>06/06/2019 22:22:09</publishTime>
@@ -6013,7 +6037,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/04/2019 15:51:52</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/03/2019 16:11:15</publishTime>
+      <publishTime>07/05/2019 16:59:01</publishTime>
     </File>
     <File Include="Views/user/login.cshtml">
       <publishTime>07/04/2019 16:01:53</publishTime>
@@ -6025,7 +6049,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/19/2019 22:56:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/04/2019 16:16:05</publishTime>
+      <publishTime>07/05/2019 18:14:01</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -69,38 +69,14 @@ namespace Model.Dao
             return model.Where(x => x.DanhMucSanPhamID == categoryID).OrderBy(x => x.NgayTao).ToPagedList(page, pageSize);
         }
 
-        public List<ProductViewModel> Search(string keyword, ref int totalRecord, int page = 1, int pageSize = 2)
+        public IEnumerable<SanPham> Search(string search, int page, int pageSize)
         {
-            totalRecord = db.SanPham.Where(x => x.TenSP.Contains(keyword)).Count();
-            var model = (from x in db.SanPham
-                         join y in db.DanhMucSanPham
-                         on x.DanhMucSanPhamID equals y.Id
-                         where x.TenSP.Contains(keyword)
-                         select new
-                         {
-                             CateMetaTitle = y.MetaTitle,
-                             CateName = y.Name,
-                             CreatedDate = x.NgayTao,
-                             ID = x.MaSP,
-                             Images = x.HinhAnh,
-                             Name = x.TenSP,
-                             MetaTitle = x.MetaTitle,
-                             Price = x.DonGia,
-                             PromotionPrice = x.GiaKhuyenMai
-                         }).AsEnumerable().Select(x => new ProductViewModel()
-                         {
-                             CateMetaTitle = x.MetaTitle,
-                             CateName = x.Name,
-                             CreatedDate = x.CreatedDate,
-                             ID = x.ID,
-                             Images = x.Images,
-                             Name = x.Name,
-                             MetaTitle = x.MetaTitle,
-                             Price = x.Price,
-                             PromotionPrice = x.PromotionPrice
-                         });
-            model.OrderByDescending(x => x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize);
-            return model.ToList();
+            IQueryable<SanPham> model = db.SanPham;
+            if (!string.IsNullOrEmpty(search))
+            {
+                model = model.Where(x => x.TenSP.Contains(search));
+            }
+            return model.OrderBy(x => x.TenSP).ToPagedList(page, pageSize);
         }
 
         public SanPham ViewDetail(long id)

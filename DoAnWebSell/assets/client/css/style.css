@@ -2567,6 +2567,11 @@ div#testimonials h4.m-title {
     margin: auto 0;
 }
 
+/*Footer*/
+.offer-footer h4 {
+    cursor: pointer;
+}
+
 /*-- //contact page --*/
 
 /*--responsive--*/

@@ -1,0 +1,321 @@
+﻿@model List<Model.EF.SanPham>
+@{
+    ViewBag.Title = "Hệ thống bán hàng điện tử gia dụng gia đình cửa hàng XM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var listNewProduct = (List<Model.EF.SanPham>)ViewBag.NewProduct;
+}
+@section slide {
+    <div class="container py-xl-2 py-lg-2">
+        <div class="row">
+            <div class="col-md-12 col-lg-3 categories">
+                @{ Html.RenderAction("productCategory", "product"); }
+            </div>
+            <div class="col-md-12 col-lg-9 slide-img">
+                <!-- banner -->
+                <div class="carousel slide" id="myCarousel" data-ride="carousel" data-interval="4000">
+                    <!-- Indicators-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item item1 active">
+                            <img class="d-block w-100" src="/assets/client/images/slide-img-mua-may-lanh.jpg" alt="Máy lạnh siêu tiết kiệm" width="800" height="420">
+                        </div>
+                        <div class="carousel-item item2">
+                            <img class="d-block w-100" src="/assets/client/images/slide-img-dien-tu-dien-lanh.png" alt="Điện tử điện lạnh siêu rẽ" width="800" height="420">
+                        </div>
+                        <div class="carousel-item item3">
+                            <img class="d-block w-100" src="/assets/client/images/slide-img-dien-lanh.jpg" alt="Điện lạnh hàng đầu" width="800" height="420">
+                        </div>
+                        <div class="carousel-item item4">
+                            <img class="d-block w-100" src="/assets/client/images/slide-img-tu-lanh-may-giat-690-300.png" alt="Máy lạnh siêu tiết kiệm" width="800" height="420">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Lùi</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Tới</span>
+                    </a>
+                </div>
+                <!-- //banner -->
+            </div>
+        </div>
+    </div>
+}
+
+<!-- top Products -->
+<div class="ads-grid py-sm-4 py-3">
+    <div class="container py-xl-4 py-lg-2">
+        <!-- tittle heading -->
+        <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+            <span>S</span>ản
+            <span>P</span>hẩm
+            <span>M</span>ới
+        </h3>
+        <!-- //tittle heading -->
+        <div class="row">
+            <!-- product left -->
+            <div class="agileinfo-ads-display col-lg-9">
+                <div class="wrapper">
+                    <!-- first section -->
+                    <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
+                        <div class="row">
+                            @if (Model.Count() > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    var url = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
+                                    <div class="col-md-3 product-men mt-1">
+                                        <div class="men-pro-item simpleCart_shelfItem">
+                                            <div class="men-thumb-item text-center">
+                                                <img src="/assets/client/images/@item.HinhAnh" alt="@item.TenSP">
+                                                <div class="men-cart-pro">
+                                                    <div class="inner-men-cart-pro">
+                                                        <a href="@url" class="link-product-add-cart">Xem chi tiết</a>
+                                                    </div>
+                                                </div>
+                                                <span class="product-new-top">Mới</span>
+
+                                            </div>
+                                            <div class="item-info-product text-center border-top mt-4">
+                                                <label class="pt-2">
+                                                    <a href="@url">@item.TenSP</a>
+                                                </label>
+                                                <div class="info-product-price">
+                                                    @if (item.GiaKhuyenMai != null)
+                                                    {
+                                                        if (item.GiaKhuyenMai.HasValue)
+                                                        {
+                                                            <strong class="item_price">@item.GiaKhuyenMai.Value.ToString("N0")₫</strong>
+                                                            <del>@item.DonGia.Value.ToString("N0")₫</del>
+                                                        }
+                                                        else
+                                                        {
+                                                            <strong class="item_price">Liên hệ</strong>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (item.DonGia.HasValue)
+                                                        {
+                                                            <strong class="item_price">@item.DonGia.Value.ToString("N0")₫</strong>
+                                                        }
+                                                        else
+                                                        {
+                                                            <strong class="item_price">Liên hệ</strong>
+                                                        }
+                                                    }
+                                                </div>
+                                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                                                    <h5><a href="/them-gio-hang?productId=@item.MaSP&quantity=1" class="btn btn-cart">Thêm vào giỏ</a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <h4 class="m-auto">Không có sản phẩm trong tầm giá</h4>
+                            }
+                        </div>
+                    </div>
+                    <!-- //first section -->
+                    <!-- third section -->
+                    <div class="product-sec1 product-sec2 px-sm-5 px-3">
+                        <div class="row">
+                            <h3 class="col-md-4 effect-bg">Lễ hội mùa hè</h3>
+                            <p class="w3l-nut-middle">Giảm giá thêm 10%</p>
+                            <div class="col-md-8 bg-right-nut">
+                                <img src="/assets/client/images/image1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //third section -->
+                </div>
+            </div>
+            <!-- //product left -->
+            <!-- product right -->
+            <div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
+                <div class="side-bar p-sm-4 p-3">
+                    <div class="search-hotel border-bottom py-2">
+                        <h3 class="agileits-sear-head mb-3">Tìm kiếm..</h3>
+                        <form action="/tim-kiem" method="get">
+                            <input type="search" name="keyword" id="txtKeyword" placeholder="Tên sản phẩm...">
+                            <input type="submit" value=" ">
+                        </form>
+                    </div>
+                    <!-- price -->
+                    <div class="range border-bottom py-2">
+                        <h3 class="agileits-sear-head mb-3">Giá bán</h3>
+                        <div class="w3l-range">
+                            <ul>
+                                <li>
+                                    <a href="tim-kiem-gia-tu-100000-500000">100,000 - 500,000</a>
+                                </li>
+                                <li class="my-1">
+                                    <a href="tim-kiem-gia-tu-500000-2000000">500,000 - 2,000,000</a>
+                                </li>
+                                <li class="my-1">
+                                    <a href="tim-kiem-gia-tu-2000000-4000000">2,000,000 - 4,000,000</a>
+                                </li>
+                                <li class="my-1">
+                                    <a href="tim-kiem-gia-tu-4000000-6000000">4,000,000 - 6,000,000</a>
+                                </li>
+                                <li class="my-1">
+                                    <a href="tim-kiem-gia-tu-6000000-10000000">6,000,000 - 10,000,000</a>
+                                </li>
+                                <li class="my-1">
+                                    <a href="tim-kiem-gia-tu-10000000-15000000">10,000,000 - 15,000,000</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //price -->
+                    <!-- reviews -->
+                    <div class="customer-rev border-bottom left-side py-2">
+                        <h3 class="agileits-sear-head mb-3">Đánh giá của khách hàng</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span>5.0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span>4.0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half"></i>
+                                    <span>3.5</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span>3.0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half"></i>
+                                    <span>2.5</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //reviews -->
+                    <!-- best seller -->
+                    <div class="f-grid py-2">
+                        <h3 class="agileits-sear-head mb-3">Sản phẩm mua nhiều nhất</h3>
+                        <div class="box-scroll">
+                            <div class="scroll">
+                                <div class="row">
+                                    @foreach (var item in listNewProduct)
+                                    {
+                                        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.MaSP;
+                                        <div class="col-lg-3 col-sm-2 col-3 left-mar">
+                                            <img src="/assets/client/images/@item.HinhAnh" alt="@item.TenSP" class="img-fluid">
+                                        </div>
+                                        <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
+                                            <a href="@url">@item.TenSP</a>
+                                            <div class="price-slide">
+                                                @if (item.GiaKhuyenMai != null)
+                                                {
+                                                    if (item.GiaKhuyenMai.HasValue)
+                                                    {
+                                                        <strong class="item_price" style="font-size: 1rem;">@item.GiaKhuyenMai.Value.ToString("N0")₫</strong>
+                                                        <del style="font-size: .8rem;">@item.DonGia.Value.ToString("N0")₫</del>
+                                                    }
+                                                    else
+                                                    {
+                                                        <strong class="item_price" style="font-size: 1rem;">Liên hệ</strong>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    if (item.DonGia.HasValue)
+                                                    {
+                                                        <strong class="item_price" style="font-size: 1rem;">@item.DonGia.Value.ToString("N0")₫</strong>
+                                                    }
+                                                    else
+                                                    {
+                                                        <strong class="item_price" style="font-size: 1rem;">Liên hệ</strong>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="my-2 w-100" style="border-bottom: 1px solid #ddd;"></div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //best seller -->
+                </div>
+                <!-- //product right -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //top products -->
+<!-- middle section -->
+<div class="join-w3l1 py-sm-5 py-4">
+    <div class="container py-xl-4 py-lg-2">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="join-agile text-left p-4">
+                    <div class="row">
+                        <div class="col-sm-7 offer-name">
+                            <h6>Âm thanh mượt mà và phong phú</h6>
+                            <h4 class="mt-2 mb-3">Tai nghe thương hiệu</h4>
+                            <p>Giảm giá tới 25% tất cả trong cửa hàng</p>
+                        </div>
+                        <div class="col-sm-5 offerimg-w3l">
+                            <img src="/assets/client/images/off1.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-lg-0 mt-5">
+                <div class="join-agile text-left p-4">
+                    <div class="row ">
+                        <div class="col-sm-7 offer-name">
+                            <h6>Ti vi màn hình cong siêu nét full</h6>
+                            <h4 class="mt-2 mb-3">Ti vi thương hiệu hàng đầu</h4>
+                            <p>Nhiều quà tặng hot đi kèm với sản phẩm</p>
+                        </div>
+                        <div class="col-sm-5 offerimg-w3l">
+                            <img src="/assets/client/images/tivi-samsung.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- middle section -->

@@ -11,4 +11,3 @@ F:\Github\do-an-web-sell\Model\bin\Release\PagedList.xml
 F:\Github\do-an-web-sell\Model\bin\Release\PagedList.Mvc.xml
 F:\Github\do-an-web-sell\Model\obj\Release\Model.dll
 F:\Github\do-an-web-sell\Model\obj\Release\Model.pdb
-F:\Github\do-an-web-sell\Model\obj\Release\Model.csprojResolveAssemblyReference.cache

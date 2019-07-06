@@ -31,7 +31,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/04/2019 21:00:26</publishTime>
     </File>
     <File Include="Areas/admin/Views/dondathang/details.cshtml">
-      <publishTime>07/03/2019 17:09:12</publishTime>
+      <publishTime>07/05/2019 20:03:58</publishTime>
     </File>
     <File Include="Areas/admin/Views/dondathang/edit.cshtml">
       <publishTime>07/02/2019 17:06:40</publishTime>
@@ -46,7 +46,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/27/2019 21:07:45</publishTime>
     </File>
     <File Include="Areas/admin/Views/khachhang/edit.cshtml">
-      <publishTime>06/27/2019 17:42:33</publishTime>
+      <publishTime>07/05/2019 20:12:19</publishTime>
     </File>
     <File Include="Areas/admin/Views/khachhang/index.cshtml">
       <publishTime>07/04/2019 20:55:01</publishTime>
@@ -103,13 +103,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/26/2019 01:05:56</publishTime>
     </File>
     <File Include="Areas/admin/Views/sanpham/details.cshtml">
-      <publishTime>06/28/2019 19:41:29</publishTime>
+      <publishTime>07/05/2019 20:09:28</publishTime>
     </File>
     <File Include="Areas/admin/Views/sanpham/edit.cshtml">
       <publishTime>06/25/2019 17:32:55</publishTime>
     </File>
     <File Include="Areas/admin/Views/sanpham/index.cshtml">
-      <publishTime>07/04/2019 20:51:29</publishTime>
+      <publishTime>07/05/2019 20:06:42</publishTime>
     </File>
     <File Include="Areas/admin/Views/Shared/_Layouts.cshtml">
       <publishTime>07/04/2019 23:36:37</publishTime>
@@ -151,7 +151,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/19/2019 23:34:19</publishTime>
     </File>
     <File Include="assets/admin/css/style.css">
-      <publishTime>07/04/2019 20:50:11</publishTime>
+      <publishTime>07/05/2019 20:13:39</publishTime>
     </File>
     <File Include="assets/admin/forgot-password.html">
       <publishTime>05/19/2019 23:34:25</publishTime>
@@ -5734,7 +5734,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/04/2019 09:40:36</publishTime>
     </File>
     <File Include="bin/DoAnWebSell.dll">
-      <publishTime>07/05/2019 18:13:38</publishTime>
+      <publishTime>07/05/2019 20:18:27</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>05/19/2019 22:56:31</publishTime>
@@ -5806,7 +5806,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/19/2019 22:56:29</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>07/05/2019 18:13:34</publishTime>
+      <publishTime>07/05/2019 20:18:23</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>05/19/2019 22:56:31</publishTime>
@@ -6037,7 +6037,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/04/2019 15:51:52</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/05/2019 16:59:01</publishTime>
+      <publishTime>07/05/2019 19:47:33</publishTime>
     </File>
     <File Include="Views/user/login.cshtml">
       <publishTime>07/04/2019 16:01:53</publishTime>
@@ -6049,7 +6049,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/19/2019 22:56:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/05/2019 18:14:01</publishTime>
+      <publishTime>07/05/2019 20:18:48</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Model.EF.BoPhan>
+
+@{
+    ViewBag.Title = "Thông tin các bộ phận";
+    Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+    int i = 0;
+}
+
+@section header {
+    Danh sách bộ phận
+}
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" cellspacing="0">
+            <div class="create mb-3">
+                <a href="/admin/bophan/create" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a>
+            </div>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã bộ phận</th>
+                    <th>Tên bộ phận</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="row_@item.MaBP">
+                        <td>
+                            @{ i++; }
+                            @i
+                        </td>
+                        <td>@item.MaBP</td>
+                        <td>
+                            @item.TenBP
+                        </td>                     
+                        <td>
+                            <a class="format-function-edit" href="/admin/bophan/edit/@item.MaBP"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+                            @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaBP }, new AjaxOptions
+                       {
+                           Confirm = "Dữ liệu liên quan có thể bị mất \nBạn có muốn xóa bộ phận này?",
+                           OnComplete = "$(' #row_" + @item.MaBP + " ').remove()",
+                           HttpMethod = "Delete"
+                       })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

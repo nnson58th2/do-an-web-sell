@@ -30,7 +30,6 @@ namespace Model.EF
         public Nullable<int> SoLuong { get; set; }
         public Nullable<decimal> DonGia { get; set; }
         public Nullable<decimal> GiaKhuyenMai { get; set; }
-        [Required(ErrorMessage = "Mời bạn chọn hình ảnh")]
         public string HinhAnh { get; set; }
         [Required(ErrorMessage = "Mời bạn nhập mô tả sản phẩm")]
         public string MoTa { get; set; }

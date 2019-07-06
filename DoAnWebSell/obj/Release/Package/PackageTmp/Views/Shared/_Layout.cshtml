@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>@ViewBag.Title</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Website thương mại điện tử chuyên mua bán các loại đồ điện tử da dụng" />
+    <meta name="author" content="Nguyễn Như Sơn">
+
+    <meta property="og:url" content="http://dodientugiadung.azurewebsites.net">
+    <!-- Helpers -->
+    <link rel="canonical" href="http://dodientugiadung.azurewebsites.net">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/client/images/icon-compra.svg" type="image/x-icon" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta tag Keywords -->
+
+    <!-- Custom-Files -->
+    <!-- Bootstrap css -->
+    <link href="/assets/client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/client/css/jquery-ui.css" rel="stylesheet" />
+    <!-- Main css -->
+    <link rel="stylesheet" href="/assets/client/css/fontawesome-all.css">
+    <!-- Font-Awesome-Icons-CSS -->
+    <link href="/assets/client/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- pop-up-box -->
+    <link href="/assets/client/css/menu.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- flexslider -->
+    <link rel="stylesheet" href="/assets/client/css/flexslider.css" type="text/css" media="screen" />
+    <!-- menu style -->
+    <!-- //Custom-Files -->
+
+    <!-- web fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+    <!-- //web fonts --> 
+
+</head>
+
+<body>
+    <!-- top-header -->
+    <div class="agile-main-top">
+        <div class="container-fluid">
+            <div class="row main-top-w3l py-1">
+                <div class="col-sm-12 col-md-5 header-most-top">
+                    <p class="text-white text-lg-left text-center">
+                        Ưu đãi & Giảm giá hàng đầu khu vực
+                        <i class="fa fa-shopping-cart ml-1"></i>
+                    </p>
+                </div>
+                <div class="col-sm-12 col-lg-7 header-right mt-lg-0">
+                    <!-- header lists -->
+                    @{Html.RenderAction("TopMenu", "home"); }
+                    <!-- //header lists -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //top-header -->
+    <!-- header-bottom-->
+    <div class="header-bot">
+        <div class="container">
+            <div class="row header-bot_inner_wthreeinfo_header_mid">
+                <!-- logo -->
+                <div class="col-md-3 logo_agile">
+                    <h1 class="text-center">
+                        <a href="/" ref="nofollow" class="font-weight-bold font-italic">
+                            <img src="/assets/client/images/logo-shop.png" alt="" class="img-fluid">Cửa hàng XM
+                        </a>
+                    </h1>
+                </div>
+                <!-- //logo -->
+                <!-- header-bot -->
+                <div class="col-md-9 header mt-4 mb-md-0 mb-4">
+                    <div class="row">
+                        <!-- search -->
+                        <div class="col-10 agileits_search">
+                            <form class="form-inline" action="/tim-kiem" method="get">
+                                <input class="form-control mr-sm-2" type="search" name="keyword" id="txtKeyword" placeholder="Gõ từ khóa tìm kiếm" aria-label="Search">
+                                <button class="btn my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                            </form>
+                        </div>
+                        <!-- //search -->
+                        <!-- cart details -->
+                        @{ Html.RenderAction("HeaderCart", "home"); }
+                        <!-- //cart details -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @{Html.RenderAction("MainMenu", "home"); }
+    @RenderSection("slide", required: false)
+    @RenderBody()
+    <!-- footer -->
+    <footer>
+        @RenderPage("Footer.cshtml")
+    </footer>
+    <!-- //footer -->
+    <!-- copyright -->
+    <div class="copy-right py-3">
+        <div class="container">
+            <p class="text-center text-white">
+                &copy; Copyright @DateTime.Now.Year | Trang thông tin quản lý của hàng điện máy | Designed By
+                <a href="https://www.facebook.com/sontocxoan.congnghe"> Sơn Tóc Xoăn</a>
+            </p>
+        </div>
+    </div>
+    <!-- //copyright -->  
+
+    <!-- js-files -->
+    <script src="/assets/client/js/jquery-2.2.3.min.js"></script>
+    <script src="/assets/client/js/jquery-ui.js"></script>
+    <!-- //jquery -->
+
+    @*Script and Jquery*@ 
+    <script src="/assets/client/js/imagezoom.js"></script>
+
+    <!-- nav smooth scroll -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+				function () {
+				    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+				    $(this).toggleClass('open');
+				},
+				function () {
+				    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+				    $(this).toggleClass('open');
+				}
+			);
+        });
+    </script>
+    <!-- //nav smooth scroll -->
+
+    <!-- popup modal (for location)-->
+    <script src="/assets/client/js/jquery.magnific-popup.js"></script>
+    <script>
+		$(document).ready(function () {
+			$('.popup-with-zoom-anim').magnificPopup({
+				type: 'inline',
+				fixedContentPos: false,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeBtnInside: true,
+				preloader: false,
+				midClick: true,
+				removalDelay: 300,
+				mainClass: 'my-mfp-zoom-in'
+			});
+
+		});
+    </script>
+    <!-- //popup modal (for location)-->
+
+    <!-- scroll seller -->
+    <script src="/assets/client/js/scroll.js"></script>
+    <!-- //scroll seller -->
+    <!-- smoothscroll -->
+    <script src="/assets/client/js/SmoothScroll.min.js"></script>
+    <!-- //smoothscroll -->
+    <!-- start-smooth-scrolling -->
+    <script src="/assets/client/js/move-top.js"></script>
+    <script src="/assets/client/js/easing.js"></script>
+    <script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+    </script>
+    <!-- //end-smooth-scrolling -->
+
+    <script src="/assets/client/js/jquery.flexslider.js"></script>
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+    <!-- //FlexSlider-->
+
+    <!-- smooth-scrolling-of-move-up -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop"><span id="toTopHover"></span></a>
+
+    <!--Phone-->
+    <a href="tel:0985407705" class="suntory-alo-phone suntory-alo-green" id="suntory-alo-phoneIcon" style="left: .9rem; bottom: .75rem;">
+			<div class="suntory-alo-ph-circle"></div>
+			<div class="suntory-alo-ph-circle-fill"></div>
+			<div class="suntory-alo-ph-img-circle"><i class="fa fa-phone"></i></div>
+		</a>
+    <!--// Phone--> 
+
+    <!-- for bootstrap working -->
+    <script src="/assets/client/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <!-- //smooth-scrolling-of-move-up -->
+    @Scripts.Render("~/bundles/controller")
+    @RenderSection("jsFooter", required: false)
+</body>
+
+</html>

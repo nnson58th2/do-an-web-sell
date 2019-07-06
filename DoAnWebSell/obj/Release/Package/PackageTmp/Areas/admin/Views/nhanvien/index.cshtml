@@ -1,0 +1,95 @@
+﻿@model PagedList.IPagedList<Model.EF.NhanVien>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Thông tin các nhân viên";
+    Layout = "~/Areas/admin/Views/Shared/_Layouts.cshtml";
+    string gioiTinh = "";
+}
+
+@section header {
+    Danh sách nhân viên
+}
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" cellspacing="0">
+            <div class="d-flex">
+                <div class="create w-80">
+                    <a href="/admin/nhanvien/create" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a>
+                </div>
+                @using (Html.BeginForm("index", "nhanvien", FormMethod.Get))
+                {
+                    <div class="form-inline form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" value="@ViewBag.Search" name="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Họ tên</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Số điện thoại</th>
+                    <th>Bộ phận</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="row_@item.MaNV">
+                        <td>@item.MaNV</td>
+                        <td>
+                            @item.HoNV
+                            @item.TenNV
+                        </td>
+                        <td>
+                            @if (item.GioiTinh == true)
+                            {
+                                gioiTinh = "Nam";
+                            }
+                            else
+                            {
+                                gioiTinh = "Nữ";
+                            }
+                            @gioiTinh
+                        </td>
+                        <td>@item.NgaySinh</td>
+                        <td>@item.SDT</td>
+                        <td>@item.BoPhan.TenBP</td>
+                        <td>
+                            <a class="format-function-edit" href="/admin/nhanvien/edit/@item.MaNV"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+                            <a class="format-function-detail" href="/admin/nhanvien/details/@item.MaNV"><i class="fas fa-info"></i> Chi tiết</a>
+                            @Ajax.ActionLink("Xóa", "delete", new { @id = item.MaNV }, new AjaxOptions
+                       {
+                           Confirm = "Dữ liệu liên quan có thể bị mất \nBạn có muốn xóa nhân viên này?",
+                           OnComplete = "$(' #row_" + @item.MaNV + " ').remove()",
+                           HttpMethod = "Delete"
+                       })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="clear"></div>
+        @Html.PagedListPager(Model, page => Url.Action("index",
+                     new { page, @searchString = @ViewBag.Search }), new PagedListRenderOptions
+                     {
+                         DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                         DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                         DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                         DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                         MaximumPageNumbersToDisplay = 5
+                     })
+    </div>
+</div>
